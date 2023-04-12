@@ -115,6 +115,7 @@ const drivers = [
   "Oscar Piastri",
   "Logan Sargeant"
 ]
+drivers.sort();
 
 function App() {
   const [myArr, updArr] = useState();

@@ -31,3 +31,13 @@ One of the ways that F1 is doing this is by expanding the number of tracks aroun
 <br>
 
 ![Globe](./tracksOnGlobe.png)
+
+# Final Set Of Visualizations:
+* Grid showing top 10 drivers from each season based on points (along with information about wins, poles, finishes in points).
+* Globe showing diversity of tracks and drivers, need to expand the dataset a little bit more.
+* Top 10 drivers statistics based on championships, points, wins (done) + Top 10 constructors based on metrics such as wins, championships, etc (yet to do) + on clicking a circle it shows up a nested svg where we show a visualization about the points/position per race of that season.(yet to do)
+* Direct comparisons of drivers over their career - select both drivers instead of just 1, and display more information like number of wins, number of points per season, number of poles, average position (partially done)
+* Create a dynamic disc diagram for checking engine performance - starts off with direct comparison of engine providers in a disc with layers representing different aspects of comparison - average points per season, average position. Clicking on one of the partitions zooms into a disc depicting specific information of that particular engine in that particular aspect over all the seasons it has been part of the sport along with all the different teams it has provided to.
+* A growing line graph showing race progression lap-by-lap from the starting grid i.e. qualifying order to the final finishing order (yet to do). We can do the same to show the qualifying results from Q1, Q2 and then to Q3 finally. Basically you can choose the race and year from a dropdown for this. (we might integrate this with the radial chart previously mentioned if time permits)
+* Sankey of championships percentages with one column as drivers and other column as constructor.
+* 
