@@ -16,3 +16,18 @@ npm start
 ```
 
 ![Screenshot of website](./WebsitePic.png)
+
+
+<br><br>
+
+## Diversity of F1
+
+* For a long time, Formula 1 has been criticized for being a sport dominated by wealthy white Europeans. However, in recent years, there has been a concerted effort to diversify the sport and make it more inclusive for people from different regions and backgrounds.
+One of the ways that F1 is doing this is by expanding the number of tracks around the world. F1 now has races in various countries across the globe, from small European nations to places like the United States, Mexico, Canada, and the Middle East. By hosting events in different regions, F1 is helping to promote the sport to new audiences and provide opportunities for aspiring drivers from diverse backgrounds.
+
+* To provide a visual representation of F1's global expansion, we have created a new interactive visualization. The visualization features a globe that displays all current circuits for the 2023 season, as well as future and returning circuits for the 2024 season. Each country that hosts an F1 track is highlighted in red, and clicking on a country changes the color to green and displays pictures of all the race tracks, along with their names and locations on the right-hand side of the screen. In addition, the visualization showcases current drivers and recent drivers who have participated in F1 since 2010, with their photos displayed prominently. The globe is fully interactive, with zooming in and out and dragging functionality, and rotates at a constant speed, providing users with an engaging and informative experience. This visualization offers a unique and immersive way for fans to explore F1's global expansion and its diverse lineup of drivers.
+* Potential Improvements : Add functionality to zoom into a country on being clicked, add data for more circuits and drivers
+
+<br>
+
+![Globe](./tracksOnGlobe.png)
