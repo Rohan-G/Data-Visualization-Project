@@ -16,12 +16,12 @@ Pos,Driver,Constructor,Points,Wins,Year
 15,Raymond Sommer,Ferrari/Talbot-Lago,3,0,1950
 16,Robert Manzon,Simca,3,0,1950
 17,Cecil Green,Kurtis Kraft,3,0,1950
-18,Philippe Étancelin,Talbot-Lago,3,0,1950
+18,Philippe etancelin,Talbot-Lago,3,0,1950
 19,Felice Bonetto,Maserati/Milano,2,0,1950
 20,Eugène Chaboud,Talbot-Lago,1,0,1950
 1,Juan Fangio,Alfa Romeo,31,3,1951
 2,Alberto Ascari,Ferrari,25,2,1951
-3,José Froilán González,Talbot-Lago/Ferrari,24,1,1951
+3,Jose Froilan Gonzalez,Talbot-Lago/Ferrari,24,1,1951
 4,Nino Farina,Alfa Romeo,19,1,1951
 5,Luigi Villoresi,Ferrari,15,0,1951
 6,Piero Taruffi,Ferrari,10,0,1951
@@ -47,7 +47,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 6,Robert Manzon,Gordini,9,0,1952
 7,Troy Ruttman,Kuzma,8,1,1952
 8,Luigi Villoresi,Ferrari,8,0,1952
-9,José Froilán González,Maserati,6.5,0,1952
+9,Jose Froilan Gonzalez,Maserati,6.5,0,1952
 10,Jim Rathmann,Kurtis Kraft,6,0,1952
 11,Jean Behra,Gordini,6,0,1952
 12,Sam Hanks,Kurtis Kraft,4,0,1952
@@ -64,23 +64,23 @@ Pos,Driver,Constructor,Points,Wins,Year
 3,Nino Farina,Ferrari,26,1,1953
 4,Mike Hawthorn,Ferrari,19,1,1953
 5,Luigi Villoresi,Ferrari,17,0,1953
-6,José Froilán González,Maserati,13.5,0,1953
+6,Jose Froilan Gonzalez,Maserati,13.5,0,1953
 7,Bill Vukovich,Kurtis Kraft,9,1,1953
 8,Toulo de Graffenried,Maserati,7,0,1953
 9,Felice Bonetto,Maserati,6.5,0,1953
 10,Art Cross,Kurtis Kraft,6,0,1953
-11,Onofre Marimón,Maserati,4,0,1953
+11,Onofre Marimon,Maserati,4,0,1953
 12,Maurice Trintignant,Gordini,4,0,1953
 13,Duane Carter,Lesovsky/Kurtis Kraft,2,0,1953
 14,Sam Hanks,Kurtis Kraft,2,0,1953
-15,Oscar Gálvez,Maserati,2,0,1953
+15,Oscar Galvez,Maserati,2,0,1953
 16,Hermann Lang,Maserati,2,0,1953
 17,Jack McGrath,Kurtis Kraft,2,0,1953
 18,Paul Russo,Kurtis Kraft,1.5,0,1953
 19,Fred Agabashian,Kurtis Kraft,1.5,0,1953
 20,Stirling Moss,Connaught/Cooper,0,0,1953
 1,Juan Fangio,Maserati/Mercedes,42,6,1954
-2,José Froilán González,Ferrari,25.14,1,1954
+2,Jose Froilan Gonzalez,Ferrari,25.14,1,1954
 3,Mike Hawthorn,Ferrari,24.64,1,1954
 4,Maurice Trintignant,Ferrari,17,0,1954
 5,Karl Kling,Mercedes,12,0,1954
@@ -91,13 +91,13 @@ Pos,Driver,Constructor,Points,Wins,Year
 10,Jimmy Bryan,Kuzma,6,0,1954
 11,Roberto Mieres,Maserati,6,0,1954
 12,Jack McGrath,Kurtis Kraft,5,0,1954
-13,Onofre Marimón,Maserati,4.14,0,1954
+13,Onofre Marimon,Maserati,4.14,0,1954
 14,Robert Manzon,Ferrari,4,0,1954
 15,Stirling Moss,Maserati,4,0,1954
 16,Sergio Mantovani,Maserati,4,0,1954
 17,Prince Bira,Maserati,3,0,1954
 18,Umberto Maglioli,Ferrari,2,0,1954
-19,André Pilette,Gordini,2,0,1954
+19,Andre Pilette,Gordini,2,0,1954
 20,Luigi Villoresi,Maserati/Lancia,2,0,1954
 1,Juan Fangio,Mercedes,40,4,1955
 2,Stirling Moss,Mercedes,23,1,1955
@@ -115,7 +115,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 14,Paul Russo,Kurtis Kraft,3,0,1955
 15,Paul Frère,Ferrari,3,0,1955
 16,Johnny Thomson,Kuzma,3,0,1955
-17,José Froilán González,Ferrari,2,0,1955
+17,Jose Froilan Gonzalez,Ferrari,2,0,1955
 18,Cesare Perdisa,Maserati,2,0,1955
 19,Carlos Menditeguy,Maserati,2,0,1955
 20,Luigi Villoresi,Lancia/Ferrari,2,0,1955
@@ -586,7 +586,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 5,Clay Regazzoni,Williams,29,1,1979
 6,Patrick Depailler,Ligier,20,1,1979
 7,Carlos Reutemann,Team Lotus,20,0,1979
-8,René Arnoux,Renault,17,0,1979
+8,Rene Arnoux,Renault,17,0,1979
 9,John Watson,McLaren,15,0,1979
 10,Didier Pironi,Tyrrell,14,0,1979
 11,Jean-Pierre Jarier,Tyrrell,14,0,1979
@@ -604,7 +604,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 3,Carlos Reutemann,Williams,42,1,1980
 4,Jacques Laffite,Ligier,34,1,1980
 5,Didier Pironi,Ligier,32,1,1980
-6,René Arnoux,Renault,29,2,1980
+6,Rene Arnoux,Renault,29,2,1980
 7,Elio de Angelis,Team Lotus,13,0,1980
 8,Jean-Pierre Jabouille,Renault,9,1,1980
 9,Riccardo Patrese,Arrows,7,0,1980
@@ -627,7 +627,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 6,John Watson,McLaren,27,1,1981
 7,Gilles Villeneuve,Ferrari,25,2,1981
 8,Elio de Angelis,Team Lotus,14,0,1981
-9,René Arnoux,Renault,11,0,1981
+9,Rene Arnoux,Renault,11,0,1981
 10,Hector Rebaque,Brabham,11,0,1981
 11,Riccardo Patrese,Arrows,10,0,1981
 12,Eddie Cheever,Tyrrell,10,0,1981
@@ -644,7 +644,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 3,John Watson,McLaren,39,2,1982
 4,Alain Prost,Renault,34,2,1982
 5,Niki Lauda,McLaren,30,2,1982
-6,René Arnoux,Renault,28,2,1982
+6,Rene Arnoux,Renault,28,2,1982
 7,Patrick Tambay,Ferrari,25,1,1982
 8,Michele Alboreto,Tyrrell,25,1,1982
 9,Elio de Angelis,Team Lotus,23,1,1982
@@ -661,7 +661,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 20,Jean-Pierre Jarier,Osella,3,0,1982
 1,Nelson Piquet,Brabham,59,3,1983
 2,Alain Prost,Renault,57,4,1983
-3,René Arnoux,Ferrari,49,3,1983
+3,Rene Arnoux,Ferrari,49,3,1983
 4,Patrick Tambay,Ferrari,40,1,1983
 5,Keke Rosberg,Williams,27,1,1983
 6,John Watson,McLaren,22,1,1983
@@ -684,7 +684,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 3,Elio de Angelis,Team Lotus,34,0,1984
 4,Michele Alboreto,Ferrari,30.5,1,1984
 5,Nelson Piquet,Brabham,29,2,1984
-6,René Arnoux,Ferrari,27,0,1984
+6,Rene Arnoux,Ferrari,27,0,1984
 7,Derek Warwick,Renault,23,0,1984
 8,Keke Rosberg,Williams,20.5,1,1984
 9,Ayrton Senna,Toleman,13,0,1984
@@ -717,7 +717,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 16,Stefan Bellof,Tyrrell,4,0,1985
 17,Andrea de Cesaris,Ligier,3,0,1985
 18,Ivan Capelli,Tyrrell,3,0,1985
-19,René Arnoux,Ferrari,3,0,1985
+19,Rene Arnoux,Ferrari,3,0,1985
 20,Gerhard Berger,Arrows,3,0,1985
 1,Alain Prost,McLaren,72,4,1986
 2,Nigel Mansell,Williams,70,5,1986
@@ -728,7 +728,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 7,Gerhard Berger,Benetton,17,1,1986
 8,Jacques Laffite,Ligier,14,0,1986
 9,Michele Alboreto,Ferrari,14,0,1986
-10,René Arnoux,Ligier,14,0,1986
+10,Rene Arnoux,Ligier,14,0,1986
 11,Martin Brundle,Tyrrell,8,0,1986
 12,Alan Jones,Lola,4,0,1986
 13,Johnny Dumfries,Team Lotus,3,0,1986
@@ -758,7 +758,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 17,Philippe Alliot,Larrousse,3,0,1987
 18,Martin Brundle,Zakspeed,2,0,1987
 19,Ivan Capelli,March,1,0,1987
-20,René Arnoux,Ligier,1,0,1987
+20,Rene Arnoux,Ligier,1,0,1987
 1,Ayrton Senna,McLaren,90,8,1988
 2,Alain Prost,McLaren,87,7,1988
 3,Gerhard Berger,Ferrari,41,1,1988
@@ -811,7 +811,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 10,Ivan Capelli,Leyton House,6,0,1990
 11,Roberto Moreno,Euro Brun/Benetton,6,0,1990
 12,Aguri Suzuki,Larrousse,6,0,1990
-13,Éric Bernard,Larrousse,5,0,1990
+13,eric Bernard,Larrousse,5,0,1990
 14,Derek Warwick,Team Lotus,3,0,1990
 15,Satoru Nakajima,Tyrrell,3,0,1990
 16,Alex Caffi,Arrows,2,0,1990
@@ -830,11 +830,11 @@ Pos,Driver,Constructor,Points,Wins,Year
 9,Andrea de Cesaris,Jordan,9,0,1991
 10,Roberto Moreno,Benetton/Jordan/Minardi,8,0,1991
 11,Pierluigi Martini,Minardi,6,0,1991
-12,Jyrki Järvilehto,Dallara,4,0,1991
+12,Jyrki Jarvilehto,Dallara,4,0,1991
 13,Bertrand Gachot,Jordan/Larrousse,4,0,1991
 14,Michael Schumacher,Jordan/Benetton,4,0,1991
 15,Satoru Nakajima,Tyrrell,2,0,1991
-16,Mika Häkkinen,Team Lotus,2,0,1991
+16,Mika Hakkinen,Team Lotus,2,0,1991
 17,Martin Brundle,Brabham,2,0,1991
 18,Emanuele Pirro,Dallara,1,0,1991
 19,Mark Blundell,Brabham,1,0,1991
@@ -846,10 +846,10 @@ Pos,Driver,Constructor,Points,Wins,Year
 5,Gerhard Berger,McLaren,49,2,1992
 6,Martin Brundle,Benetton,38,0,1992
 7,Jean Alesi,Ferrari,18,0,1992
-8,Mika Häkkinen,Team Lotus,11,0,1992
+8,Mika Hakkinen,Team Lotus,11,0,1992
 9,Andrea de Cesaris,Tyrrell,8,0,1992
 10,Michele Alboreto,Footwork,6,0,1992
-11,Érik Comas,Ligier,4,0,1992
+11,erik Comas,Ligier,4,0,1992
 12,Karl Wendlinger,March,3,0,1992
 13,Ivan Capelli,Ferrari,3,0,1992
 14,Thierry Boutsen,Ligier,2,0,1992
@@ -871,9 +871,9 @@ Pos,Driver,Constructor,Points,Wins,Year
 10,Mark Blundell,Ligier,10,0,1993
 11,Michael Andretti,McLaren,7,0,1993
 12,Karl Wendlinger,Sauber,7,0,1993
-13,Jyrki Järvilehto,Sauber,5,0,1993
+13,Jyrki Jarvilehto,Sauber,5,0,1993
 14,Christian Fittipaldi,Minardi,5,0,1993
-15,Mika Häkkinen,McLaren,4,0,1993
+15,Mika Hakkinen,McLaren,4,0,1993
 16,Derek Warwick,Footwork,4,0,1993
 17,Philippe Alliot,Larrousse,2,0,1993
 18,Rubens Barrichello,Jordan,2,0,1993
@@ -882,7 +882,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 1,Michael Schumacher,Benetton,92,8,1994
 2,Damon Hill,Williams,91,6,1994
 3,Gerhard Berger,Ferrari,41,1,1994
-4,Mika Häkkinen,McLaren,26,0,1994
+4,Mika Hakkinen,McLaren,26,0,1994
 5,Jean Alesi,Ferrari,24,0,1994
 6,Rubens Barrichello,Jordan,19,0,1994
 7,Martin Brundle,McLaren,16,0,1994
@@ -896,7 +896,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 15,Christian Fittipaldi,Footwork,6,0,1994
 16,Eddie Irvine,Jordan,6,0,1994
 17,Ukyo Katayama,Tyrrell,5,0,1994
-18,Éric Bernard,Ligier/Team Lotus,4,0,1994
+18,eric Bernard,Ligier/Team Lotus,4,0,1994
 19,Karl Wendlinger,Sauber,4,0,1994
 20,Andrea de Cesaris,Jordan/Sauber,4,0,1994
 1,Michael Schumacher,Benetton,102,9,1995
@@ -905,7 +905,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 4,Johnny Herbert,Benetton,45,2,1995
 5,Jean Alesi,Ferrari,42,1,1995
 6,Gerhard Berger,Ferrari,31,0,1995
-7,Mika Häkkinen,McLaren,17,0,1995
+7,Mika Hakkinen,McLaren,17,0,1995
 8,Olivier Panis,Ligier,16,0,1995
 9,Heinz-Harald Frentzen,Sauber,15,0,1995
 10,Mark Blundell,McLaren,13,0,1995
@@ -923,7 +923,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 2,Jacques Villeneuve,Williams,78,4,1996
 3,Michael Schumacher,Ferrari,59,3,1996
 4,Jean Alesi,Benetton,47,0,1996
-5,Mika Häkkinen,McLaren,31,0,1996
+5,Mika Hakkinen,McLaren,31,0,1996
 6,Gerhard Berger,Benetton,21,0,1996
 7,David Coulthard,McLaren,18,0,1996
 8,Rubens Barrichello,Jordan,14,0,1996
@@ -944,7 +944,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 3,David Coulthard,McLaren,36,2,1997
 4,Jean Alesi,Benetton,36,0,1997
 5,Gerhard Berger,Benetton,27,1,1997
-6,Mika Häkkinen,McLaren,27,1,1997
+6,Mika Hakkinen,McLaren,27,1,1997
 7,Eddie Irvine,Ferrari,24,0,1997
 8,Giancarlo Fisichella,Jordan,20,0,1997
 9,Olivier Panis,Prost,16,0,1997
@@ -959,7 +959,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 18,Shinji Nakano,Prost,2,0,1997
 19,Nicola Larini,Sauber,1,0,1997
 20,Jan Magnussen,Stewart,0,0,1997
-1,Mika Häkkinen,McLaren,100,8,1998
+1,Mika Hakkinen,McLaren,100,8,1998
 2,Michael Schumacher,Ferrari,86,6,1998
 3,David Coulthard,McLaren,56,1,1998
 4,Eddie Irvine,Ferrari,47,0,1998
@@ -979,7 +979,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 18,Shinji Nakano,Minardi,0,0,1998
 19,Esteban Tuero,Minardi,0,0,1998
 20,Ricardo Rosset,Tyrrell,0,0,1998
-1,Mika Häkkinen,McLaren,76,5,1999
+1,Mika Hakkinen,McLaren,76,5,1999
 2,Eddie Irvine,Ferrari,74,4,1999
 3,Heinz-Harald Frentzen,Jordan,54,2,1999
 4,David Coulthard,McLaren,48,2,1999
@@ -995,12 +995,12 @@ Pos,Driver,Constructor,Points,Wins,Year
 14,Pedro Diniz,Sauber,3,0,1999
 15,Jean Alesi,Sauber,2,0,1999
 16,Olivier Panis,Prost,2,0,1999
-17,Marc Gené,Minardi,1,0,1999
+17,Marc Gene,Minardi,1,0,1999
 18,Pedro de la Rosa,Arrows,1,0,1999
 19,Alessandro Zanardi,Williams,0,0,1999
 20,Toranosuke Takagi,Arrows,0,0,1999
 1,Michael Schumacher,Ferrari,108,9,2000
-2,Mika Häkkinen,McLaren,89,4,2000
+2,Mika Hakkinen,McLaren,89,4,2000
 3,David Coulthard,McLaren,73,3,2000
 4,Rubens Barrichello,Ferrari,62,1,2000
 5,Ralf Schumacher,Williams,24,0,2000
@@ -1017,18 +1017,18 @@ Pos,Driver,Constructor,Points,Wins,Year
 16,Pedro de la Rosa,Arrows,2,0,2000
 17,Johnny Herbert,Jaguar,0,0,2000
 18,Pedro Diniz,Sauber,0,0,2000
-19,Marc Gené,Minardi,0,0,2000
+19,Marc Gene,Minardi,0,0,2000
 20,Nick Heidfeld,Prost,0,0,2000
 1,Michael Schumacher,Ferrari,123,9,2001
 2,David Coulthard,McLaren,65,2,2001
 3,Rubens Barrichello,Ferrari,56,0,2001
 4,Ralf Schumacher,Williams,49,3,2001
-5,Mika Häkkinen,McLaren,37,2,2001
+5,Mika Hakkinen,McLaren,37,2,2001
 6,Juan Pablo Montoya,Williams,31,1,2001
 7,Jacques Villeneuve,BAR,12,0,2001
 8,Nick Heidfeld,Sauber,12,0,2001
 9,Jarno Trulli,Jordan,12,0,2001
-10,Kimi Räikkönen,Sauber,9,0,2001
+10,Kimi Raikkonen,Sauber,9,0,2001
 11,Giancarlo Fisichella,Benetton,8,0,2001
 12,Eddie Irvine,Jaguar,6,0,2001
 13,Heinz-Harald Frentzen,Jordan/Prost,6,0,2001
@@ -1044,7 +1044,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 3,Juan Pablo Montoya,Williams,50,0,2002
 4,Ralf Schumacher,Williams,42,1,2002
 5,David Coulthard,McLaren,41,1,2002
-6,Kimi Räikkönen,McLaren,24,0,2002
+6,Kimi Raikkonen,McLaren,24,0,2002
 7,Jenson Button,Renault,14,0,2002
 8,Jarno Trulli,Renault,9,0,2002
 9,Eddie Irvine,Jaguar,8,0,2002
@@ -1060,7 +1060,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 19,Allan McNish,Toyota,0,0,2002
 20,Alex Yoong,Minardi,0,0,2002
 1,Michael Schumacher,Ferrari,93,6,2003
-2,Kimi Räikkönen,McLaren,91,1,2003
+2,Kimi Raikkonen,McLaren,91,1,2003
 3,Juan Pablo Montoya,Williams,82,2,2003
 4,Rubens Barrichello,Ferrari,65,2,2003
 5,Ralf Schumacher,Williams,58,2,2003
@@ -1075,7 +1075,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 14,Nick Heidfeld,Sauber,6,0,2003
 15,Olivier Panis,Toyota,6,0,2003
 16,Jacques Villeneuve,BAR,6,0,2003
-17,Marc Gené,Williams,4,0,2003
+17,Marc Gene,Williams,4,0,2003
 18,Takuma Sato,BAR,3,0,2003
 19,Ralph Firman,Jordan,1,0,2003
 20,Justin Wilson,Minardi/Jaguar,1,0,2003
@@ -1085,7 +1085,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 4,Fernando Alonso,Renault,59,0,2004
 5,Juan Pablo Montoya,Williams,58,1,2004
 6,Jarno Trulli,Renault/Toyota,46,1,2004
-7,Kimi Räikkönen,McLaren,45,1,2004
+7,Kimi Raikkonen,McLaren,45,1,2004
 8,Takuma Sato,BAR,34,0,2004
 9,Ralf Schumacher,Williams,24,0,2004
 10,David Coulthard,McLaren,24,0,2004
@@ -1100,7 +1100,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 19,Timo Glock,Jordan,2,0,2004
 20,Zsolt Baumgartner,Minardi,1,0,2004
 1,Fernando Alonso,Renault,133,7,2005
-2,Kimi Räikkönen,McLaren,112,7,2005
+2,Kimi Raikkonen,McLaren,112,7,2005
 3,Michael Schumacher,Ferrari,62,1,2005
 4,Juan Pablo Montoya,McLaren,60,3,2005
 5,Giancarlo Fisichella,Renault,58,1,2005
@@ -1123,7 +1123,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 2,Michael Schumacher,Ferrari,121,7,2006
 3,Felipe Massa,Ferrari,80,2,2006
 4,Giancarlo Fisichella,Renault,72,1,2006
-5,Kimi Räikkönen,McLaren,65,0,2006
+5,Kimi Raikkonen,McLaren,65,0,2006
 6,Jenson Button,Honda,56,1,2006
 7,Rubens Barrichello,Honda,30,0,2006
 8,Juan Pablo Montoya,McLaren,26,0,2006
@@ -1139,7 +1139,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 18,Christian Klien,Red Bull,2,0,2006
 19,Vitantonio Liuzzi,Toro Rosso,1,0,2006
 20,Scott Speed,Toro Rosso,0,0,2006
-1,Kimi Räikkönen,Ferrari,110,6,2007
+1,Kimi Raikkonen,Ferrari,110,6,2007
 2,Lewis Hamilton,McLaren,109,4,2007
 3,Fernando Alonso,McLaren,109,4,2007
 4,Felipe Massa,Ferrari,94,3,2007
@@ -1161,7 +1161,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 20,Rubens Barrichello,Honda,0,0,2007
 1,Lewis Hamilton,McLaren,98,5,2008
 2,Felipe Massa,Ferrari,97,6,2008
-3,Kimi Räikkönen,Ferrari,75,2,2008
+3,Kimi Raikkonen,Ferrari,75,2,2008
 4,Robert Kubica,BMW Sauber,75,1,2008
 5,Fernando Alonso,Renault,61,2,2008
 6,Nick Heidfeld,BMW Sauber,60,0,2008
@@ -1175,7 +1175,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 14,Rubens Barrichello,Honda,11,0,2008
 15,Kazuki Nakajima,Williams,9,0,2008
 16,David Coulthard,Red Bull,8,0,2008
-17,Sébastien Bourdais,Toro Rosso,4,0,2008
+17,Sebastien Bourdais,Toro Rosso,4,0,2008
 18,Jenson Button,Honda,3,0,2008
 19,Giancarlo Fisichella,Force India,0,0,2008
 20,Adrian Sutil,Force India,0,0,2008
@@ -1184,7 +1184,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 3,Rubens Barrichello,Brawn,77,2,2009
 4,Mark Webber,Red Bull,69.5,2,2009
 5,Lewis Hamilton,McLaren,49,2,2009
-6,Kimi Räikkönen,Ferrari,48,1,2009
+6,Kimi Raikkonen,Ferrari,48,1,2009
 7,Nico Rosberg,Williams,34.5,0,2009
 8,Jarno Trulli,Toyota,32.5,0,2009
 9,Fernando Alonso,Renault,26,0,2009
@@ -1194,10 +1194,10 @@ Pos,Driver,Constructor,Points,Wins,Year
 13,Nick Heidfeld,BMW Sauber,19,0,2009
 14,Robert Kubica,BMW Sauber,17,0,2009
 15,Giancarlo Fisichella,Force India/Ferrari,8,0,2009
-16,Sébastien Buemi,Toro Rosso,6,0,2009
+16,Sebastien Buemi,Toro Rosso,6,0,2009
 17,Adrian Sutil,Force India,5,0,2009
 18,Kamui Kobayashi,Toyota,3,0,2009
-19,Sébastien Bourdais,Toro Rosso,2,0,2009
+19,Sebastien Bourdais,Toro Rosso,2,0,2009
 20,Kazuki Nakajima,Williams,0,0,2009
 1,Sebastian Vettel,Red Bull,256,5,2010
 2,Fernando Alonso,Ferrari,252,5,2010
@@ -1212,9 +1212,9 @@ Pos,Driver,Constructor,Points,Wins,Year
 11,Adrian Sutil,Force India,47,0,2010
 12,Kamui Kobayashi,Sauber,32,0,2010
 13,Vitaly Petrov,Renault,27,0,2010
-14,Nico Hülkenberg,Williams,22,0,2010
+14,Nico Hulkenberg,Williams,22,0,2010
 15,Vitantonio Liuzzi,Force India,21,0,2010
-16,Sébastien Buemi,Toro Rosso,8,0,2010
+16,Sebastien Buemi,Toro Rosso,8,0,2010
 17,Pedro de la Rosa,Sauber,6,0,2010
 18,Nick Heidfeld,Sauber,6,0,2010
 19,Jaime Alguersuari,Toro Rosso,5,0,2010
@@ -1233,29 +1233,29 @@ Pos,Driver,Constructor,Points,Wins,Year
 12,Kamui Kobayashi,Sauber,30,0,2011
 13,Paul di Resta,Force India,27,0,2011
 14,Jaime Alguersuari,Toro Rosso,26,0,2011
-15,Sébastien Buemi,Toro Rosso,15,0,2011
-16,Sergio Pérez,Sauber,14,0,2011
+15,Sebastien Buemi,Toro Rosso,15,0,2011
+16,Sergio Perez,Sauber,14,0,2011
 17,Rubens Barrichello,Williams,4,0,2011
 18,Bruno Senna,Renault,2,0,2011
 19,Pastor Maldonado,Williams,1,0,2011
 20,Pedro de la Rosa,Sauber,0,0,2011
 1,Sebastian Vettel,Red Bull,281,5,2012
 2,Fernando Alonso,Ferrari,278,3,2012
-3,Kimi Räikkönen,Lotus F1,207,1,2012
+3,Kimi Raikkonen,Lotus F1,207,1,2012
 4,Lewis Hamilton,McLaren,190,4,2012
 5,Jenson Button,McLaren,188,3,2012
 6,Mark Webber,Red Bull,179,2,2012
 7,Felipe Massa,Ferrari,122,0,2012
 8,Romain Grosjean,Lotus F1,96,0,2012
 9,Nico Rosberg,Mercedes,93,1,2012
-10,Sergio Pérez,Sauber,66,0,2012
-11,Nico Hülkenberg,Force India,63,0,2012
+10,Sergio Perez,Sauber,66,0,2012
+11,Nico Hulkenberg,Force India,63,0,2012
 12,Kamui Kobayashi,Sauber,60,0,2012
 13,Michael Schumacher,Mercedes,49,0,2012
 14,Paul di Resta,Force India,46,0,2012
 15,Pastor Maldonado,Williams,45,1,2012
 16,Bruno Senna,Williams,31,0,2012
-17,Jean-Éric Vergne,Toro Rosso,16,0,2012
+17,Jean-eric Vergne,Toro Rosso,16,0,2012
 18,Daniel Ricciardo,Toro Rosso,10,0,2012
 19,Vitaly Petrov,Caterham,0,0,2012
 20,Timo Glock,Marussia,0,0,2012
@@ -1263,18 +1263,18 @@ Pos,Driver,Constructor,Points,Wins,Year
 2,Fernando Alonso,Ferrari,242,2,2013
 3,Mark Webber,Red Bull,199,0,2013
 4,Lewis Hamilton,Mercedes,189,1,2013
-5,Kimi Räikkönen,Lotus F1,183,1,2013
+5,Kimi Raikkonen,Lotus F1,183,1,2013
 6,Nico Rosberg,Mercedes,171,2,2013
 7,Romain Grosjean,Lotus F1,132,0,2013
 8,Felipe Massa,Ferrari,112,0,2013
 9,Jenson Button,McLaren,73,0,2013
-10,Nico Hülkenberg,Sauber,51,0,2013
-11,Sergio Pérez,McLaren,49,0,2013
+10,Nico Hulkenberg,Sauber,51,0,2013
+11,Sergio Perez,McLaren,49,0,2013
 12,Paul di Resta,Force India,48,0,2013
 13,Adrian Sutil,Force India,29,0,2013
 14,Daniel Ricciardo,Toro Rosso,20,0,2013
-15,Jean-Éric Vergne,Toro Rosso,13,0,2013
-16,Esteban Gutiérrez,Sauber,6,0,2013
+15,Jean-eric Vergne,Toro Rosso,13,0,2013
+16,Esteban Gutierrez,Sauber,6,0,2013
 17,Valtteri Bottas,Williams,4,0,2013
 18,Pastor Maldonado,Williams,1,0,2013
 19,Jules Bianchi,Marussia,0,0,2013
@@ -1287,28 +1287,28 @@ Pos,Driver,Constructor,Points,Wins,Year
 6,Fernando Alonso,Ferrari,161,0,2014
 7,Felipe Massa,Williams,134,0,2014
 8,Jenson Button,McLaren,126,0,2014
-9,Nico Hülkenberg,Force India,96,0,2014
-10,Sergio Pérez,Force India,59,0,2014
+9,Nico Hulkenberg,Force India,96,0,2014
+10,Sergio Perez,Force India,59,0,2014
 11,Kevin Magnussen,McLaren,55,0,2014
-12,Kimi Räikkönen,Ferrari,55,0,2014
-13,Jean-Éric Vergne,Toro Rosso,22,0,2014
+12,Kimi Raikkonen,Ferrari,55,0,2014
+13,Jean-eric Vergne,Toro Rosso,22,0,2014
 14,Romain Grosjean,Lotus F1,8,0,2014
 15,Daniil Kvyat,Toro Rosso,8,0,2014
 16,Pastor Maldonado,Lotus F1,2,0,2014
 17,Jules Bianchi,Marussia,2,0,2014
 18,Adrian Sutil,Sauber,0,0,2014
 19,Marcus Ericsson,Caterham,0,0,2014
-20,Esteban Gutiérrez,Sauber,0,0,2014
+20,Esteban Gutierrez,Sauber,0,0,2014
 1,Lewis Hamilton,Mercedes,381,10,2015
 2,Nico Rosberg,Mercedes,322,6,2015
 3,Sebastian Vettel,Ferrari,278,3,2015
-4,Kimi Räikkönen,Ferrari,150,0,2015
+4,Kimi Raikkonen,Ferrari,150,0,2015
 5,Valtteri Bottas,Williams,136,0,2015
 6,Felipe Massa,Williams,121,0,2015
 7,Daniil Kvyat,Red Bull,95,0,2015
 8,Daniel Ricciardo,Red Bull,92,0,2015
-9,Sergio Pérez,Force India,78,0,2015
-10,Nico Hülkenberg,Force India,58,0,2015
+9,Sergio Perez,Force India,78,0,2015
+10,Nico Hulkenberg,Force India,58,0,2015
 11,Romain Grosjean,Lotus F1,51,0,2015
 12,Max Verstappen,Toro Rosso,49,0,2015
 13,Felipe Nasr,Sauber,27,0,2015
@@ -1324,10 +1324,10 @@ Pos,Driver,Constructor,Points,Wins,Year
 3,Daniel Ricciardo,Red Bull,256,1,2016
 4,Sebastian Vettel,Ferrari,212,0,2016
 5,Max Verstappen,Toro Rosso/Red Bull,204,1,2016
-6,Kimi Räikkönen,Ferrari,186,0,2016
-7,Sergio Pérez,Force India,101,0,2016
+6,Kimi Raikkonen,Ferrari,186,0,2016
+7,Sergio Perez,Force India,101,0,2016
 8,Valtteri Bottas,Williams,85,0,2016
-9,Nico Hülkenberg,Force India,72,0,2016
+9,Nico Hulkenberg,Force India,72,0,2016
 10,Fernando Alonso,McLaren,54,0,2016
 11,Felipe Massa,Williams,53,0,2016
 12,Carlos Sainz,Toro Rosso,46,0,2016
@@ -1342,13 +1342,13 @@ Pos,Driver,Constructor,Points,Wins,Year
 1,Lewis Hamilton,Mercedes,363,9,2017
 2,Sebastian Vettel,Ferrari,317,5,2017
 3,Valtteri Bottas,Mercedes,305,3,2017
-4,Kimi Räikkönen,Ferrari,205,0,2017
+4,Kimi Raikkonen,Ferrari,205,0,2017
 5,Daniel Ricciardo,Red Bull,200,1,2017
 6,Max Verstappen,Red Bull,168,2,2017
-7,Sergio Pérez,Force India,100,0,2017
+7,Sergio Perez,Force India,100,0,2017
 8,Esteban Ocon,Force India,87,0,2017
 9,Carlos Sainz,Toro Rosso/Renault,54,0,2017
-10,Nico Hülkenberg,Renault,43,0,2017
+10,Nico Hulkenberg,Renault,43,0,2017
 11,Felipe Massa,Williams,43,0,2017
 12,Lance Stroll,Williams,40,0,2017
 13,Romain Grosjean,Haas F1 Team,28,0,2017
@@ -1361,12 +1361,12 @@ Pos,Driver,Constructor,Points,Wins,Year
 20,Marcus Ericsson,Sauber,0,0,2017
 1,Lewis Hamilton,Mercedes,408,11,2018
 2,Sebastian Vettel,Ferrari,320,5,2018
-3,Kimi Räikkönen,Ferrari,251,1,2018
+3,Kimi Raikkonen,Ferrari,251,1,2018
 4,Max Verstappen,Red Bull,249,2,2018
 5,Valtteri Bottas,Mercedes,247,0,2018
 6,Daniel Ricciardo,Red Bull,170,2,2018
-7,Nico Hülkenberg,Renault,69,0,2018
-8,Sergio Pérez,Force India,62,0,2018
+7,Nico Hulkenberg,Renault,69,0,2018
+8,Sergio Perez,Force India,62,0,2018
 9,Kevin Magnussen,Haas F1 Team,56,0,2018
 10,Carlos Sainz,Renault,53,0,2018
 11,Fernando Alonso,McLaren,50,0,2018
@@ -1388,11 +1388,11 @@ Pos,Driver,Constructor,Points,Wins,Year
 7,Pierre Gasly,Red Bull/Toro Rosso,95,0,2019
 8,Alexander Albon,Toro Rosso/Red Bull,92,0,2019
 9,Daniel Ricciardo,Renault,54,0,2019
-10,Sergio Pérez,Racing Point,52,0,2019
+10,Sergio Perez,Racing Point,52,0,2019
 11,Lando Norris,McLaren,49,0,2019
-12,Kimi Räikkönen,Alfa Romeo,43,0,2019
+12,Kimi Raikkonen,Alfa Romeo,43,0,2019
 13,Daniil Kvyat,Toro Rosso,37,0,2019
-14,Nico Hülkenberg,Renault,37,0,2019
+14,Nico Hulkenberg,Renault,37,0,2019
 15,Lance Stroll,Racing Point,21,0,2019
 16,Kevin Magnussen,Haas F1 Team,20,0,2019
 17,Antonio Giovinazzi,Alfa Romeo,14,0,2019
@@ -1402,7 +1402,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 1,Lewis Hamilton,Mercedes,347,11,2020
 2,Valtteri Bottas,Mercedes,223,2,2020
 3,Max Verstappen,Red Bull,214,2,2020
-4,Sergio Pérez,Racing Point,125,1,2020
+4,Sergio Perez,Racing Point,125,1,2020
 5,Daniel Ricciardo,Renault,119,0,2020
 6,Carlos Sainz,McLaren,105,0,2020
 7,Alexander Albon,Red Bull,105,0,2020
@@ -1413,8 +1413,8 @@ Pos,Driver,Constructor,Points,Wins,Year
 12,Esteban Ocon,Renault,62,0,2020
 13,Sebastian Vettel,Ferrari,33,0,2020
 14,Daniil Kvyat,AlphaTauri,32,0,2020
-15,Nico Hülkenberg,Racing Point,10,0,2020
-16,Kimi Räikkönen,Alfa Romeo,4,0,2020
+15,Nico Hulkenberg,Racing Point,10,0,2020
+16,Kimi Raikkonen,Alfa Romeo,4,0,2020
 17,Antonio Giovinazzi,Alfa Romeo,4,0,2020
 18,George Russell,Williams/Mercedes,3,0,2020
 19,Romain Grosjean,Haas F1 Team,2,0,2020
@@ -1422,7 +1422,7 @@ Pos,Driver,Constructor,Points,Wins,Year
 1,Max Verstappen,Red Bull,395.5,10,2021
 2,Lewis Hamilton,Mercedes,387.5,8,2021
 3,Valtteri Bottas,Mercedes,226,1,2021
-4,Sergio Pérez,Red Bull,190,1,2021
+4,Sergio Perez,Red Bull,190,1,2021
 5,Carlos Sainz,Ferrari,164.5,0,2021
 6,Lando Norris,McLaren,160,0,2021
 7,Charles Leclerc,Ferrari,159,0,2021
@@ -1434,14 +1434,14 @@ Pos,Driver,Constructor,Points,Wins,Year
 13,Lance Stroll,Aston Martin,34,0,2021
 14,Yuki Tsunoda,AlphaTauri,32,0,2021
 15,George Russell,Williams,16,0,2021
-16,Kimi Räikkönen,Alfa Romeo,10,0,2021
+16,Kimi Raikkonen,Alfa Romeo,10,0,2021
 17,Nicholas Latifi,Williams,7,0,2021
 18,Antonio Giovinazzi,Alfa Romeo,3,0,2021
 19,Mick Schumacher,Haas F1 Team,0,0,2021
 20,Robert Kubica,Alfa Romeo,0,0,2021
 1,Max Verstappen,Red Bull,454,15,2022
 2,Charles Leclerc,Ferrari,308,3,2022
-3,Sergio Pérez,Red Bull,305,2,2022
+3,Sergio Perez,Red Bull,305,2,2022
 4,George Russell,Mercedes,275,1,2022
 5,Carlos Sainz,Ferrari,246,1,2022
 6,Lewis Hamilton,Mercedes,240,0,2022
@@ -1460,14 +1460,14 @@ Pos,Driver,Constructor,Points,Wins,Year
 19,Alexander Albon,Williams,4,0,2022
 20,Nicholas Latifi,Williams,2,0,2022
 1,Max Verstappen,Red Bull,69,2,2023
-2,Sergio Pérez,Red Bull,54,1,2023
+2,Sergio Perez,Red Bull,54,1,2023
 3,Fernando Alonso,Aston Martin,45,0,2023
 4,Lewis Hamilton,Mercedes,38,0,2023
 5,Carlos Sainz,Ferrari,20,0,2023
 6,Lance Stroll,Aston Martin,20,0,2023
 7,George Russell,Mercedes,18,0,2023
 8,Lando Norris,McLaren,8,0,2023
-9,Nico Hülkenberg,Haas F1 Team,6,0,2023
+9,Nico Hulkenberg,Haas F1 Team,6,0,2023
 10,Charles Leclerc,Ferrari,6,0,2023
 11,Valtteri Bottas,Alfa Romeo,4,0,2023
 12,Esteban Ocon,Alpine F1 Team,4,0,2023
