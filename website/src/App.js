@@ -121,6 +121,23 @@ function App() {
   const [myMap, updMap] = useState();
   const [dname,chDriver] = useState("");
 
+  async function insertImage(dname){
+    await d3.csv('https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/DriverImages.csv', function(data){
+      if(data.Driver==dname){
+        d3.select(".images").append("img")
+        .attr("height",500)
+        .attr("width",500)
+        .attr("src",data['Image Link']);
+        d3.select(".images").append("h2")
+        .attr("align","center")
+        .text(dname)
+        d3.select(".images").append("p")
+        .attr("class","info")
+        .text("Hover over one of the veritcal lines to see the season wise points breakdown")
+      }
+    })
+  }
+
   function drawGraph(){
     var pointScale = [0, 50, 100, 150, 200, 250, 300, 350, 400, 450];
     var xVals = [2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
@@ -394,16 +411,7 @@ function App() {
       d3.select("#H2Hgraph").append("div")
       .attr("class","images");
 
-      d3.select(".images").append("img")
-      .attr("height",500)
-      .attr("width",500)
-      .attr("src","https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/Images/LewisH.avif")
-      d3.select(".images").append("h2")
-      .attr("align","center")
-      .text(dname)
-      d3.select(".images").append("p")
-      .attr("class","info")
-      .text("Hover over one of the veritcal lines to see the season wise points breakdown")
+      insertImage(dname);
     }
   },[myArr,myMap])
 
