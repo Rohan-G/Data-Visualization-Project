@@ -190,6 +190,41 @@ function App() {
       .attr("y2", function(d){ return yScale(d) - 7})
       .attr("style", "stroke: black; stroke-width: 1")
 
+      svg.selectAll(".infoLines")
+      .data(xVals)
+      .enter().append("line")
+      .attr("class","infoLines")
+      .attr("x1", function(d){ return xScale(d) + xScale.bandwidth()/2})
+      .attr("y1", 0)
+      .attr("x2", function(d){ return xScale(d) + xScale.bandwidth()/2})
+      .attr("y2", 687.5)
+      .attr("style","stroke:black; stroke-width:8; stroke-opacity:0.1")
+      .on("mouseover",function(event,d){
+        d3.select(event.target).attr("style","stroke:black; stroke-width:8; stroke-opacity:0.5");
+        d3.selectAll(".info").remove()
+        if(!myMap.has(String(d))){
+          d3.select(".images").append("p")
+          .attr("class","info")
+          .text("Did not drive in "+d)
+        }
+        else{
+          d3.select(".images").append("p")
+          .attr("class","info")
+          .text("Points: "+myArr.get(String(d))[0])
+          d3.select(".images").append("p")
+          .attr("class","info")
+          .text("Teammate's Points: "+myArr.get(String(d))[1])
+          
+        }
+      })
+      .on("mouseout",function(event,d){
+        d3.select(event.target).attr("style","stroke:black; stroke-width:8; stroke-opacity:0.1");
+        d3.selectAll(".info").remove()
+        d3.select(".images").append("p")
+        .attr("class","info")
+        .text("Hover over one of the veritcal lines to see the season wise points breakdown")
+      });
+
       svg.selectAll(".opponent")
       .data(myVals)
       .enter().append("line")
@@ -281,7 +316,7 @@ function App() {
       .attr("cx",40)
       .attr("cy",690)
       .attr("r", 20)
-      .attr("fill","blue")
+      .attr("fill","blue");
       
       // var line = d3
       // .line()
@@ -354,34 +389,47 @@ function App() {
       .attr("width",1230)
       .attr("height",800);
       drawGraph();
+
+      d3.selectAll(".images").remove();
+      d3.select("#H2Hgraph").append("div")
+      .attr("class","images");
+
+      d3.select(".images").append("img")
+      .attr("height",600)
+      .attr("width",450)
+      .attr("src","https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/Images/Lewis%20Hamilton.jpg?raw=true")
+      d3.select(".images").append("h2")
+      .attr("align","center")
+      .text(dname)
+      d3.select(".images").append("p")
+      .attr("class","info")
+      .text("Hover over one of the veritcal lines to see the season wise points breakdown")
     }
   },[myArr,myMap])
 
   useEffect(()=>{
     if(dname !== ""){
-      d3.select(".images").remove("img");
       getData(dname);
-      d3.select("#H2Hgraph").append("img")
-      .attr("class","images")
-      .attr("src","../dataset/Images/"+dname+".jpg")
     }
   },[dname]);
 
   return (
     <>
       <h1 align="center">F1</h1>
-      <FormControl fullWidth>
-        <InputLabel>Driver</InputLabel>
-        <Select value = {dname} label="Driver" onChange={(event)=>{chDriver(event.target.value)}}>
-          {
-            drivers.map((driver, index)=>{
-              return(<MenuItem key={index} value={driver}>{driver}</MenuItem>);
-              // console.log(driver);
-            })
-          }
-        </Select>
-      </FormControl>
-      <div id="H2Hgraph" style={{position:"absolute", top: "20vh", left: "0vw"}}>
+      <div align="center">
+        <FormControl align={"center"} style={{ width: "50vw" }}>
+          <InputLabel>Driver</InputLabel>
+          <Select value = {dname} label="Driver" onChange={(event)=>{chDriver(event.target.value)}}>
+            {
+              drivers.map((driver, index)=>{
+                return(<MenuItem key={index} value={driver}>{driver}</MenuItem>);
+                // console.log(driver);
+              })
+            }
+          </Select>
+        </FormControl>
+      </div>
+      <div id="H2Hgraph" style={{position:"absolute", top: "20vh", left: "0vw", display:"flex", flexFlow:"row wrap", alignItems:"top", justifyItems:"center", gap:"100px" }}>
         <svg className="H2H" width={1230} height={800} />
       </div>
     </>
