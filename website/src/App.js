@@ -395,9 +395,9 @@ function App() {
       .attr("class","images");
 
       d3.select(".images").append("img")
-      .attr("height",600)
-      .attr("width",450)
-      .attr("src","https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/Images/Lewis%20Hamilton.jpg?raw=true")
+      .attr("height",500)
+      .attr("width",500)
+      .attr("src","https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/Images/LewisH.avif")
       d3.select(".images").append("h2")
       .attr("align","center")
       .text(dname)
