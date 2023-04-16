@@ -17,6 +17,12 @@
         <label for="1">Top 10 drivers based on overall race wins</label><br/>
         <input type="radio" name="myradio" value="2" labelfor="2" id="2"/>
         <label for="2">Top 10 drivers based on overall Championships</label><br/>
+        <input type="radio" name="myradio" value="3" labelfor="3" id="3"/>
+        <label for="3">Top 10 constructors based on overall points</label><br/>
+        <input type="radio" name="myradio" value="4" labelfor="4" id="4"/>
+        <label for="4">Top 10 constructors based on overall race wins</label><br/>
+        <input type="radio" name="myradio" value="5" labelfor="5" id="5"/>
+        <label for="5">Top 10 constructors based on overall Championships</label><br/>
         <svg width="1425" height="780" class="radial-chart" style="background-color:#EFE0BB">
         </svg>
     </div>
@@ -54,7 +60,14 @@
         // .text("Top 10 drivers based on overall championships")
         const func = async function (data, ind, mult)
         {
-            data = await d3.csv("https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/f1db_csv/allseasonstandings.csv")
+            if (ind < 3)
+            {
+                data = await d3.csv("https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/f1db_csv/allseasonstandings.csv")
+            }
+            else
+            {
+                data = await d3.csv("https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/f1db_csv/constructorsstandings.csv")
+            }
             console.log(data)
 
             center = [700, 350]
@@ -101,7 +114,11 @@
             }
 
             const headers = ['Overall Points in career']
-            const top = [['Lewis Hamilton', 'Sebastian Vettel', 'Fernando Alonso', 'Max Verstappen', 'Kimi Raikkonen', 'Valtteri Bottas', 'Nico Rosberg', 'Michael Schumacher', 'Daniel Ricciardo', 'Jenson Button'], ['Lewis Hamilton', 'Michael Schumacher', 'Sebastian Vettel', 'Alain Prost', 'Ayrton Senna', 'Max Verstappen', 'Fernando Alonso', 'Nigel Mansell', 'Jackie Stewart', 'Jim Clark'], ['Michael Schumacher', 'Lewis Hamilton', 'Juan Fangio', 'Alain Prost', 'Sebastian Vettel', 'Jack Brabham', 'Jackie Stewart', 'Niki Lauda', 'Nelson Piquet', 'Ayrton Senna']]
+            const top = [['Lewis Hamilton', 'Sebastian Vettel', 'Fernando Alonso', 'Max Verstappen', 'Kimi Raikkonen', 'Valtteri Bottas', 'Nico Rosberg', 'Michael Schumacher', 'Daniel Ricciardo', 'Jenson Button'],
+                        ['Lewis Hamilton', 'Michael Schumacher', 'Sebastian Vettel', 'Alain Prost', 'Ayrton Senna', 'Max Verstappen', 'Fernando Alonso', 'Nigel Mansell', 'Jackie Stewart', 'Jim Clark'], ['Michael Schumacher', 'Lewis Hamilton', 'Juan Fangio', 'Alain Prost', 'Sebastian Vettel', 'Jack Brabham', 'Jackie Stewart', 'Niki Lauda', 'Nelson Piquet', 'Ayrton Senna'],
+                        ['Ferrari', 'Mercedes', 'Red Bull', 'McLaren', 'Williams', 'Renault', 'Lotus', 'Force India', 'Sauber', 'Brabham'],
+                        ['Ferrari', 'McLaren', 'Mercedes', 'Red Bull', 'Lotus', 'Brabham', 'Renault', 'Benetton', 'Tyrrell'],
+                        ['Ferrari', 'Williams', 'McLaren', 'Mercedes', 'Lotus', 'Red Bull', 'Cooper', 'Brabham', 'Renault', 'Vanwall']]
             const carcolours = new Map()
             carcolours.set('Ferrari', '#EF1A2D')
             carcolours.set('Mercedes', '#0D98BA')
@@ -111,6 +128,7 @@
             carcolours.set('BMW Sauber/Toro Rosso', '#1D19AC')
             carcolours.set('McLaren', '#FF8000')
             carcolours.set('Aston Martin', '#037A68')
+            carcolours.set('Force India', 'pink')
             carcolours.set('Benetton', '#037A68')
             carcolours.set('Jordan/Benetton', '#037A68')
             carcolours.set('Williams', '#FFFFFF')
@@ -135,9 +153,19 @@
             for(let i=0; i<data.length; i++)
             {
                 // console.log(data[i]["Driver"])
-                if (top[ind].includes(data[i]["Driver"]))
+                if (ind < 3 && top[ind].includes(data[i]["Driver"]) || ind >= 3 && top[ind].includes(data[i]["Constructor"]))
                 {
-                    const index = top[ind].indexOf(data[i]["Driver"])
+                    var p = 0
+                    if (ind < 3)
+                    {
+                        p = top[ind].indexOf(data[i]["Driver"])
+                    }
+                    else
+                    {
+                        p = top[ind].indexOf(data[i]["Constructor"])
+                    }
+                    console.log(p)
+                    const index = p
                     var colour;
                     var carcolour = carcolours.get(data[i]['Constructor']);
                     if (carcolour == null)
@@ -179,9 +207,18 @@
                     .attr("id", function(){return "c"+index+data[i]["Year"]})
                     .on("mouseover", function() {
                         d3.select("#c"+index+yr).attr('stroke', ccolor)
-                        tippy("#c"+index+yr, {
-                        content: "Driver: "+curdata["Driver"]+"<br>Position: "+curdata["Pos"]+"<br>Team: "+curdata["Constructor"]+"<br>Points: "+curdata["Points"]+"<br>Wins: "+curdata["Wins"]+"<br>Year: "+curdata["Year"]
-                        })
+                        if (ind < 3)
+                        {
+                            tippy("#c"+index+yr, {
+                            content: "Driver: "+curdata["Driver"]+"<br>Position: "+curdata["Pos"]+"<br>Team: "+curdata["Constructor"]+"<br>Points: "+curdata["Points"]+"<br>Wins: "+curdata["Wins"]+"<br>Year: "+curdata["Year"]
+                            })
+                        }
+                        else
+                        {
+                            tippy("#c"+index+yr, {
+                            content: "Name: "+curdata["Constructor"]+"<br>Position: "+curdata["Pos"]+"<br>Points: "+curdata["Points"]+"<br>Wins: "+curdata["Wins"]+"<br>Year: "+curdata["Year"]
+                            })
+                        }
                     })
                     .on("mouseout", function() {
                         d3.select("#c"+index+yr).attr('stroke', "black")
@@ -192,17 +229,17 @@
             {
                 const ind2 = i
                 let points2 = 0
-                if (ind == 0)
+                if (ind%3 == 0)
                 {
                     const points = drivpoints[ind2]
                     points2 = points
                 }
-                else if (ind == 1)
+                else if (ind%3 == 1)
                 {
                     const points = drivwins[ind2]
                     points2 = points
                 }
-                else if (ind == 2)
+                else if (ind%3 == 2)
                 {
                     const points = drivchamps[ind2]
                     points2 = points
@@ -218,19 +255,19 @@
                 .attr("id", "r"+i)
                 .on("mouseover", function() {
                     d3.select("#r"+ind2).attr('stroke', colour)
-                    if (ind == 0)
+                    if (ind%3 == 0)
                     {
                         tippy("#r"+ind2, {
                         content: "Total Points: "+points2
                         })
                     }
-                    else if (ind == 1)
+                    else if (ind%3 == 1)
                     {
                         tippy("#r"+ind2, {
                         content: "Total Wins: "+points2
                         })
                     }
-                    else if (ind == 2)
+                    else if (ind%3 == 2)
                     {
                         tippy("#r"+ind2, {
                         content: "Total Championships: "+points2
@@ -423,6 +460,9 @@
         let b1 = document.getElementById("0")
         let b2 = document.getElementById("1")
         let b3 = document.getElementById("2")
+        let b4 = document.getElementById("3")
+        let b5 = document.getElementById("4")
+        let b6 = document.getElementById("5")
         
         b1.addEventListener("click", function (){
             ind = 0
@@ -439,6 +479,24 @@
         b3.addEventListener("click", function (){
             ind = 2
             mult = 500
+            svg.selectAll("*").remove()
+            func(data, ind, mult);
+        })
+        b4.addEventListener("click", function (){
+            ind = 3
+            mult = 0.5
+            svg.selectAll("*").remove()
+            func(data, ind, mult);
+        })
+        b5.addEventListener("click", function (){
+            ind = 4
+            mult = 20
+            svg.selectAll("*").remove()
+            func(data, ind, mult);
+        })
+        b6.addEventListener("click", function (){
+            ind = 5
+            mult = 250
             svg.selectAll("*").remove()
             func(data, ind, mult);
         })
