@@ -1,0 +1,595 @@
+Pos,Constructor,Points,Wins,Year
+1,Vanwall,48.0,6,1958
+2,Ferrari,40.0,2,1958
+3,Cooper,31.0,2,1958
+4,BRM,18.0,0,1958
+5,Maserati,6.0,0,1958
+6,Team Lotus,3.0,0,1958
+7,Porsche,0.0,0,1958
+8,Connaught,0.0,0,1958
+9,OSCA,0.0,0,1958
+1,Vanwall,48.0,6,1959
+2,Ferrari,40.0,2,1959
+3,Cooper,31.0,2,1959
+4,BRM,18.0,0,1959
+5,Maserati,6.0,0,1959
+6,Team Lotus,3.0,0,1959
+7,Porsche,0.0,0,1959
+8,Connaught,0.0,0,1959
+9,OSCA,0.0,0,1959
+1,Vanwall,48.0,6,1960
+2,Ferrari,40.0,2,1960
+3,Cooper,31.0,2,1960
+4,BRM,18.0,0,1960
+5,Maserati,6.0,0,1960
+6,Team Lotus,3.0,0,1960
+7,Porsche,0.0,0,1960
+8,Connaught,0.0,0,1960
+9,OSCA,0.0,0,1960
+1,Vanwall,48.0,6,1961
+2,Ferrari,40.0,2,1961
+3,Cooper,31.0,2,1961
+4,BRM,18.0,0,1961
+5,Maserati,6.0,0,1961
+6,Team Lotus,3.0,0,1961
+7,Porsche,0.0,0,1961
+8,Connaught,0.0,0,1961
+9,OSCA,0.0,0,1961
+1,Vanwall,48.0,6,1962
+2,Ferrari,40.0,2,1962
+3,Cooper,31.0,2,1962
+4,BRM,18.0,0,1962
+5,Maserati,6.0,0,1962
+6,Team Lotus,3.0,0,1962
+7,Porsche,0.0,0,1962
+8,Connaught,0.0,0,1962
+9,OSCA,0.0,0,1962
+1,Vanwall,48.0,6,1963
+2,Ferrari,40.0,2,1963
+3,Cooper,31.0,2,1963
+4,BRM,18.0,0,1963
+5,Maserati,6.0,0,1963
+6,Team Lotus,3.0,0,1963
+7,Porsche,0.0,0,1963
+8,Connaught,0.0,0,1963
+9,OSCA,0.0,0,1963
+1,Vanwall,48.0,6,1964
+2,Ferrari,40.0,2,1964
+3,Cooper,31.0,2,1964
+4,BRM,18.0,0,1964
+5,Maserati,6.0,0,1964
+6,Team Lotus,3.0,0,1964
+7,Porsche,0.0,0,1964
+8,Connaught,0.0,0,1964
+9,OSCA,0.0,0,1964
+1,Vanwall,48.0,6,1965
+2,Ferrari,40.0,2,1965
+3,Cooper,31.0,2,1965
+4,BRM,18.0,0,1965
+5,Maserati,6.0,0,1965
+6,Team Lotus,3.0,0,1965
+7,Porsche,0.0,0,1965
+8,Connaught,0.0,0,1965
+9,OSCA,0.0,0,1965
+1,Vanwall,48.0,6,1966
+2,Ferrari,40.0,2,1966
+3,Cooper,31.0,2,1966
+4,BRM,18.0,0,1966
+5,Maserati,6.0,0,1966
+6,Team Lotus,3.0,0,1966
+7,Porsche,0.0,0,1966
+8,Connaught,0.0,0,1966
+9,OSCA,0.0,0,1966
+1,Vanwall,48.0,6,1967
+2,Ferrari,40.0,2,1967
+3,Cooper,31.0,2,1967
+4,BRM,18.0,0,1967
+5,Maserati,6.0,0,1967
+6,Team Lotus,3.0,0,1967
+7,Porsche,0.0,0,1967
+8,Connaught,0.0,0,1967
+9,OSCA,0.0,0,1967
+1,Vanwall,48.0,6,1968
+2,Ferrari,40.0,2,1968
+3,Cooper,31.0,2,1968
+4,BRM,18.0,0,1968
+5,Maserati,6.0,0,1968
+6,Team Lotus,3.0,0,1968
+7,Porsche,0.0,0,1968
+8,Connaught,0.0,0,1968
+9,OSCA,0.0,0,1968
+1,Vanwall,48.0,6,1969
+2,Ferrari,40.0,2,1969
+3,Cooper,31.0,2,1969
+4,BRM,18.0,0,1969
+5,Maserati,6.0,0,1969
+6,Team Lotus,3.0,0,1969
+7,Porsche,0.0,0,1969
+8,Connaught,0.0,0,1969
+9,OSCA,0.0,0,1969
+1,Vanwall,48.0,6,1970
+2,Ferrari,40.0,2,1970
+3,Cooper,31.0,2,1970
+4,BRM,18.0,0,1970
+5,Maserati,6.0,0,1970
+6,Team Lotus,3.0,0,1970
+7,Porsche,0.0,0,1970
+8,Connaught,0.0,0,1970
+9,OSCA,0.0,0,1970
+1,Vanwall,48.0,6,1971
+2,Ferrari,40.0,2,1971
+3,Cooper,31.0,2,1971
+4,BRM,18.0,0,1971
+5,Maserati,6.0,0,1971
+6,Team Lotus,3.0,0,1971
+7,Porsche,0.0,0,1971
+8,Connaught,0.0,0,1971
+9,OSCA,0.0,0,1971
+1,Vanwall,48.0,6,1972
+2,Ferrari,40.0,2,1972
+3,Cooper,31.0,2,1972
+4,BRM,18.0,0,1972
+5,Maserati,6.0,0,1972
+6,Team Lotus,3.0,0,1972
+7,Porsche,0.0,0,1972
+8,Connaught,0.0,0,1972
+9,OSCA,0.0,0,1972
+1,Vanwall,48.0,6,1973
+2,Ferrari,40.0,2,1973
+3,Cooper,31.0,2,1973
+4,BRM,18.0,0,1973
+5,Maserati,6.0,0,1973
+6,Team Lotus,3.0,0,1973
+7,Porsche,0.0,0,1973
+8,Connaught,0.0,0,1973
+9,OSCA,0.0,0,1973
+1,Vanwall,48.0,6,1974
+2,Ferrari,40.0,2,1974
+3,Cooper,31.0,2,1974
+4,BRM,18.0,0,1974
+5,Maserati,6.0,0,1974
+6,Team Lotus,3.0,0,1974
+7,Porsche,0.0,0,1974
+8,Connaught,0.0,0,1974
+9,OSCA,0.0,0,1974
+1,Vanwall,48.0,6,1975
+2,Ferrari,40.0,2,1975
+3,Cooper,31.0,2,1975
+4,BRM,18.0,0,1975
+5,Maserati,6.0,0,1975
+6,Team Lotus,3.0,0,1975
+7,Porsche,0.0,0,1975
+8,Connaught,0.0,0,1975
+9,OSCA,0.0,0,1975
+1,Vanwall,48.0,6,1976
+2,Ferrari,40.0,2,1976
+3,Cooper,31.0,2,1976
+4,BRM,18.0,0,1976
+5,Maserati,6.0,0,1976
+6,Team Lotus,3.0,0,1976
+7,Porsche,0.0,0,1976
+8,Connaught,0.0,0,1976
+9,OSCA,0.0,0,1976
+1,Vanwall,48.0,6,1977
+2,Ferrari,40.0,2,1977
+3,Cooper,31.0,2,1977
+4,BRM,18.0,0,1977
+5,Maserati,6.0,0,1977
+6,Team Lotus,3.0,0,1977
+7,Porsche,0.0,0,1977
+8,Connaught,0.0,0,1977
+9,OSCA,0.0,0,1977
+1,Vanwall,48.0,6,1978
+2,Ferrari,40.0,2,1978
+3,Cooper,31.0,2,1978
+4,BRM,18.0,0,1978
+5,Maserati,6.0,0,1978
+6,Team Lotus,3.0,0,1978
+7,Porsche,0.0,0,1978
+8,Connaught,0.0,0,1978
+9,OSCA,0.0,0,1978
+1,Vanwall,48.0,6,1979
+2,Ferrari,40.0,2,1979
+3,Cooper,31.0,2,1979
+4,BRM,18.0,0,1979
+5,Maserati,6.0,0,1979
+6,Team Lotus,3.0,0,1979
+7,Porsche,0.0,0,1979
+8,Connaught,0.0,0,1979
+9,OSCA,0.0,0,1979
+1,Vanwall,48.0,6,1980
+2,Ferrari,40.0,2,1980
+3,Cooper,31.0,2,1980
+4,BRM,18.0,0,1980
+5,Maserati,6.0,0,1980
+6,Team Lotus,3.0,0,1980
+7,Porsche,0.0,0,1980
+8,Connaught,0.0,0,1980
+9,OSCA,0.0,0,1980
+1,Vanwall,48.0,6,1981
+2,Ferrari,40.0,2,1981
+3,Cooper,31.0,2,1981
+4,BRM,18.0,0,1981
+5,Maserati,6.0,0,1981
+6,Team Lotus,3.0,0,1981
+7,Porsche,0.0,0,1981
+8,Connaught,0.0,0,1981
+9,OSCA,0.0,0,1981
+1,Vanwall,48.0,6,1982
+2,Ferrari,40.0,2,1982
+3,Cooper,31.0,2,1982
+4,BRM,18.0,0,1982
+5,Maserati,6.0,0,1982
+6,Team Lotus,3.0,0,1982
+7,Porsche,0.0,0,1982
+8,Connaught,0.0,0,1982
+9,OSCA,0.0,0,1982
+1,Vanwall,48.0,6,1983
+2,Ferrari,40.0,2,1983
+3,Cooper,31.0,2,1983
+4,BRM,18.0,0,1983
+5,Maserati,6.0,0,1983
+6,Team Lotus,3.0,0,1983
+7,Porsche,0.0,0,1983
+8,Connaught,0.0,0,1983
+9,OSCA,0.0,0,1983
+1,Vanwall,48.0,6,1984
+2,Ferrari,40.0,2,1984
+3,Cooper,31.0,2,1984
+4,BRM,18.0,0,1984
+5,Maserati,6.0,0,1984
+6,Team Lotus,3.0,0,1984
+7,Porsche,0.0,0,1984
+8,Connaught,0.0,0,1984
+9,OSCA,0.0,0,1984
+1,Vanwall,48.0,6,1985
+2,Ferrari,40.0,2,1985
+3,Cooper,31.0,2,1985
+4,BRM,18.0,0,1985
+5,Maserati,6.0,0,1985
+6,Team Lotus,3.0,0,1985
+7,Porsche,0.0,0,1985
+8,Connaught,0.0,0,1985
+9,OSCA,0.0,0,1985
+1,Vanwall,48.0,6,1986
+2,Ferrari,40.0,2,1986
+3,Cooper,31.0,2,1986
+4,BRM,18.0,0,1986
+5,Maserati,6.0,0,1986
+6,Team Lotus,3.0,0,1986
+7,Porsche,0.0,0,1986
+8,Connaught,0.0,0,1986
+9,OSCA,0.0,0,1986
+1,Vanwall,48.0,6,1987
+2,Ferrari,40.0,2,1987
+3,Cooper,31.0,2,1987
+4,BRM,18.0,0,1987
+5,Maserati,6.0,0,1987
+6,Team Lotus,3.0,0,1987
+7,Porsche,0.0,0,1987
+8,Connaught,0.0,0,1987
+9,OSCA,0.0,0,1987
+1,Vanwall,48.0,6,1988
+2,Ferrari,40.0,2,1988
+3,Cooper,31.0,2,1988
+4,BRM,18.0,0,1988
+5,Maserati,6.0,0,1988
+6,Team Lotus,3.0,0,1988
+7,Porsche,0.0,0,1988
+8,Connaught,0.0,0,1988
+9,OSCA,0.0,0,1988
+1,Vanwall,48.0,6,1989
+2,Ferrari,40.0,2,1989
+3,Cooper,31.0,2,1989
+4,BRM,18.0,0,1989
+5,Maserati,6.0,0,1989
+6,Team Lotus,3.0,0,1989
+7,Porsche,0.0,0,1989
+8,Connaught,0.0,0,1989
+9,OSCA,0.0,0,1989
+1,Vanwall,48.0,6,1990
+2,Ferrari,40.0,2,1990
+3,Cooper,31.0,2,1990
+4,BRM,18.0,0,1990
+5,Maserati,6.0,0,1990
+6,Team Lotus,3.0,0,1990
+7,Porsche,0.0,0,1990
+8,Connaught,0.0,0,1990
+9,OSCA,0.0,0,1990
+1,Vanwall,48.0,6,1991
+2,Ferrari,40.0,2,1991
+3,Cooper,31.0,2,1991
+4,BRM,18.0,0,1991
+5,Maserati,6.0,0,1991
+6,Team Lotus,3.0,0,1991
+7,Porsche,0.0,0,1991
+8,Connaught,0.0,0,1991
+9,OSCA,0.0,0,1991
+1,Vanwall,48.0,6,1992
+2,Ferrari,40.0,2,1992
+3,Cooper,31.0,2,1992
+4,BRM,18.0,0,1992
+5,Maserati,6.0,0,1992
+6,Team Lotus,3.0,0,1992
+7,Porsche,0.0,0,1992
+8,Connaught,0.0,0,1992
+9,OSCA,0.0,0,1992
+1,Vanwall,48.0,6,1993
+2,Ferrari,40.0,2,1993
+3,Cooper,31.0,2,1993
+4,BRM,18.0,0,1993
+5,Maserati,6.0,0,1993
+6,Team Lotus,3.0,0,1993
+7,Porsche,0.0,0,1993
+8,Connaught,0.0,0,1993
+9,OSCA,0.0,0,1993
+1,Vanwall,48.0,6,1994
+2,Ferrari,40.0,2,1994
+3,Cooper,31.0,2,1994
+4,BRM,18.0,0,1994
+5,Maserati,6.0,0,1994
+6,Team Lotus,3.0,0,1994
+7,Porsche,0.0,0,1994
+8,Connaught,0.0,0,1994
+9,OSCA,0.0,0,1994
+1,Vanwall,48.0,6,1995
+2,Ferrari,40.0,2,1995
+3,Cooper,31.0,2,1995
+4,BRM,18.0,0,1995
+5,Maserati,6.0,0,1995
+6,Team Lotus,3.0,0,1995
+7,Porsche,0.0,0,1995
+8,Connaught,0.0,0,1995
+9,OSCA,0.0,0,1995
+1,Vanwall,48.0,6,1996
+2,Ferrari,40.0,2,1996
+3,Cooper,31.0,2,1996
+4,BRM,18.0,0,1996
+5,Maserati,6.0,0,1996
+6,Team Lotus,3.0,0,1996
+7,Porsche,0.0,0,1996
+8,Connaught,0.0,0,1996
+9,OSCA,0.0,0,1996
+1,Vanwall,48.0,6,1997
+2,Ferrari,40.0,2,1997
+3,Cooper,31.0,2,1997
+4,BRM,18.0,0,1997
+5,Maserati,6.0,0,1997
+6,Team Lotus,3.0,0,1997
+7,Porsche,0.0,0,1997
+8,Connaught,0.0,0,1997
+9,OSCA,0.0,0,1997
+1,Vanwall,48.0,6,1998
+2,Ferrari,40.0,2,1998
+3,Cooper,31.0,2,1998
+4,BRM,18.0,0,1998
+5,Maserati,6.0,0,1998
+6,Team Lotus,3.0,0,1998
+7,Porsche,0.0,0,1998
+8,Connaught,0.0,0,1998
+9,OSCA,0.0,0,1998
+1,Vanwall,48.0,6,1999
+2,Ferrari,40.0,2,1999
+3,Cooper,31.0,2,1999
+4,BRM,18.0,0,1999
+5,Maserati,6.0,0,1999
+6,Team Lotus,3.0,0,1999
+7,Porsche,0.0,0,1999
+8,Connaught,0.0,0,1999
+9,OSCA,0.0,0,1999
+1,Vanwall,48.0,6,2000
+2,Ferrari,40.0,2,2000
+3,Cooper,31.0,2,2000
+4,BRM,18.0,0,2000
+5,Maserati,6.0,0,2000
+6,Team Lotus,3.0,0,2000
+7,Porsche,0.0,0,2000
+8,Connaught,0.0,0,2000
+9,OSCA,0.0,0,2000
+1,Vanwall,48.0,6,2001
+2,Ferrari,40.0,2,2001
+3,Cooper,31.0,2,2001
+4,BRM,18.0,0,2001
+5,Maserati,6.0,0,2001
+6,Team Lotus,3.0,0,2001
+7,Porsche,0.0,0,2001
+8,Connaught,0.0,0,2001
+9,OSCA,0.0,0,2001
+1,Vanwall,48.0,6,2002
+2,Ferrari,40.0,2,2002
+3,Cooper,31.0,2,2002
+4,BRM,18.0,0,2002
+5,Maserati,6.0,0,2002
+6,Team Lotus,3.0,0,2002
+7,Porsche,0.0,0,2002
+8,Connaught,0.0,0,2002
+9,OSCA,0.0,0,2002
+1,Vanwall,48.0,6,2003
+2,Ferrari,40.0,2,2003
+3,Cooper,31.0,2,2003
+4,BRM,18.0,0,2003
+5,Maserati,6.0,0,2003
+6,Team Lotus,3.0,0,2003
+7,Porsche,0.0,0,2003
+8,Connaught,0.0,0,2003
+9,OSCA,0.0,0,2003
+1,Vanwall,48.0,6,2004
+2,Ferrari,40.0,2,2004
+3,Cooper,31.0,2,2004
+4,BRM,18.0,0,2004
+5,Maserati,6.0,0,2004
+6,Team Lotus,3.0,0,2004
+7,Porsche,0.0,0,2004
+8,Connaught,0.0,0,2004
+9,OSCA,0.0,0,2004
+1,Vanwall,48.0,6,2005
+2,Ferrari,40.0,2,2005
+3,Cooper,31.0,2,2005
+4,BRM,18.0,0,2005
+5,Maserati,6.0,0,2005
+6,Team Lotus,3.0,0,2005
+7,Porsche,0.0,0,2005
+8,Connaught,0.0,0,2005
+9,OSCA,0.0,0,2005
+1,Vanwall,48.0,6,2006
+2,Ferrari,40.0,2,2006
+3,Cooper,31.0,2,2006
+4,BRM,18.0,0,2006
+5,Maserati,6.0,0,2006
+6,Team Lotus,3.0,0,2006
+7,Porsche,0.0,0,2006
+8,Connaught,0.0,0,2006
+9,OSCA,0.0,0,2006
+1,Vanwall,48.0,6,2007
+2,Ferrari,40.0,2,2007
+3,Cooper,31.0,2,2007
+4,BRM,18.0,0,2007
+5,Maserati,6.0,0,2007
+6,Team Lotus,3.0,0,2007
+7,Porsche,0.0,0,2007
+8,Connaught,0.0,0,2007
+9,OSCA,0.0,0,2007
+1,Vanwall,48.0,6,2008
+2,Ferrari,40.0,2,2008
+3,Cooper,31.0,2,2008
+4,BRM,18.0,0,2008
+5,Maserati,6.0,0,2008
+6,Team Lotus,3.0,0,2008
+7,Porsche,0.0,0,2008
+8,Connaught,0.0,0,2008
+9,OSCA,0.0,0,2008
+1,Vanwall,48.0,6,2009
+2,Ferrari,40.0,2,2009
+3,Cooper,31.0,2,2009
+4,BRM,18.0,0,2009
+5,Maserati,6.0,0,2009
+6,Team Lotus,3.0,0,2009
+7,Porsche,0.0,0,2009
+8,Connaught,0.0,0,2009
+9,OSCA,0.0,0,2009
+1,Vanwall,48.0,6,2010
+2,Ferrari,40.0,2,2010
+3,Cooper,31.0,2,2010
+4,BRM,18.0,0,2010
+5,Maserati,6.0,0,2010
+6,Team Lotus,3.0,0,2010
+7,Porsche,0.0,0,2010
+8,Connaught,0.0,0,2010
+9,OSCA,0.0,0,2010
+1,Vanwall,48.0,6,2011
+2,Ferrari,40.0,2,2011
+3,Cooper,31.0,2,2011
+4,BRM,18.0,0,2011
+5,Maserati,6.0,0,2011
+6,Team Lotus,3.0,0,2011
+7,Porsche,0.0,0,2011
+8,Connaught,0.0,0,2011
+9,OSCA,0.0,0,2011
+1,Vanwall,48.0,6,2012
+2,Ferrari,40.0,2,2012
+3,Cooper,31.0,2,2012
+4,BRM,18.0,0,2012
+5,Maserati,6.0,0,2012
+6,Team Lotus,3.0,0,2012
+7,Porsche,0.0,0,2012
+8,Connaught,0.0,0,2012
+9,OSCA,0.0,0,2012
+1,Vanwall,48.0,6,2013
+2,Ferrari,40.0,2,2013
+3,Cooper,31.0,2,2013
+4,BRM,18.0,0,2013
+5,Maserati,6.0,0,2013
+6,Team Lotus,3.0,0,2013
+7,Porsche,0.0,0,2013
+8,Connaught,0.0,0,2013
+9,OSCA,0.0,0,2013
+1,Vanwall,48.0,6,2014
+2,Ferrari,40.0,2,2014
+3,Cooper,31.0,2,2014
+4,BRM,18.0,0,2014
+5,Maserati,6.0,0,2014
+6,Team Lotus,3.0,0,2014
+7,Porsche,0.0,0,2014
+8,Connaught,0.0,0,2014
+9,OSCA,0.0,0,2014
+1,Vanwall,48.0,6,2015
+2,Ferrari,40.0,2,2015
+3,Cooper,31.0,2,2015
+4,BRM,18.0,0,2015
+5,Maserati,6.0,0,2015
+6,Team Lotus,3.0,0,2015
+7,Porsche,0.0,0,2015
+8,Connaught,0.0,0,2015
+9,OSCA,0.0,0,2015
+1,Vanwall,48.0,6,2016
+2,Ferrari,40.0,2,2016
+3,Cooper,31.0,2,2016
+4,BRM,18.0,0,2016
+5,Maserati,6.0,0,2016
+6,Team Lotus,3.0,0,2016
+7,Porsche,0.0,0,2016
+8,Connaught,0.0,0,2016
+9,OSCA,0.0,0,2016
+1,Vanwall,48.0,6,2017
+2,Ferrari,40.0,2,2017
+3,Cooper,31.0,2,2017
+4,BRM,18.0,0,2017
+5,Maserati,6.0,0,2017
+6,Team Lotus,3.0,0,2017
+7,Porsche,0.0,0,2017
+8,Connaught,0.0,0,2017
+9,OSCA,0.0,0,2017
+1,Vanwall,48.0,6,2018
+2,Ferrari,40.0,2,2018
+3,Cooper,31.0,2,2018
+4,BRM,18.0,0,2018
+5,Maserati,6.0,0,2018
+6,Team Lotus,3.0,0,2018
+7,Porsche,0.0,0,2018
+8,Connaught,0.0,0,2018
+9,OSCA,0.0,0,2018
+1,Vanwall,48.0,6,2019
+2,Ferrari,40.0,2,2019
+3,Cooper,31.0,2,2019
+4,BRM,18.0,0,2019
+5,Maserati,6.0,0,2019
+6,Team Lotus,3.0,0,2019
+7,Porsche,0.0,0,2019
+8,Connaught,0.0,0,2019
+9,OSCA,0.0,0,2019
+1,Vanwall,48.0,6,2020
+2,Ferrari,40.0,2,2020
+3,Cooper,31.0,2,2020
+4,BRM,18.0,0,2020
+5,Maserati,6.0,0,2020
+6,Team Lotus,3.0,0,2020
+7,Porsche,0.0,0,2020
+8,Connaught,0.0,0,2020
+9,OSCA,0.0,0,2020
+1,Vanwall,48.0,6,2021
+2,Ferrari,40.0,2,2021
+3,Cooper,31.0,2,2021
+4,BRM,18.0,0,2021
+5,Maserati,6.0,0,2021
+6,Team Lotus,3.0,0,2021
+7,Porsche,0.0,0,2021
+8,Connaught,0.0,0,2021
+9,OSCA,0.0,0,2021
+1,Vanwall,48.0,6,2022
+2,Ferrari,40.0,2,2022
+3,Cooper,31.0,2,2022
+4,BRM,18.0,0,2022
+5,Maserati,6.0,0,2022
+6,Team Lotus,3.0,0,2022
+7,Porsche,0.0,0,2022
+8,Connaught,0.0,0,2022
+9,OSCA,0.0,0,2022
+1,Vanwall,48.0,6,2023
+2,Ferrari,40.0,2,2023
+3,Cooper,31.0,2,2023
+4,BRM,18.0,0,2023
+5,Maserati,6.0,0,2023
+6,Team Lotus,3.0,0,2023
+7,Porsche,0.0,0,2023
+8,Connaught,0.0,0,2023
+9,OSCA,0.0,0,2023
