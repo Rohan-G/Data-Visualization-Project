@@ -116,34 +116,36 @@
             const headers = ['Overall Points in career']
             const top = [['Lewis Hamilton', 'Sebastian Vettel', 'Fernando Alonso', 'Max Verstappen', 'Kimi Raikkonen', 'Valtteri Bottas', 'Nico Rosberg', 'Michael Schumacher', 'Daniel Ricciardo', 'Jenson Button'],
                         ['Lewis Hamilton', 'Michael Schumacher', 'Sebastian Vettel', 'Alain Prost', 'Ayrton Senna', 'Max Verstappen', 'Fernando Alonso', 'Nigel Mansell', 'Jackie Stewart', 'Jim Clark'], ['Michael Schumacher', 'Lewis Hamilton', 'Juan Fangio', 'Alain Prost', 'Sebastian Vettel', 'Jack Brabham', 'Jackie Stewart', 'Niki Lauda', 'Nelson Piquet', 'Ayrton Senna'],
-                        ['Ferrari', 'Mercedes', 'Red Bull', 'McLaren', 'Williams', 'Renault', 'Lotus', 'Force India', 'Sauber', 'Brabham'],
+                        ['Ferrari', 'Mercedes', 'Red Bull', 'McLaren', 'Williams', 'Lotus', 'Renault', 'Force India', 'Sauber', 'Brabham'],
                         ['Ferrari', 'McLaren', 'Mercedes', 'Red Bull', 'Lotus', 'Brabham', 'Renault', 'Benetton', 'Tyrrell'],
                         ['Ferrari', 'Williams', 'McLaren', 'Mercedes', 'Lotus', 'Red Bull', 'Cooper', 'Brabham', 'Renault', 'Vanwall']]
             const carcolours = new Map()
             carcolours.set('Ferrari', '#EF1A2D')
             carcolours.set('Mercedes', '#0D98BA')
+            carcolours.set('Maserati', 'darkgreen')
             carcolours.set('Red Bull', ' #00008B')
-            carcolours.set('Toro Rosso/Red Bull', ' #00008B')
             carcolours.set('Toro Rosso', '#1D19AC')
-            carcolours.set('BMW Sauber/Toro Rosso', '#1D19AC')
+            carcolours.set('BMW', '#1D19AC')
             carcolours.set('McLaren', '#FF8000')
             carcolours.set('Aston Martin', '#037A68')
             carcolours.set('Force India', 'pink')
             carcolours.set('Benetton', '#037A68')
-            carcolours.set('Jordan/Benetton', '#037A68')
+            carcolours.set('Jordan', '#037A68')
+            carcolours.set('Cooper', 'blue')
+            carcolours.set('Tyrrell', 'darkblue')
+            carcolours.set('Vanwall', 'darkgreen')
+            carcolours.set('Brabham', '#037A68')
             carcolours.set('Williams', '#FFFFFF')
             carcolours.set('Renault', '#FFF500')
             carcolours.set('Honda', '#CC0000')
             carcolours.set('BAR', '#6e7a77')
             carcolours.set('Alfa Romeo', '#A42134')
             carcolours.set('Sauber', '#739CD9')
-            carcolours.set('Alpine F1 Team', '#2173B8')
-            carcolours.set('Lotus F1', '#86995B')
-            carcolours.set('Team Lotus', '#86995B')
-            carcolours.set('Lotus-Climax', '#86995B')
-            carcolours.set('Lotus-BRM', '#86995B')
-            carcolours.set('Lotus-Climax/Lotus-BRM', '#86995B')
+            carcolours.set('Alpine', '#2173B8')
+            carcolours.set('Lotus', '#86995B')
             carcolours.set('BRM', '#86995B')
+            carcolourlist = ['Maserati', 'Cooper', 'Tyrrell', 'Vanwall', 'Brabham', 'Ferrari', 'Mercedes', 'Red Bull', 'Toro Rosso', 'Sauber', 'BMW', 'McLaren', 'Aston Martin', 'Force India', 'Benetton', 'Jordan',
+        'Williams', 'Renault', 'Honda', 'BAR', 'Alfa Romeo', 'Alpine', 'Lotus', 'BRM']
             // var ind = 0
             // var mult = 1
             var drivcolors = ["", "", "", "", "", "", "", "", "", ""]
@@ -153,21 +155,54 @@
             for(let i=0; i<data.length; i++)
             {
                 // console.log(data[i]["Driver"])
-                if (ind < 3 && top[ind].includes(data[i]["Driver"]) || ind >= 3 && top[ind].includes(data[i]["Constructor"]))
+                var constr = top[ind][0]
+                var driv = top[ind][0]
+                var p = -1
+                for (j = 0; j<10; j++)
+                {
+                    if (ind >= 3 && data[i]["Constructor"].includes(top[ind][j]))
+                    {
+                        p = j
+                        constr = top[ind][j]
+                        break
+                    }
+                    else if (ind < 3 && data[i]["Driver"].includes(top[ind][j]))
+                    {
+                        p = j
+                        driv = top[ind][j]
+                        break
+                    }
+                }
+                if (p != -1)
                 {
                     var p = 0
                     if (ind < 3)
                     {
-                        p = top[ind].indexOf(data[i]["Driver"])
+                        p = top[ind].indexOf(driv)
                     }
                     else
                     {
-                        p = top[ind].indexOf(data[i]["Constructor"])
+                        p = top[ind].indexOf(constr)
                     }
                     console.log(p)
                     const index = p
                     var colour;
-                    var carcolour = carcolours.get(data[i]['Constructor']);
+                    var carcolour = null
+                    if (ind < 3)
+                    {
+                        for(j = 0; j<carcolourlist.length; j++)
+                        {
+                            if (data[i]["Constructor"].includes(carcolourlist[j]))
+                            {
+                                carcolour = carcolours.get(carcolourlist[j])
+                                break
+                            }
+                        }
+                    }
+                    else
+                    {
+                        carcolour = carcolours.get(constr)
+                    }
                     if (carcolour == null)
                     {
                         carcolour = 'black'
