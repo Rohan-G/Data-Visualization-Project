@@ -1,74 +1,66 @@
-Year,Driver,Constructor,Color
-2022,Max Verstappen (NE),Red Bull,"rgb(0, 11, 141)"
-2021,Max Verstappen (NE),Red Bull,"rgb(0, 11, 141)"
-2020,Lewis Hamilton (GB),Mercedes,"rgb(164, 170, 174)"
-2019,Lewis Hamilton (GB),Mercedes,"rgb(164, 170, 174)"
-2018,Lewis Hamilton (GB),Mercedes,"rgb(164, 170, 174)"
-2017,Lewis Hamilton (GB),Mercedes,"rgb(164, 170, 174)"
-2016,Nico Rosberg (D),Mercedes,"rgb(164, 170, 174)"
-2015,Lewis Hamilton (GB),Mercedes,"rgb(164, 170, 174)"
-2014,Lewis Hamilton (GB),Mercedes,"rgb(164, 170, 174)"
-2013,Sebastian Vettel (D),Red Bull,"rgb(0, 11, 141)"
-2012,Sebastian Vettel (D),Red Bull,"rgb(0, 11, 141)"
-2011,Sebastian Vettel (D),Red Bull,"rgb(0, 11, 141)"
-2010,Sebastian Vettel (D),Red Bull,"rgb(0, 11, 141)"
-2009,Jenson Button (GB),BrawnGP,"rgb(184, 253, 110)"
-2008,Lewis Hamilton (GB),McLaren,"rgb(255, 128, 0)"
-2007,Kimi RAIKKONEN (FIN),Ferrari,"rgb(247, 13, 26 )"
-2006,Fernando ALONSO (SPA),Renault,"rgb(252,233,3)"
-2005,Fernando ALONSO (SPA),Renault,"rgb(252,233,3)"
-2004,Michael SCHUMACHER (GER),Ferrari,"rgb(247, 13, 26 )"
-2003,Michael SCHUMACHER (GER),Ferrari,"rgb(247, 13, 26 )"
-2002,Michael SCHUMACHER (GER),Ferrari,"rgb(247, 13, 26 )"
-2001,Michael SCHUMACHER (GER),Ferrari,"rgb(247, 13, 26 )"
-2000,Michael SCHUMACHER (GER),Ferrari,"rgb(247, 13, 26 )"
-1999,Mika HAKKINEN (FIN),McLaren,"rgb(255, 128, 0)"
-1998,Mika HAKKINEN (FIN),McLaren,"rgb(255, 128, 0)"
-1997,Jacques VILLENEUVE (CAN),Williams,"rgb(0, 160, 222)"
-1996,Damon Hill (GBR),Williams,"rgb(0, 160, 222)"
-1995,Michael SCHUMACHER (GER),Benetton,"rgb(0, 136, 96)"
-1994,Michael SCHUMACHER (GER),Benetton,"rgb(0, 136, 96)"
-1993,Alain PROST (FRA),Williams,"rgb(0, 160, 222)"
-1992,Nigel MANSELL (GBR),Williams,"rgb(0, 160, 222)"
-1991,Ayrton SENNA (BRA),McLaren,"rgb(255, 128, 0)"
-1990,Ayrton SENNA (BRA),McLaren,"rgb(255, 128, 0)"
-1989,Alain PROST (FRA),McLaren,"rgb(255, 128, 0)"
-1988,Ayrton SENNA (BRA),McLaren,"rgb(255, 128, 0)"
-1987,Nelson PIQUET (BRA),Williams,"rgb(0, 160, 222)"
-1986,Alain PROST (FRA),McLaren,"rgb(255, 128, 0)"
-1985,Alain PROST (FRA),McLaren,"rgb(255, 128, 0)"
-1984,Niki LAUDA (AUT,McLaren,"rgb(255, 128, 0)"
-1983,Nelson PIQUET (BRA),Brabham,"rgb(53, 94, 59)"
-1982,Keke ROSBERG (FIN),Williams,"rgb(0, 160, 222)"
-1981,Nelson PIQUET (BRA),Brabham,"rgb(53, 94, 59)"
-1980,Alan JONES (AUS),Williams,"rgb(0, 160, 222)"
-1979,Jody SCHECKTER (SAF),Ferrari,"rgb(247, 13, 26 )"
-1978,Mario ANDRETTI (USA),Lotus,"rgb(182, 153, 91)"
-1977,Niki LAUDA (AUT),Ferrari,"rgb(247, 13, 26 )"
-1976,James HUNT (GBR),McLaren,"rgb(255, 128, 0)"
-1975,Niki LAUDA (AUT),Ferrari,"rgb(247, 13, 26 )"
-1974,Emerson FITTIPALDI (BRA),McLaren,"rgb(255, 128, 0)"
-1973,Jackie STEWART (GBR),Tyrrell,"rgb(0,58,247)"
-1972,Emerson FITTIPALDI (BRA),Lotus,"rgb(182, 153, 91)"
-1971,Jackie STEWART (GBR),Tyrrell,"rgb(0,58,247)"
-1970,Jochen RINDT (AUT),Lotus,"rgb(182, 153, 91)"
-1969,Jackie STEWART (GBR),Matra,"rgb(210,96,239)"
-1968,Graham HILL (GBR),Lotus,"rgb(182, 153, 91)"
-1967,Denny HULME (NZL),Brabham,"rgb(53, 94, 59)"
-1966,Jack BRABHAM (AUS),Brabham,"rgb(53, 94, 59)"
-1965,Jim CLARK (GBR),Lotus,"rgb(182, 153, 91)"
-1964,John SURTEES (GBR),Ferrari,"rgb(247, 13, 26 )"
-1963,Jim CLARK (GBR),Lotus,"rgb(182, 153, 91)"
-1962,Graham HILL (GBR),BRM,"rgb(51,102,0)"
-1961,Phil HILL (GBR),Ferrari,"rgb(247, 13, 26 )"
-1960,Jack BRABHAM (AUS),Cooper,"rgb(102,0,204)"
-1959,Jack BRABHAM (AUS),Cooper,"rgb(102,0,204)"
-1958,Mike HAWTHORN (GBR),Ferrari,"rgb(247, 13, 26 )"
-1957,Juan Manuel FANGIO (ARG),Maserati,"rgb(0,0,0)"
-1956,Juan Manuel FANGIO (ARG),Ferrari,"rgb(247, 13, 26 )"
-1955,Juan Manuel FANGIO (ARG),Mercedes,"rgb(164, 170, 174)"
-1954,Juan Manuel FANGIO (ARG),Mercedes,"rgb(164, 170, 174)"
-1953,Alberto ASCARI (ITA),Ferrari,"rgb(247, 13, 26 )"
-1952,Alberto ASCARI (ITA),Ferrari,"rgb(247, 13, 26 )"
-1951,Juan Manuel FANGIO (ARG),Alfa Romeo,"rgb(164,33,52)"
-1950,"Giuseppe ""Nino"" FARINA (ITA)",Alfa Romeo,"rgb(164,33,52)"
+Year,Driver,Constructor,Color,Point Difference
+2022,Max Verstappen,Red Bull,"rgb(0, 11, 141)",205
+2021,Max Verstappen,Red Bull,"rgb(0, 11, 141)",-28
+2020,Lewis Hamilton,Mercedes,"rgb(164, 170, 174)",254
+2019,Lewis Hamilton,Mercedes,"rgb(164, 170, 174)",235
+2018,Lewis Hamilton,Mercedes,"rgb(164, 170, 174)",84
+2017,Lewis Hamilton,Mercedes,"rgb(164, 170, 174)",146
+2016,Nico Rosberg,Mercedes,"rgb(164, 170, 174)",297
+2015,Lewis Hamilton,Mercedes,"rgb(164, 170, 174)",275
+2014,Lewis Hamilton,Mercedes,"rgb(164, 170, 174)",296
+2013,Sebastian Vettel,Red Bull,"rgb(0, 11, 141)",236
+2012,Sebastian Vettel,Red Bull,"rgb(0, 11, 141)",60
+2011,Sebastian Vettel,Red Bull,"rgb(0, 11, 141)",153
+2010,Sebastian Vettel,Red Bull,"rgb(0, 11, 141)",44
+2009,Jenson Button,BrawnGP,"rgb(184, 253, 110)",18.5
+2008,Lewis Hamilton,McLaren,"rgb(255, 128, 0)",-21
+2007,Kimi Raikkonen,Ferrari,"rgb(247, 13, 26 )",103
+2006,Fernando Alonso,Renault,"rgb(252,233,3)",5
+2005,Fernando Alonso,Renault,"rgb(252,233,3)",9
+2004,Michael Schumacher,Ferrari,"rgb(247, 13, 26 )",143
+2003,Michael Schumacher,Ferrari,"rgb(247, 13, 26 )",14
+2002,Michael Schumacher,Ferrari,"rgb(247, 13, 26 )",129
+2001,Michael Schumacher,Ferrari,"rgb(247, 13, 26 )",77
+2000,Michael Schumacher,Ferrari,"rgb(247, 13, 26 )",8
+1999,Mika Hakkinen,McLaren,"rgb(255, 128, 0)",-4
+1998,Mika Hakkinen,McLaren,"rgb(255, 128, 0)",23
+1997,Jacques Villeneuve,Williams,"rgb(0, 160, 222)",21
+1996,Damon Hill,Williams,"rgb(0, 160, 222)",105
+1995,Michael Schumacher,Benetton,"rgb(0, 136, 96)",29
+1994,Michael Schumacher,Benetton,"rgb(0, 136, 96)",15
+1993,Alain Prost,Williams,"rgb(0, 160, 222)",84
+1992,Nigel Mansell,Williams,"rgb(0, 160, 222)",65
+1991,Ayrton Senna,McLaren,"rgb(255, 128, 0)",14
+1990,Ayrton Senna,McLaren,"rgb(255, 128, 0)",11
+1989,Alain Prost,McLaren,"rgb(255, 128, 0)",64
+1988,Ayrton Senna,McLaren,"rgb(255, 128, 0)",134
+1987,Nelson Piquet,Williams,"rgb(0, 160, 222)",61
+1986,Alain Prost,McLaren,"rgb(255, 128, 0)",-45
+1985,Alain Prost,McLaren,"rgb(255, 128, 0)",8
+1984,Niki Lauda,McLaren,"rgb(255, 128, 0)",86
+1983,Nelson Piquet,Brabham,"rgb(53, 94, 59)",-17
+1982,Keke Rosberg,Williams,"rgb(0, 160, 222)",-16
+1981,Nelson Piquet,Brabham,"rgb(53, 94, 59)",-34
+1980,Alan Jones,Williams,"rgb(0, 160, 222)",54
+1979,Jody Scheckter,Ferrari,"rgb(247, 13, 26 )",38
+1978,Mario Andretti,Lotus,"rgb(182, 153, 91)",28
+1977,Niki Lauda,Ferrari,"rgb(247, 13, 26 )",33
+1976,James Hunt,McLaren,"rgb(255, 128, 0)",-9
+1975,Niki Lauda,Ferrari,"rgb(247, 13, 26 )",18.5
+1974,Emerson Fittipaldi ,McLaren,"rgb(255, 128, 0)",8
+1973,Jackie Stewart ,Tyrrell,"rgb(0,58,247)",-10
+1972,Emerson Fittipaldi ,Lotus,"rgb(182, 153, 91)",10
+1971,Jackie Stewart ,Tyrrell,"rgb(0,58,247)",37
+1970,Jochen Rindt ,Lotus,"rgb(182, 153, 91)",7
+1969,Jackie Stewart ,Matra,"rgb(210,96,239)",17
+1968,Graham Hill ,Lotus,"rgb(182, 153, 91)",13
+1967,Denny Hulme ,Brabham,"rgb(53, 94, 59)",19
+1966,Jack Brabham ,Brabham,"rgb(53, 94, 59)",11
+1965,Jim Clark ,Lotus,"rgb(182, 153, 91)",9
+1964,John Surtees,Ferrari,"rgb(247, 13, 26 )",3
+1963,Jim Clark ,Lotus,"rgb(182, 153, 91)",18
+1962,Graham Hill ,BRM,"rgb(51,102,0)",6
+1961,Phil Hill ,Ferrari,"rgb(247, 13, 26 )",10
+1960,Jack Brabham ,Cooper,"rgb(102,0,204)",14
+1959,Jack Brabham ,Cooper,"rgb(102,0,204)",8
+1958,Mike Hawthorn ,Ferrari,"rgb(247, 13, 26 )",-8
