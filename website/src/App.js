@@ -1,9 +1,7 @@
 import * as d3 from 'd3';
 import { useState, useEffect } from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import TextField from '@mui/material/TextField'
+import Autocomplete from '@mui/material/Autocomplete';
 
 const drivers = [
   "Michael Schumacher",
@@ -150,25 +148,31 @@ function App() {
       let svg = d3.select(".H2H");
 
       svg.append("line")
-      .attr("x1",40)
+      .attr("x1",100)
       .attr("x2",1230)
       .attr("y1",687.5)
       .attr("y2",687.5)
       .attr("style","stroke: black; stroke-width: 5");
 
       svg.append("line")
-      .attr("x1",40)
-      .attr("x2",40)
+      .attr("x1",100)
+      .attr("x2",100)
       .attr("y1",0)
       .attr("y2",690)
       .attr("style","stroke: black; stroke-width: 5")
 
       var xScale = d3.scaleBand();
-      xScale.range([40,1215]);
+      xScale.range([100,1215]);
       xScale.domain(xVals.map((d)=>{return d;}));
       var yScale = d3.scaleLinear();
       yScale.range([687.5,10]);
-      yScale.domain([0,460]);
+      yScale.domain([0,480]);
+
+      svg.append("text")
+      .attr("x",625)
+      .attr("y",750)
+      .text("Season")
+      .attr("style","font-size:1.5vw; font-weight:bold");
 
       svg.selectAll(".xLabels")
       .data(xVals)
@@ -189,11 +193,18 @@ function App() {
       .attr("y2", 680)
       .attr("style","stroke:black; stroke-width:2");
 
+      svg.append("text")
+      .attr("x",40)
+      .attr("y",400)
+      .text("Points")
+      .attr("transform","rotate(270,40,400)")
+      .attr("style","font-size:1.5vw; font-weight:bold");
+
       svg.selectAll(".yLabels")
       .data(pointScale)
       .enter().append("text")
       .attr("class","yLabels")
-      .attr("x", 0)
+      .attr("x", 60)
       .attr("y", function(d){ return yScale(d)})
       .text(function(d){ return d })
       .attr("style","font-size:1.01vw")
@@ -202,9 +213,9 @@ function App() {
       .data(pointScale)
       .enter().append("line")
       .attr("class","yTicks")
-      .attr("x1", 35)
+      .attr("x1", 95)
       .attr("y1", function(d){ return yScale(d) - 7})
-      .attr("x2", 45)
+      .attr("x2", 105)
       .attr("y2", function(d){ return yScale(d) - 7})
       .attr("style", "stroke: black; stroke-width: 1")
 
@@ -228,10 +239,7 @@ function App() {
         else{
           d3.select(".images").append("p")
           .attr("class","info")
-          .text("Points: "+myArr.get(String(d))[0])
-          d3.select(".images").append("p")
-          .attr("class","info")
-          .text("Teammate's Points: "+myArr.get(String(d))[1])
+          .html("Season: " + d + "<br>" + "Team: " + myMap.get(String(d)) + "<br>" + "Points: "+myArr.get(String(d))[0] + "<br>" +"Teammates' total Points: "+myArr.get(String(d))[1])
           
         }
       })
@@ -249,7 +257,7 @@ function App() {
       .attr("class","opponent")
       .attr("x1", function(d, index){
         if(index==0){
-          return 40;
+          return 100;
         }
         else{
           return xScale(Number(myVals[index-1])) + xScale.bandwidth()/2;
@@ -285,7 +293,7 @@ function App() {
 
       svg.append("circle")
       .attr("class","oppPoints")
-      .attr("cx",40)
+      .attr("cx",100)
       .attr("cy",690)
       .attr("r", 20)
       .attr("fill","red");
@@ -296,7 +304,7 @@ function App() {
       .attr("class","myDriver")
       .attr("x1", function(d, index){
         if(index==0){
-          return 40;
+          return 100;
         }
         else{
           return xScale(Number(myVals[index-1])) + xScale.bandwidth()/2;
@@ -331,7 +339,7 @@ function App() {
 
       svg.append("circle")
       .attr("class","myPoints")
-      .attr("cx",40)
+      .attr("cx",100)
       .attr("cy",690)
       .attr("r", 20)
       .attr("fill","blue");
@@ -398,7 +406,7 @@ function App() {
   }
 
   useEffect(()=>{
-    console.log(myArr);
+    // console.log(myArr);
     // console.log(myMap);
     if(myArr!=undefined && myMap!=undefined){
       d3.select(".H2H").remove();
@@ -418,15 +426,16 @@ function App() {
 
   useEffect(()=>{
     if(dname !== ""){
+      // console.log(dname);
       getData(dname);
     }
   },[dname]);
 
   return (
     <>
-      <h1 align="center">F1</h1>
+      <h1 align="center">Driver v/s Teammate</h1>
       <div align="center">
-        <FormControl align={"center"} style={{ width: "50vw" }}>
+        {/* <FormControl align={"center"} style={{ width: "50vw" }}>
           <InputLabel>Driver</InputLabel>
           <Select value = {dname} label="Driver" onChange={(event)=>{chDriver(event.target.value)}}>
             {
@@ -436,9 +445,17 @@ function App() {
               })
             }
           </Select>
-        </FormControl>
+        </FormControl> */}
+        <Autocomplete
+          disablePortal
+          id="combo-box-demo"
+          options={drivers}
+          sx={{ width: 300 }}
+          onChange={(event,value)=>{chDriver(value)}}
+          renderInput={(params) => <TextField {...params} label="Driver" />}
+        />
       </div>
-      <div id="H2Hgraph" style={{position:"absolute", top: "20vh", left: "0vw", display:"flex", flexFlow:"row wrap", alignItems:"top", justifyItems:"center", gap:"100px" }}>
+      <div id="H2Hgraph" style={{position:"absolute", top: "20vh", left: "0vw", display:"flex", flexFlow:"row no-wrap", alignItems:"top", justifyItems:"center", gap:"100px" }}>
         <svg className="H2H" width={1230} height={800} />
       </div>
     </>
