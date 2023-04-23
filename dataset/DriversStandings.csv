@@ -18,7 +18,7 @@ Pos,Driver,Constructor,Points,Year
 17,Marc Gené,Williams,4,2003
 18,Takuma Sato,BAR,3,2003
 19,Ralph Firman,Jordan,1,2003
-20,Justin Wilson,Minardi/Jaguar,1,2003
+20,Justin Wilson,Jaguar,1,2003
 21,Antônio Pizzonia,Jaguar,0,2003
 22,Jos Verstappen,Minardi,0,2003
 23,Nicolas Kiesa,Minardi,0,2003
@@ -28,7 +28,7 @@ Pos,Driver,Constructor,Points,Year
 3,Jenson Button,BAR,85,2004
 4,Fernando Alonso,Renault,59,2004
 5,Juan Pablo Montoya,Williams,58,2004
-6,Jarno Trulli,Renault/Toyota,46,2004
+6,Jarno Trulli,Toyota,46,2004
 7,Kimi Räikkönen,McLaren,45,2004
 8,Takuma Sato,BAR,34,2004
 9,Ralf Schumacher,Williams,24,2004
@@ -115,7 +115,7 @@ Pos,Driver,Constructor,Points,Year
 11,Alexander Wurz,Williams,13,2007
 12,Mark Webber,Red Bull,10,2007
 13,Jarno Trulli,Toyota,8,2007
-14,Sebastian Vettel,BMW Sauber/Toro Rosso,6,2007
+14,Sebastian Vettel,Toro Rosso,6,2007
 15,Jenson Button,Honda,6,2007
 16,Ralf Schumacher,Toyota,5,2007
 17,Takuma Sato,Super Aguri,4,2007
@@ -327,7 +327,7 @@ Pos,Driver,Constructor,Points,Year
 2,Lewis Hamilton,Mercedes,380,2016
 3,Daniel Ricciardo,Red Bull,256,2016
 4,Sebastian Vettel,Ferrari,212,2016
-5,Max Verstappen,Toro Rosso/Red Bull,204,2016
+5,Max Verstappen,Red Bull,204,2016
 6,Kimi Räikkönen,Ferrari,186,2016
 7,Sergio Pérez,Force India,101,2016
 8,Valtteri Bottas,Williams,85,2016
@@ -336,7 +336,7 @@ Pos,Driver,Constructor,Points,Year
 11,Felipe Massa,Williams,53,2016
 12,Carlos Sainz,Toro Rosso,46,2016
 13,Romain Grosjean,Haas F1 Team,29,2016
-14,Daniil Kvyat,Red Bull/Toro Rosso,25,2016
+14,Daniil Kvyat,Toro Rosso,25,2016
 15,Jenson Button,McLaren,21,2016
 16,Kevin Magnussen,Renault,7,2016
 17,Felipe Nasr,Sauber,2,2016
@@ -398,8 +398,8 @@ Pos,Driver,Constructor,Points,Year
 4,Charles Leclerc,Ferrari,264,2019
 5,Sebastian Vettel,Ferrari,240,2019
 6,Carlos Sainz,McLaren,96,2019
-7,Pierre Gasly,Red Bull/Toro Rosso,95,2019
-8,Alexander Albon,Toro Rosso/Red Bull,92,2019
+7,Pierre Gasly,Toro Rosso,95,2019
+8,Alexander Albon,Red Bull,92,2019
 9,Daniel Ricciardo,Renault,54,2019
 10,Sergio Pérez,Racing Point,52,2019
 11,Lando Norris,McLaren,49,2019
@@ -429,7 +429,7 @@ Pos,Driver,Constructor,Points,Year
 15,Nico Hülkenberg,Racing Point,10,2020
 16,Kimi Räikkönen,Alfa Romeo,4,2020
 17,Antonio Giovinazzi,Alfa Romeo,4,2020
-18,George Russell,Williams/Mercedes,3,2020
+18,George Russell,Williams,3,2020
 19,Romain Grosjean,Haas F1 Team,2,2020
 20,Kevin Magnussen,Haas F1 Team,1,2020
 21,Nicholas Latifi,Williams,0,2020
