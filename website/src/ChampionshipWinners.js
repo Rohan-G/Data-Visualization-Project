@@ -8,6 +8,7 @@ function Dominance() {
     const [actData, newData] = useState();
     const[teams, setTeams] = useState();
     const[nChamps, setnChamps] = useState();
+    const [constChamps, setConstChamps] = useState();
 
     var margin = {top: 10, right: 10, bottom: 10, left: 70},
     width = 1800 - margin.left - margin.right,
@@ -32,6 +33,7 @@ function Dominance() {
         var myElems = [];
         var myTeams = new Map();
         var driverWise = new Map();
+        var constWise = new Map();
         var prev = undefined;
         await d3.csv('https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/Champions.csv', (data)=>{
             if(prev === undefined){
@@ -54,6 +56,24 @@ function Dominance() {
             else{
                 driverWise.set(data.Driver,1)
             }
+
+            if(constWise.has(data.Constructor)){
+                var info = constWise.get(data.Constructor);
+                if(data['Point Difference']<0){
+                    constWise.set(data.Constructor, [info[0]+1,info[1]])
+                }
+                else{
+                    constWise.set(data.Constructor, [info[0]+1,info[1]+1])
+                }
+            }
+            else{
+                if(data['Point Difference']<0){
+                    constWise.set(data.Constructor, [1,0])
+                }
+                else{
+                    constWise.set(data.Constructor, [1,1])
+                }
+            }
         })
 
         // var myMap = new Map();
@@ -64,6 +84,7 @@ function Dominance() {
         newData(myElems);
         setTeams(myTeams);
         setnChamps(driverWise);
+        setConstChamps(constWise);
     }
 
     function drawTimeline(){
@@ -163,7 +184,15 @@ function Dominance() {
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
             .on("mouseover", function(event,target){
+                console.log(constChamps.get(target));
                 svg.selectAll("."+target.split(' ')[0]).style("opacity","0.3");
+                tippy(this, {
+                    content: 'Number of Driver Championships: '+constChamps.get(target)[0]+'<br>'+'Number of Driver and Constructor Championships: '+constChamps.get(target)[1],
+                    theme: 'light-border',
+                    animation: 'scale',
+                    duration: 0,
+                    allowHTML: true
+                    }).show();
             })
             .on("mouseout", function(event,target){
                 svg.selectAll("."+target.split(' ')[0]).style("opacity","1");
