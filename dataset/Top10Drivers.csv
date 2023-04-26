@@ -1,0 +1,211 @@
+Pos,Driver,Constructor,Points,Year,PointsFinishes,Wins,Poles
+1,Michael Schumacher,Ferrari,93,2003,15,6,5
+2,Kimi Räikkönen,McLaren,91,2003,13,1,2
+3,Juan Pablo Montoya,Williams,82,2003,12,2,1
+4,Rubens Barrichello,Ferrari,65,2003,11,2,3
+5,Ralf Schumacher,Williams,58,2003,11,2,3
+6,Fernando Alonso,Renault,55,2003,11,1,2
+7,David Coulthard,McLaren,51,2003,10,1,0
+8,Jarno Trulli,Renault,33,2003,10,0,0
+9,Jenson Button,BAR,17,2003,7,0,0
+10,Mark Webber,Jaguar,17,2003,7,0,0
+1,Michael Schumacher,Ferrari,148,2004,16,13,8
+2,Rubens Barrichello,Ferrari,114,2004,16,2,4
+3,Jenson Button,BAR,85,2004,15,0,1
+4,Fernando Alonso,Renault,59,2004,12,0,1
+5,Juan Pablo Montoya,Williams,58,2004,13,1,0
+6,Jarno Trulli,Renault/Toyota,46,2004,9,1,2
+7,Kimi Räikkönen,McLaren,45,2004,9,1,1
+8,Takuma Sato,BAR,34,2004,9,0,0
+9,Ralf Schumacher,Williams,24,2004,6,0,1
+10,David Coulthard,McLaren,24,2004,9,0,0
+1,Fernando Alonso,Renault,133,2005,16,7,6
+2,Kimi Räikkönen,McLaren,112,2005,14,7,5
+3,Michael Schumacher,Ferrari,62,2005,12,1,1
+4,Juan Pablo Montoya,McLaren,60,2005,10,3,2
+5,Giancarlo Fisichella,Renault,58,2005,11,1,1
+6,Ralf Schumacher,Toyota,45,2005,14,0,1
+7,Jarno Trulli,Toyota,43,2005,9,0,1
+8,Rubens Barrichello,Ferrari,38,2005,8,0,0
+9,Jenson Button,BAR,37,2005,10,0,1
+10,Mark Webber,Williams,36,2005,10,0,0
+1,Fernando Alonso,Renault,134,2006,16,7,6
+2,Michael Schumacher,Ferrari,121,2006,16,7,4
+3,Felipe Massa,Ferrari,80,2006,13,2,3
+4,Giancarlo Fisichella,Renault,72,2006,16,1,1
+5,Kimi Räikkönen,McLaren,65,2006,12,0,3
+6,Jenson Button,Honda,56,2006,11,1,1
+7,Rubens Barrichello,Honda,30,2006,10,0,0
+8,Juan Pablo Montoya,McLaren,26,2006,5,0,0
+9,Nick Heidfeld,BMW Sauber,23,2006,10,0,0
+10,Ralf Schumacher,Toyota,20,2006,7,0,0
+1,Kimi Räikkönen,Ferrari,110,2007,15,6,3
+2,Lewis Hamilton,McLaren,109,2007,15,4,6
+3,Fernando Alonso,McLaren,109,2007,16,4,2
+4,Felipe Massa,Ferrari,94,2007,14,3,6
+5,Nick Heidfeld,BMW Sauber,61,2007,14,0,0
+6,Robert Kubica,BMW Sauber,39,2007,11,0,0
+7,Heikki Kovalainen,Renault,30,2007,11,0,0
+8,Giancarlo Fisichella,Renault,21,2007,7,0,0
+9,Nico Rosberg,Williams,20,2007,7,0,0
+10,David Coulthard,Red Bull,14,2007,4,0,0
+1,Lewis Hamilton,McLaren,98,2008,14,5,7
+2,Felipe Massa,Ferrari,97,2008,13,6,6
+3,Kimi Räikkönen,Ferrari,75,2008,12,2,2
+4,Robert Kubica,BMW Sauber,75,2008,14,1,1
+5,Fernando Alonso,Renault,61,2008,12,2,0
+6,Nick Heidfeld,BMW Sauber,60,2008,11,0,0
+7,Heikki Kovalainen,McLaren,53,2008,11,1,1
+8,Sebastian Vettel,Toro Rosso,35,2008,9,1,1
+9,Jarno Trulli,Toyota,31,2008,10,0,0
+10,Timo Glock,Toyota,25,2008,6,0,0
+1,Jenson Button,Brawn,95,2009,16,6,4
+2,Sebastian Vettel,Red Bull,84,2009,12,4,4
+3,Rubens Barrichello,Brawn,77,2009,15,2,1
+4,Mark Webber,Red Bull,69.5,2009,10,2,1
+5,Lewis Hamilton,McLaren,49,2009,8,2,4
+6,Kimi Räikkönen,Ferrari,48,2009,9,1,0
+7,Nico Rosberg,Williams,34.5,2009,11,0,0
+8,Jarno Trulli,Toyota,32.5,2009,8,0,1
+9,Fernando Alonso,Renault,26,2009,8,0,1
+10,Timo Glock,Toyota,24,2009,7,0,0
+1,Sebastian Vettel,Red Bull,256,2010,15,5,10
+2,Fernando Alonso,Ferrari,252,2010,16,5,2
+3,Mark Webber,Red Bull,242,2010,17,4,5
+4,Lewis Hamilton,McLaren,240,2010,15,3,1
+5,Jenson Button,McLaren,214,2010,16,2,0
+6,Felipe Massa,Ferrari,144,2010,14,0,0
+7,Nico Rosberg,Mercedes,142,2010,15,0,0
+8,Robert Kubica,Renault,136,2010,15,0,0
+9,Michael Schumacher,Mercedes,72,2010,12,0,0
+10,Rubens Barrichello,Williams,47,2010,10,0,0
+1,Sebastian Vettel,Red Bull,392,2011,18,11,15
+2,Jenson Button,McLaren,270,2011,17,3,0
+3,Mark Webber,Red Bull,258,2011,18,1,3
+4,Fernando Alonso,Ferrari,257,2011,18,1,0
+5,Lewis Hamilton,McLaren,227,2011,16,3,1
+6,Felipe Massa,Ferrari,118,2011,15,0,0
+7,Nico Rosberg,Mercedes,89,2011,14,0,0
+8,Michael Schumacher,Mercedes,76,2011,11,0,0
+9,Adrian Sutil,Force India,42,2011,9,0,0
+10,Vitaly Petrov,Renault,37,2011,8,0,0
+1,Sebastian Vettel,Red Bull,281,2012,17,5,6
+2,Fernando Alonso,Ferrari,278,2012,18,3,2
+3,Kimi Räikkönen,Lotus F1,207,2012,19,1,0
+4,Lewis Hamilton,McLaren,190,2012,14,4,7
+5,Jenson Button,McLaren,188,2012,14,3,1
+6,Mark Webber,Red Bull,179,2012,15,2,2
+7,Felipe Massa,Ferrari,122,2012,14,0,0
+8,Romain Grosjean,Lotus F1,96,2012,10,0,0
+9,Nico Rosberg,Mercedes,93,2012,10,1,1
+10,Sergio Pérez,Sauber,66,2012,7,0,0
+1,Sebastian Vettel,Red Bull,397,2013,18,13,9
+2,Fernando Alonso,Ferrari,242,2013,17,2,0
+3,Mark Webber,Red Bull,199,2013,15,0,2
+4,Lewis Hamilton,Mercedes,189,2013,17,1,5
+5,Kimi Räikkönen,Lotus F1,183,2013,14,1,0
+6,Nico Rosberg,Mercedes,171,2013,16,2,3
+7,Romain Grosjean,Lotus F1,132,2013,13,0,0
+8,Felipe Massa,Ferrari,112,2013,15,0,0
+9,Jenson Button,McLaren,73,2013,14,0,0
+10,Nico Hülkenberg,Sauber,51,2013,10,0,0
+1,Lewis Hamilton,Mercedes,384,2014,16,11,7
+2,Nico Rosberg,Mercedes,317,2014,16,5,11
+3,Daniel Ricciardo,Red Bull,238,2014,16,3,0
+4,Valtteri Bottas,Williams,186,2014,17,0,0
+5,Sebastian Vettel,Red Bull,167,2014,16,0,0
+6,Fernando Alonso,Ferrari,161,2014,17,0,0
+7,Felipe Massa,Williams,134,2014,11,0,1
+8,Jenson Button,McLaren,126,2014,13,0,0
+9,Nico Hülkenberg,Force India,96,2014,15,0,0
+10,Sergio Pérez,Force India,59,2014,12,0,0
+1,Lewis Hamilton,Mercedes,381,2015,18,10,11
+2,Nico Rosberg,Mercedes,322,2015,17,6,7
+3,Sebastian Vettel,Ferrari,278,2015,17,3,1
+4,Kimi Räikkönen,Ferrari,150,2015,14,0,0
+5,Valtteri Bottas,Williams,136,2015,13,0,0
+6,Felipe Massa,Williams,121,2015,13,0,0
+7,Daniil Kvyat,Red Bull,95,2015,14,0,0
+8,Daniel Ricciardo,Red Bull,92,2015,13,0,0
+9,Sergio Pérez,Force India,78,2015,12,0,0
+10,Nico Hülkenberg,Force India,58,2015,9,0,0
+1,Nico Rosberg,Mercedes,385,2016,20,9,8
+2,Lewis Hamilton,Mercedes,380,2016,19,10,12
+3,Daniel Ricciardo,Red Bull,256,2016,20,1,1
+4,Sebastian Vettel,Ferrari,212,2016,17,0,0
+5,Max Verstappen,Toro Rosso/Red Bull,204,2016,17,1,0
+6,Kimi Räikkönen,Ferrari,186,2016,17,0,0
+7,Sergio Pérez,Force India,101,2016,16,0,0
+8,Valtteri Bottas,Williams,85,2016,15,0,0
+9,Nico Hülkenberg,Force India,72,2016,14,0,0
+10,Fernando Alonso,McLaren,54,2016,9,0,0
+1,Lewis Hamilton,Mercedes,363,2017,20,11,10
+2,Sebastian Vettel,Ferrari,317,2017,18,5,4
+3,Valtteri Bottas,Mercedes,305,2017,19,3,4
+4,Kimi Räikkönen,Ferrari,205,2017,16,0,1
+5,Daniel Ricciardo,Red Bull,200,2017,14,1,0
+6,Max Verstappen,Red Bull,168,2017,13,2,0
+7,Sergio Pérez,Force India,100,2017,17,0,0
+8,Esteban Ocon,Force India,87,2017,18,0,0
+9,Carlos Sainz,Toro Rosso/Renault,54,2017,10,0,0
+10,Nico Hülkenberg,Renault,43,2017,8,0,0
+1,Lewis Hamilton,Mercedes,408,2018,20,11,11
+2,Sebastian Vettel,Ferrari,320,2018,20,5,5
+3,Kimi Räikkönen,Ferrari,251,2018,17,1,1
+4,Max Verstappen,Red Bull,249,2018,17,2,0
+5,Valtteri Bottas,Mercedes,247,2018,19,0,2
+6,Daniel Ricciardo,Red Bull,170,2018,13,2,2
+7,Nico Hülkenberg,Renault,69,2018,11,0,0
+8,Sergio Pérez,Force India,62,2018,12,0,0
+9,Kevin Magnussen,Haas F1 Team,56,2018,11,0,0
+10,Carlos Sainz,Renault,53,2018,13,0,0
+1,Lewis Hamilton,Mercedes,413,2019,21,11,5
+2,Valtteri Bottas,Mercedes,326,2019,19,4,5
+3,Max Verstappen,Red Bull,278,2019,19,3,2
+4,Charles Leclerc,Ferrari,264,2019,18,2,7
+5,Sebastian Vettel,Ferrari,240,2019,16,1,2
+6,Carlos Sainz,McLaren,96,2019,13,0,0
+7,Pierre Gasly,Red Bull/Toro Rosso,95,2019,14,0,0
+8,Alexander Albon,Toro Rosso/Red Bull,92,2019,13,0,0
+9,Daniel Ricciardo,Renault,54,2019,8,0,0
+10,Sergio Pérez,Racing Point,52,2019,11,0,0
+1,Lewis Hamilton,Mercedes,347,2020,16,11,10
+2,Valtteri Bottas,Mercedes,223,2020,14,2,5
+3,Max Verstappen,Red Bull,214,2020,12,2,1
+4,Sergio Pérez,Racing Point,125,2020,13,1,0
+5,Daniel Ricciardo,Renault,119,2020,14,0,0
+6,Carlos Sainz,McLaren,105,2020,12,0,0
+7,Alexander Albon,Red Bull,105,2020,12,0,0
+8,Charles Leclerc,Ferrari,98,2020,10,0,0
+9,Lando Norris,McLaren,97,2020,13,0,0
+10,Pierre Gasly,AlphaTauri,75,2020,10,1,0
+1,Max Verstappen,Red Bull,395.5,2021,19,10,10
+2,Lewis Hamilton,Mercedes,387.5,2021,20,8,5
+3,Valtteri Bottas,Mercedes,226,2021,15,1,4
+4,Sergio Pérez,Red Bull,190,2021,16,1,0
+5,Carlos Sainz,Ferrari,164.5,2021,20,0,0
+6,Lando Norris,McLaren,160,2021,20,0,1
+7,Charles Leclerc,Ferrari,159,2021,18,0,2
+8,Daniel Ricciardo,McLaren,115,2021,13,1,0
+9,Pierre Gasly,AlphaTauri,110,2021,15,0,0
+10,Fernando Alonso,Alpine F1 Team,81,2021,15,0,0
+1,Max Verstappen,Red Bull,454,2022,20,15,7
+2,Charles Leclerc,Ferrari,308,2022,19,3,9
+3,Sergio Pérez,Red Bull,305,2022,19,2,1
+4,George Russell,Mercedes,275,2022,20,1,1
+5,Carlos Sainz,Ferrari,246,2022,16,1,3
+6,Lewis Hamilton,Mercedes,240,2022,19,0,0
+7,Lando Norris,McLaren,122,2022,17,0,0
+8,Esteban Ocon,Alpine F1 Team,92,2022,16,0,0
+9,Fernando Alonso,Alpine F1 Team,81,2022,14,0,0
+10,Valtteri Bottas,Alfa Romeo,49,2022,9,0,0
+1,Max Verstappen,Red Bull,69,2023,3,2,2
+2,Sergio Pérez,Red Bull,54,2023,3,1,1
+3,Fernando Alonso,Aston Martin,45,2023,3,0,0
+4,Lewis Hamilton,Mercedes,38,2023,3,0,0
+5,Carlos Sainz,Ferrari,20,2023,2,0,0
+6,Lance Stroll,Aston Martin,20,2023,2,0,0
+7,George Russell,Mercedes,18,2023,2,0,0
+8,Lando Norris,McLaren,8,2023,1,0,0
+9,Nico Hülkenberg,Haas F1 Team,6,2023,1,0,0
+10,Charles Leclerc,Ferrari,6,2023,1,0,0
