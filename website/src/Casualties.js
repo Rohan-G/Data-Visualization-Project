@@ -1,6 +1,9 @@
 import * as d3 from 'd3';
 import Backdrop from '@mui/material/Backdrop';
 import { useState, useEffect } from 'react';
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/animations/scale.css';
 
 function Casualties() {
 
@@ -12,7 +15,9 @@ function Casualties() {
 
     var scale = 1.5;
 
-    var margin = {top: 10, right: 10, bottom: 10, left: 70},
+    var yVals = [0,5,10,15,20,25,30,35,40,45,50];
+
+    var margin = {top: 20, right: 10, bottom: 10, left: 70},
     width = 2000 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
@@ -21,38 +26,94 @@ function Casualties() {
     svg.attr("height", height + margin.top + margin.bottom);
 
     var xScale = d3.scaleTime()
-    .domain([new Date(1948, 0, 1), new Date(2023, 0, 1)])
+    .domain([new Date(1949, 0, 1), new Date(2023, 0, 1)])
     .range([margin.left, width-margin.left-margin.right]);
 
     var yScale = d3.scaleLinear()
     .domain([0, 50])
     .range([500, margin.top]);
 
+    svg.append("line")
+    .attr("x1",margin.left)
+    .attr("y1",yScale(0))
+    .attr("x2",width-margin.left)
+    .attr("y2",yScale(0))
+    .attr("style","stroke:black; stroke-width:2")
+
+    svg.append("text")
+    .attr("x",width/2)
+    .attr("y",height-margin.bottom+10)
+    .attr("style","font-size:1.5vw")
+    .text("Year");
+
+    svg.append("line")
+    .attr("x1",margin.left)
+    .attr("y1",yScale(0))
+    .attr("x2",margin.left)
+    .attr("y2",margin.top)
+    .attr("style","stroke:black; stroke-width:2")
+
+    svg.selectAll(".yticks")
+    .data(yVals)
+    .enter().append("line")
+    .attr("class","yticks")
+    .attr("x1",margin.left+5)
+    .attr("y1",function(d){return yScale(d)})
+    .attr("x2",margin.left-5)
+    .attr("y2",function(d){return yScale(d)})
+    .attr("style","stroke:black; stroke-width:2");
+
+    svg.selectAll(".yLabels")
+    .data(yVals)
+    .enter().append("text")
+    .attr("class","yLabels")
+    .attr("x",margin.left-30)
+    .attr("y",function(d){return yScale(d)+7})
+    .text(function(d){return d});
+
+    svg.append("text")
+    .text("Casualties since the Last Regulation Change")
+    .attr("x",30)
+    .attr("y",530)
+    .attr("transform","rotate(270,30,530)")
+    .attr("style","font-size:1.25vw");
+
 
     function makeGraph(){
-        // svg.selectAll(".RegInfo")
-        // .data(regulations)
-        // .enter().append("text")
-        // .attr("class","RegInfo")
-        // .attr("x",function(d){ return xScale(d.Year) - 20 })
-        // .attr("y",550)
-        // .text(function(d){ return d.Year.getFullYear() });
+        var curr = true;
+        svg.selectAll(".RegInfo")
+        .data(regulations)
+        .enter().append("text")
+        .attr("class","RegInfo")
+        .attr("x",function(d){ return xScale(d.Year) - 20 })
+        .attr("y",function(){
+            if(curr){
+                curr = !curr;
+                return 530;
+            }
+            else{
+                curr = !curr;
+                return margin.top-5;
+            }
+        })
+        .text(function(d){ return d.Year.getFullYear() });
+
 
         svg.selectAll(".RegLines")
         .data(regulations)
         .enter().append("line")
         .attr("class","RegLines")
         .attr("x1",function(d){ return xScale(d.Year) })
-        .attr("y1",520)
+        .attr("y1",500)
         .attr("x2",function(d){ return xScale(d.Year) })
         .attr("y2",yScale(50))
-        .attr("style","stroke:black; stroke-width:4; stroke-dasharray:3 3 0; opacity:0.5")
+        .attr("style","stroke:red; stroke-width:4; stroke-dasharray:3 3 0; opacity:0.5")
         .on("mouseover",(event,d)=>{
             // console.log(d);
-            d3.select(event.target).attr("style","stroke:black; stroke-width:4; stroke-dasharray:3 3 0; opacity: 1")
+            d3.select(event.target).attr("style","stroke:red; stroke-width:4; stroke-dasharray:3 3 0; opacity: 1")
         })
         .on("mouseout",(event,d)=>{
-            d3.select(event.target).attr("style","stroke:black; stroke-width:4; stroke-dasharray:3 3 0; opacity:0.5")
+            d3.select(event.target).attr("style","stroke:red; stroke-width:4; stroke-dasharray:3 3 0; opacity:0.5")
         })
         .on("click",(event,d)=>{
             console.log(d);
@@ -71,7 +132,57 @@ function Casualties() {
         .datum(regulations)
         .attr("d", curve)
         .attr("fill", "none")
-        .attr("style","stroke:black; stroke-width:2");
+        .attr("style","stroke:red; stroke-width:2");
+
+        svg.selectAll(".dcasualties")
+        .data(drivers)
+        .enter().append("circle")
+        .attr("class","dcasualties")
+        .style("opacity","0.5")
+        .style("fill", "green")
+        .attr("r", 10)
+        .attr("cx", function(d){ return xScale(d['Date Of Accident']) })
+        .attr("cy",115)
+        .on("mouseover",(event,d)=>{
+            console.log(d);
+            d3.select(event.target).style("opacity",1);
+            tippy(event.target, {
+                content: 'Driver: '+d.Driver+'<br>'+'Age: '+d.Age + '<br>' + 'Date Of Accident: ' + d['Date Of Accident'].toLocaleDateString() + '<br>' + 'Session: '+d['Session'] + '<br>' + 'Car: '+d['Car'] + '<br>'+ 'Event: '+d['Event'],
+                theme: 'light-border',
+                animation: 'scale',
+                duration: 0,
+                allowHTML: true
+                }).show();
+        })
+        .on("mouseout",(event,d)=>{
+            d3.select(event.target).style("opacity",0.5);
+            tippy(event.target).hide();
+        });
+        
+        svg.selectAll(".mcasualties")
+        .data(marshalls)
+        .enter().append("circle")
+        .attr("class","mcasualties")
+        .style("opacity","0.5")
+        .style("fill", "orange")
+        .attr("r", 10)
+        .attr("cx", function(d){ return xScale(d['Date Of Accident']) })
+        .attr("cy",115)
+        .on("mouseover",(event,d)=>{
+            // console.log(d);
+            d3.select(event.target).style("opacity",1);
+            tippy(event.target, {
+                content: 'Marshall: '+d.Name+'<br>'+'Age: '+d.Age + '<br>' + 'Date Of Accident: ' + d['Date Of Accident'].toLocaleDateString() + '<br>' + 'Event: '+d['Event'],
+                theme: 'light-border',
+                animation: 'scale',
+                duration: 0,
+                allowHTML: true
+                }).show();
+        })
+        .on("mouseout",(event,d)=>{
+            d3.select(event.target).style("opacity",0.5);
+            tippy(event.target).hide();
+        });
     }
 
     async function getData(){
@@ -93,26 +204,55 @@ function Casualties() {
 
         var regulationData = [];
         await d3.csv('https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/Regulations.csv',function(data){
-            data['Year'] = new Date(Number(data['Year']),0,1);
-            let count = 0;
-            for(var i=0; i<driversData.length; i++){
-                if(driversData[i]['Date Of Accident'] < data.Year){
-                    count+=1;
+            if(regulationData.length>0){
+                if(regulationData[regulationData.length - 1].Year.getFullYear()==data.Year){
+                    regulationData[regulationData.length - 1].Regulation = regulationData[regulationData.length - 1].Regulation + ', '+data.Regulation;
                 }
                 else{
-                    break;
+                    data['Year'] = new Date(Number(data['Year']),0,1);
+                    let count = 0;
+                    for(var i=0; i<driversData.length; i++){
+                        if(driversData[i]['Date Of Accident'] < data.Year){
+                            count+=1;
+                        }
+                        else{
+                            break;
+                        }
+                    }
+                    for(var i=0; i<marshallsData.length; i++){
+                        if(marshallsData[i]['Date Of Accident'] < data.Year){
+                            count+=1;
+                        }
+                        else{
+                            break;
+                        }
+                    }
+                    data.Number = count;
+                    regulationData.push(data);
                 }
             }
-            for(var i=0; i<marshallsData.length; i++){
-                if(marshallsData[i]['Date Of Accident'] < data.Year){
-                    count+=1;
+            else{
+                data['Year'] = new Date(Number(data['Year']),0,1);
+                let count = 0;
+                for(var i=0; i<driversData.length; i++){
+                    if(driversData[i]['Date Of Accident'] < data.Year){
+                        count+=1;
+                    }
+                    else{
+                        break;
+                    }
                 }
-                else{
-                    break;
+                for(var i=0; i<marshallsData.length; i++){
+                    if(marshallsData[i]['Date Of Accident'] < data.Year){
+                        count+=1;
+                    }
+                    else{
+                        break;
+                    }
                 }
+                data.Number = count;
+                regulationData.push(data);
             }
-            data.Number = count;
-            regulationData.push(data);
         })
 
         regulationData.push({'Year':new Date(2023,0,1), 'Regulation':'No newer regulations', 'Number':driversData.length+marshallsData.length})
