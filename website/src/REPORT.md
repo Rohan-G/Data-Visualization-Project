@@ -31,14 +31,31 @@ One of the ways that F1 is doing this is by expanding the number of tracks aroun
 ## Championships Over the Years:
 * <u>What:</u> We are visualizing the effect a constructor has on the driver's championship, if any, as well as how dominant a particular constructor or driver has been for a contiguous set of seasons.
 
-* <u>Why:</u>We want to see if there is a correlation between the constructor's champions and the driver's champion, to see how much the car affects the driver's championship over driver ability. We also want to see periods of dominance and patterns of dominance of particular constructors, particular drivers, and both together over a period of time in the overall timeline of the sport (so essentially 1958-2022, as the constructor's championship started in 1958), as it could have an insight on how interesting the season is for a newcomer who's 
+* <u>Why:</u> We want to see if there is a correlation between the constructor's champions and the driver's champion, to see how much the car affects the driver's championship over driver ability. We also want to see periods of dominance and patterns of dominance of particular constructors, particular drivers, and both together over a period of time in the overall timeline of the sport (so essentially 1958-2022, as the constructor's championship started in 1958), as it could have an insight on how interesting the season is for a newcomer who's looking to learn more about the sport. (Boring seasons usually fall in the middle of dominant periods, and generally not much insight into new rules can be gained as not much action leading to rule-breaking happens).
 
-* <u>
+* <u>How:</u> We have made a sort of timeline graph, with blocks representing the constructor of the driver that won the driver's championship in that season, and being above/below representing whether the constructor won the constructor's championship or not respectively. On hovering over one of the blocks, we highlight all the drivers championships won by the driver who won the championship during the year represented by that particular block, making it easier to see periods of driver dominance. Since we color coded based on constructor colors, it is already evident which constructor has what periods of dominance (if any), although hovering over the constructor name still highlights championships won by a driver of the particular constructor. We also have a tooltip on the particular blocks and the constructors' names in the legend depicting more information on the championships.
+
+<br>
+
+![Screenshot of Timeline](./timeline.png)
+
+## Safety Over The Years
+* <u>What:</u> We are visulizing how safety in the sport has evolved over the years.
+
+* <u>Why: </u> F1 is an entertaining sport, but it is also very dangerous. There have been many casualties on the track, both drivers and volunteers, and there have been many regulations added to make the sport safer for both drivers and by-standers. We wanted  to show a correlation (if any) between the added regulations and the casualties in the sport, and how safe the sport is in this day and age.
+
+* <u>How: </u> We use a curved line chart to depict how many casucalties occur between any 2 consecutive regulation changes (and the latest season, in the case of the last regulation change). We have highlighted the years of major regulation changes, clicking on which gives us more information about what the regulation that changed was and how many casualties occured since the previous regulation change. We have also depicted the driver casualties (green dots) and marshall casualties(yellow dots), hovering over which gives us more information about the incident.
+
+![Screenshot of Safety](./safety.png)
+
 
 ## Contributions:
 * Shashwat Dash: Globe visualization, Grid Visualization, Sunburst
 * Rohan Girish: Head 2 Head, Championships Over the Years, Safety Visualization
 * Sarthak Chittawar: Top 10s, Drivers vs Points Per Round Growing Bar
+
+# Code Link
+https://github.com/Rohan-G/Data-Visualization-Project
 
 # Video
 https://drive.google.com/drive/folders/1nCsKZX7gCxuvHcXrdeOT3MI7vasSKQY-?usp=share_link
