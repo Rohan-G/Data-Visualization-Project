@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5"></script>
+    <title>Project</title>
+</head>
+<body>
+    <!-- <div>
+        <svg width="1425" height="780" class="bar-chart" style="background-color:#EFE0BB">
+        </svg>
+    </div> -->
+    <div id="my_dataviz">
+        <button id="button">Click me</button>
+    </div>
+    <script>
+
+        var margin = {top: 30, right: 30, bottom: 90, left: 90},
+            width = 800 - margin.left - margin.right,
+            height = 600 - margin.top - margin.bottom;
+
+        // append the svg object to the body of the page
+        var svg = d3.select("#my_dataviz")
+        .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .attr("id", "svgid")
+        .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+
+        var data = []
+        // let svg = d3.select(".bar-chart")
+        var season = 2022
+
+        var m = new Map()
+
+        const func = async function (data, season, round)
+        {
+            data = await d3.csv("https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/f1db_csv/roundwisepoints.csv")
+            maxppl = 0
+            data2 = []
+            data3 = []
+            drivers = []
+            for(var i=0; i<data.length; i++)
+            {
+                if (data[i]["Season"] == season && data[i]["Round"] == round)
+                {
+                    data2.push(data[i])
+                    if (!m.has(data[i]["Name"].split(" ")[1]))
+                    {
+                        m.set(data[i]["Name"].split(" ")[1], 0)
+                    }
+                }
+                if (data[i]["Season"] == season)
+                {
+                    data3.push(data[i])
+                }
+
+            }
+            data3 = data3.reverse()
+            s = data3[0]["Season"]
+            r = data3[0]["Round"]
+            pos = data3[0]["Position"]
+            var maxpoints=0
+            for(var i=0; i<parseInt(pos); i++)
+            {
+                drivers.push(data3[i]["Name"].split(" ")[1])
+                if (i == parseInt(pos) - 1)
+                {
+                    maxpoints = data3[i]["Points"]
+                }
+            }
+            drivers = drivers.reverse()
+            data3 = data3.reverse()
+
+
+            const y = d3.scaleBand()
+                .range([0, width])
+                .domain(drivers.map(function(d) { return d }))
+                .padding(0.2)
+            svg.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(y))
+                .selectAll("text")
+                    .attr("transform", "translate(-10,0)rotate(-45)")
+                    .style("text-anchor", "end");
+
+
+            const x = d3.scaleLinear()
+                .domain([0, 500])
+                .range([ height, 0])
+            svg.append("g")
+                .call(d3.axisLeft(x))
+
+            var bar = svg.selectAll("mybar")
+                .data(data2)
+                .enter()
+                .append("rect")
+                    .attr("id", function(d) {return "c"+d["Name"]})
+                    .attr("x", function(d) { return y(d["Name"].split(" ")[1]); })
+                    .attr("width", y.bandwidth())
+                    .attr("fill", "blue")
+                    // no bar at the beginning thus:
+                    .attr("height", function(d) { console.log(m.get(d["Name"].split(" ")[1])) ;return m.get(d["Name"].split(" ")[1]); }) // always equal to 0
+                    .attr("y", function(d) { return height - m.get(d["Name"].split(" ")[1]); })
+            bar.transition()
+                .duration(800)
+                .attr("y", function(d) { m.set(d["Name"].split(" ")[1], parseInt(d["Points"]));return height - d["Points"]; })
+                .attr("height", function(d) { return d["Points"]; })
+                .delay(function(d,i){return(0*100)})
+
+            bar.on("mouseover", function (d, f) {
+                console.log(f["Points"])
+                tippy("#c"+f["Name"], {
+                    content: "Points: "+f["Points"]
+                })
+            })
+
+            svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", width/2 + 30)
+            .attr("y", height + margin.top + 55)
+            .text("Drivers");
+
+            svg.append("text")
+            .attr("text-anchor", "center")
+            .attr("x", width/2)
+            .attr("y", margin.top)
+            .text("Season: "+season+"\nRound: "+round);
+
+            // Y axis label:
+            svg.append("text")
+                .attr("text-anchor", "end")
+                .attr("transform", "rotate(-90)")
+                .attr("y", -margin.left+11)
+                .attr("x", -margin.top - 100)
+                .text("Points")
+        }
+        let a = document.getElementById("button")
+        var round = 1
+        func(data, season, round)
+
+        a.addEventListener("click", function (){
+            round = round + 1
+            svg.selectAll("*").remove()
+            func(data, season, round);
+        })
+    </script>
+</body>
