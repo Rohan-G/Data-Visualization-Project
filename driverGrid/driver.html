@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Top 10 Drivers Seasonwise</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+</head>
+
+<body>
+
+    <body>
+        <div class="dropdown-wrapper">
+            <select id="year">
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+            </select>
+        </div>
+
+        <div id="svgDiv" style="width: 960px"></div>
+
+        <script>
+            var w = 1200;
+            var h = 700;
+
+            var svg = d3
+                .select("#svgDiv")
+                .append("svg")
+                .attr("width", w)
+                .attr("height", h - 70)
+                .attr("class", "driverSvg")
+
+            d3.select(".dropdown-wrapper")
+                .style("position", "absolute")
+                .style("top", "48px")
+                .style("left", "145px");
+
+            d3.csv("https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/Top10Drivers.csv").then(function (data) {
+
+
+                function printSeason(selectedYear) {
+
+                    d3.selectAll("svg > *").remove();
+
+                    const dataYear = data.filter(d => d.Year === selectedYear);
+
+                    console.log(dataYear);
+
+                    svg.append("text")
+                        .attr("x", 590)
+                        .attr("y", 40)
+                        .attr("class", "driverText")
+                        .attr("text-anchor", "middle")
+                        .attr("font-size", "32px")
+                        .attr("fill", "white")
+                        .text(`TOP 10 DRIVERS SEASONWISE - ${selectedYear}`);
+
+                    x_init = 50
+
+                    console.log(selectedYear);
+
+                    for (let i = 0; i < 3; i++) {
+                        svg.append("line")
+                            .attr("x1", x_init)
+                            .attr("y1", 110)
+                            .attr("x2", x_init)
+                            .attr("y2", 150)
+                            .attr("stroke", "white")
+                            .attr("stroke-width", 2.5);
+
+                        svg.append("line")
+                            .attr("x1", x_init + 60)
+                            .attr("y1", 110)
+                            .attr("x2", x_init + 60)
+                            .attr("y2", 150)
+                            .attr("stroke", "white")
+                            .attr("stroke-width", 2.5);
+
+
+                        svg.append("line")
+                            .attr("x1", x_init)
+                            .attr("y1", 110)
+                            .attr("x2", x_init + 60)
+                            .attr("y2", 110)
+                            .attr("stroke", "white")
+                            .attr("stroke-width", 2.5);
+
+                        svg.append("image")
+                            .attr("x", x_init - 20)
+                            .attr("y", 115)
+                            .attr("width", 100)
+                            .attr("height", 90)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/car.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init + 30)
+                            .attr("y", 95)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "24px")
+                            .attr("fill", "white")
+                            // .attr("font-weight", "bold")
+                            .text(i + 1);
+
+                        svg.append("text")
+                            .attr("x", x_init + 170)
+                            .attr("y", 110)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "16px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Driver.toUpperCase())
+                            // .on("mouseover", function (d) {
+                            //     tippy(this, {
+                            //         content: "<strong>" + "Driver: " + dataYear[i].Driver + "</strong>",
+                            //         allowHTML: true
+                            //     })
+                            // })
+
+
+                        svg.append("image")
+                            .attr("x", x_init + 70)
+                            .attr("y", 120)
+                            .attr("width", 50)
+                            .attr("height", 25)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/point.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init + 133)
+                            .attr("y", 140)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Points);
+
+                        svg.append("image")
+                            .attr("x", x_init + 165)
+                            .attr("y", 120)
+                            .attr("width", 50)
+                            .attr("height", 25)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/flag.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init + 230)
+                            .attr("y", 140)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].PointsFinishes);
+
+                        svg.append("image")
+                            .attr("x", x_init + 70)
+                            .attr("y", 150)
+                            .attr("width", 50)
+                            .attr("height", 40)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/goldTrophy.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init + 130)
+                            .attr("y", 180)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Wins);
+
+                        svg.append("image")
+                            .attr("x", x_init + 165)
+                            .attr("y", 155)
+                            .attr("width", 50)
+                            .attr("height", 35)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/poles.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init + 230)
+                            .attr("y", 180)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Poles);
+
+                        x_init += 420
+                    }
+
+                    x_init2 = 260
+
+                    for (let i = 3; i < 5; i++) {
+                        svg.append("line")
+                            .attr("x1", x_init2)
+                            .attr("y1", 240)
+                            .attr("x2", x_init2)
+                            .attr("y2", 280)
+                            .attr("stroke", "white")
+                            .attr("stroke-width", 2.5);
+
+                        svg.append("line")
+                            .attr("x1", x_init2 + 60)
+                            .attr("y1", 240)
+                            .attr("x2", x_init2 + 60)
+                            .attr("y2", 280)
+                            .attr("stroke", "white")
+                            .attr("stroke-width", 2.5);
+
+                        svg.append("line")
+                            .attr("x1", x_init2)
+                            .attr("y1", 240)
+                            .attr("x2", x_init2 + 60)
+                            .attr("y2", 240)
+                            .attr("stroke", "white")
+                            .attr("stroke-width", 2.5);
+
+                        svg.append("image")
+                            .attr("x", x_init2 - 20)
+                            .attr("y", 245)
+                            .attr("width", 100)
+                            .attr("height", 90)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/car.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init2 + 30)
+                            .attr("y", 225)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "24px")
+                            .attr("fill", "white")
+                            .text(i + 1);
+
+                        svg.append("text")
+                            .attr("x", x_init2 + 170)
+                            .attr("y", 240)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "16px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Driver.toUpperCase());
+
+                        svg.append("image")
+                            .attr("x", x_init2 + 70)
+                            .attr("y", 250)
+                            .attr("width", 50)
+                            .attr("height", 25)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/point.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init2 + 133)
+                            .attr("y", 270)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Points);
+
+                        svg.append("image")
+                            .attr("x", x_init2 + 165)
+                            .attr("y", 250)
+                            .attr("width", 50)
+                            .attr("height", 25)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/flag.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init2 + 230)
+                            .attr("y", 270)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].PointsFinishes);
+
+                        svg.append("image")
+                            .attr("x", x_init2 + 70)
+                            .attr("y", 280)
+                            .attr("width", 50)
+                            .attr("height", 40)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/goldTrophy.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init2 + 130)
+                            .attr("y", 310)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Wins);
+
+                        svg.append("image")
+                            .attr("x", x_init2 + 165)
+                            .attr("y", 285)
+                            .attr("width", 50)
+                            .attr("height", 35)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/poles.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init2 + 230)
+                            .attr("y", 310)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Poles);
+
+                        x_init2 += 460
+                    }
+
+                    x_init3 = 50
+
+                    for (let i = 5; i < 8; i++) {
+                        svg.append("line")
+                            .attr("x1", x_init3)
+                            .attr("y1", 380)
+                            .attr("x2", x_init3)
+                            .attr("y2", 420)
+                            .attr("stroke", "white")
+                            .attr("stroke-width", 2.5);
+
+                        svg.append("line")
+                            .attr("x1", x_init3 + 60)
+                            .attr("y1", 380)
+                            .attr("x2", x_init3 + 60)
+                            .attr("y2", 420)
+                            .attr("stroke", "white")
+                            .attr("stroke-width", 2.5);
+
+                        svg.append("line")
+                            .attr("x1", x_init3)
+                            .attr("y1", 380)
+                            .attr("x2", x_init3 + 60)
+                            .attr("y2", 380)
+                            .attr("stroke", "white")
+                            .attr("stroke-width", 2.5);
+
+                        svg.append("image")
+                            .attr("x", x_init3 - 20)
+                            .attr("y", 385)
+                            .attr("width", 100)
+                            .attr("height", 90)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/car.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init3 + 30)
+                            .attr("y", 365)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "24px")
+                            .attr("fill", "white")
+                            // .attr("font-weight", "bold")
+                            .text(i + 1);
+
+                        svg.append("text")
+                            .attr("x", x_init3 + 170)
+                            .attr("y", 380)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "16px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Driver.toUpperCase());
+
+
+                        svg.append("image")
+                            .attr("x", x_init3 + 70)
+                            .attr("y", 390)
+                            .attr("width", 50)
+                            .attr("height", 25)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/point.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init3 + 133)
+                            .attr("y", 410)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Points);
+
+                        svg.append("image")
+                            .attr("x", x_init3 + 165)
+                            .attr("y", 390)
+                            .attr("width", 50)
+                            .attr("height", 25)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/flag.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init3 + 230)
+                            .attr("y", 410)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].PointsFinishes);
+
+                        svg.append("image")
+                            .attr("x", x_init3 + 70)
+                            .attr("y", 420)
+                            .attr("width", 50)
+                            .attr("height", 40)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/goldTrophy.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init3 + 130)
+                            .attr("y", 450)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Wins);
+
+                        svg.append("image")
+                            .attr("x", x_init3 + 165)
+                            .attr("y", 425)
+                            .attr("width", 50)
+                            .attr("height", 35)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/poles.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init3 + 230)
+                            .attr("y", 450)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Poles);
+
+                        x_init3 += 420
+                    }
+
+                    // driver 7    
+
+                    x_init4 = 260
+
+                    for (let i = 8; i < 10; i++) {
+
+                        svg.append("line")
+                            .attr("x1", x_init4)
+                            .attr("y1", 510)
+                            .attr("x2", x_init4)
+                            .attr("y2", 550)
+                            .attr("stroke", "white")
+                            .attr("stroke-width", 2.5);
+
+                        svg.append("line")
+                            .attr("x1", x_init4 + 60)
+                            .attr("y1", 510)
+                            .attr("x2", x_init4 + 60)
+                            .attr("y2", 550)
+                            .attr("stroke", "white")
+                            .attr("stroke-width", 2.5);
+
+                        svg.append("line")
+                            .attr("x1", x_init4)
+                            .attr("y1", 510)
+                            .attr("x2", x_init4 + 60)
+                            .attr("y2", 510)
+                            .attr("stroke", "white")
+                            .attr("stroke-width", 2.5);
+
+                        svg.append("image")
+                            .attr("x", x_init4 - 20)
+                            .attr("y", 515)
+                            .attr("width", 100)
+                            .attr("height", 90)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/car.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init4 + 30)
+                            .attr("y", 495)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "24px")
+                            .attr("fill", "white")
+                            .text(i + 1);
+
+                        svg.append("text")
+                            .attr("x", x_init4 + 170)
+                            .attr("y", 510)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "16px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Driver.toUpperCase());
+
+                        svg.append("image")
+                            .attr("x", x_init4 + 70)
+                            .attr("y", 520)
+                            .attr("width", 50)
+                            .attr("height", 25)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/point.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init4 + 133)
+                            .attr("y", 540)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Points);
+
+                        svg.append("image")
+                            .attr("x", x_init4 + 165)
+                            .attr("y", 520)
+                            .attr("width", 50)
+                            .attr("height", 25)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/flag.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init4 + 230)
+                            .attr("y", 540)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].PointsFinishes);
+
+                        svg.append("image")
+                            .attr("x", x_init4 + 70)
+                            .attr("y", 550)
+                            .attr("width", 50)
+                            .attr("height", 40)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/goldTrophy.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init4 + 130)
+                            .attr("y", 580)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Wins);
+
+                        svg.append("image")
+                            .attr("x", x_init4 + 165)
+                            .attr("y", 555)
+                            .attr("width", 50)
+                            .attr("height", 35)
+                            .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/poles.png?raw=true");
+
+                        svg.append("text")
+                            .attr("x", x_init4 + 230)
+                            .attr("y", 580)
+                            .attr("class", "driverText")
+                            .attr("text-anchor", "middle")
+                            .attr("font-size", "18px")
+                            .attr("fill", "white")
+                            .text(dataYear[i].Poles);
+
+                        x_init4 += 460
+                    }
+
+
+                    svg.append("image")
+                        .attr("x", 10)
+                        .attr("y", 500)
+                        .attr("width", 50)
+                        .attr("height", 20)
+                        .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/point.png?raw=true")
+
+                    svg.append("text")
+                        .attr("x", 85)
+                        .attr("y", 516)
+                        .attr("class", "driverText")
+                        .attr("text-anchor", "middle")
+                        .attr("font-size", "15px")
+                        .attr("fill", "white")
+                        .text("Points");
+
+                    svg.append("image")
+                        .attr("x", 10)
+                        .attr("y", 535)
+                        .attr("width", 50)
+                        .attr("height", 18)
+                        .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/flag.png?raw=true");
+
+                    svg.append("text")
+                        .attr("x", 124)
+                        .attr("y", 550)
+                        .attr("class", "driverText")
+                        .attr("text-anchor", "middle")
+                        .attr("font-size", "15px")
+                        .attr("fill", "white")
+                        .attr("font-family", "Roboto")
+                        .text("Finishes in Points");
+
+                    svg.append("image")
+                        .attr("x", 10)
+                        .attr("y", 560)
+                        .attr("width", 50)
+                        .attr("height", 30)
+                        .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/goldTrophy.png?raw=true");
+
+                    svg.append("text")
+                        .attr("x", 130)
+                        .attr("y", 583)
+                        .attr("class", "driverText")
+                        .attr("text-anchor", "middle")
+                        .attr("font-size", "15px")
+                        .attr("fill", "white")
+                        .attr("font-family", "Roboto")
+                        .text("Wins in the Season");
+
+                    svg.append("image")
+                        .attr("x", 10)
+                        .attr("y", 595)
+                        .attr("width", 50)
+                        .attr("height", 28)
+                        .attr("xlink:href", "https://github.com/Rohan-G/Data-Visualization-Project/blob/main/dataset/top10images/poles.png?raw=true");
+
+                    svg.append("text")
+                        .attr("x", 112)
+                        .attr("y", 615)
+                        .attr("class", "driverText")
+                        .attr("text-anchor", "middle")
+                        .attr("font-size", "15px")
+                        .attr("fill", "white")
+                        .attr("font-family", "Roboto")
+                        .text("Pole Positions");
+
+                }
+
+                const dropdown = document.getElementById("year");
+                let selectedYear = dropdown.value;
+
+                printSeason(selectedYear);
+
+                dropdown.addEventListener("change", (event) => {
+                    selectedYear = event.target.value;
+                    printSeason(selectedYear);
+                });
+            })
+
+        </script>
+
+    </body>
+
+</html>
