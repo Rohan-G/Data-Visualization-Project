@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import Dominance from './ChampionshipWinners';
 import reportWebVitals from './reportWebVitals';
+import Casualties from './Casualties';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Dominance />
+    {/* <Dominance /> */}
+    <Casualties />
   </React.StrictMode>
 );
 
