@@ -56,9 +56,9 @@
                 if (data[i]["Season"] == season && data[i]["Round"] == round)
                 {
                     data2.push(data[i])
-                    if (!m.has(data[i]["Name"].split(" ")[1]))
+                    if (!m.has(data[i]["Name"]))
                     {
-                        m.set(data[i]["Name"].split(" ")[1], 0)
+                        m.set(data[i]["Name"], 0)
                     }
                 }
                 if (data[i]["Season"] == season)
@@ -74,7 +74,7 @@
             var maxpoints=0
             for(var i=0; i<parseInt(pos); i++)
             {
-                drivers.push(data3[i]["Name"].split(" ")[1])
+                drivers.push(data3[i]["Name"])
                 if (i == parseInt(pos) - 1)
                 {
                     maxpoints = data3[i]["Points"]
@@ -82,6 +82,7 @@
             }
             drivers = drivers.reverse()
             data3 = data3.reverse()
+            console.log(drivers)
 
             const carcolours = new Map()
             carcolours.set('Ferrari', '#EF1A2D')
@@ -128,7 +129,7 @@
 
 
             const x = d3.scaleLinear()
-                .domain([0, height])
+                .domain([0, maxpoints])
                 .range([ height, 0])
             svg.append("g")
                 .attr("id", "yaxis")
@@ -138,21 +139,21 @@
                 .data(data2)
                 .enter()
                 .append("rect")
-                    .attr("id", function(d) {return "c"+drivers.indexOf(d["Name"].split(" ")[1])})
-                    .attr("x", function(d) { return y(d["Name"].split(" ")[1]); })
+                    .attr("id", function(d) {return "c"+drivers.indexOf(d["Name"])})
+                    .attr("x", function(d) { return y(d["Name"]); })
                     .attr("width", y.bandwidth())
-                    .attr("fill", function(d) { console.log(d);if (carcolours.has(d["Constructor"])){return carcolours.get(d["Constructor"])} else {return "black"}})
+                    .attr("fill", function(d) {if (carcolours.has(d["Constructor"])){return carcolours.get(d["Constructor"])} else {return "black"}})
                     // no bar at the beginning thus:
-                    .attr("height", function(d) {return m.get(d["Name"].split(" ")[1]); }) // always equal to 0
-                    .attr("y", function(d) { return height - m.get(d["Name"].split(" ")[1]); })
+                    .attr("height", function(d) {return m.get(d["Name"]); }) // always equal to 0
+                    .attr("y", function(d) { return height - m.get(d["Name"]); })
             bar.transition()
                 .duration(500)
-                .attr("y", function(d) { m.set(d["Name"].split(" ")[1], parseInt(d["Points"]));return height - d["Points"]; })
-                .attr("height", function(d) { return d["Points"]; })
+                .attr("y", function(d) { m.set(d["Name"], parseInt(d["Points"]*height/maxpoints));return height - d["Points"]*height/maxpoints; })
+                .attr("height", function(d) { return d["Points"]*height/maxpoints; })
                 .delay(function(d,i){return(0*100)})
 
             bar.on("mouseover", function (d, f) {
-                tippy("#c"+drivers.indexOf(f["Name"].split(" ")[1]), {
+                tippy("#c"+drivers.indexOf(f["Name"]), {
                     content: "Position: "+f["Position"]+"<br>Points: "+f["Points"]+"<br>Wins: "+f["Wins"]+"<br>Constructor: "+f["Constructor"]
                 })
             })
@@ -213,8 +214,9 @@
         }
 
         a.addEventListener("click", function (){
-            svg.selectAll("*").remove()
+            m.clear()
             func(data, ss.value, round);
+            svg.selectAll("*").remove()
         })
     </script>
 </body>
