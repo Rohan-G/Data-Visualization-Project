@@ -10,18 +10,24 @@
     <title>Growing Bar Chart</title>
 </head>
 <body>
-    <div id="my_dataviz">
-        <br>
+    <div>
+        <p font-family="Raleway" style="display: flex; justify-content: center; color: grey; font-size: 40px;"><b>A growing Bar Chart for the Round-wise points of an F1 season</b></p>
+        <p font-family="Raleway" style="display: flex; justify-content: center; color: grey; font-size: 18px;">Select a season from the drop-down box above to activate the buttons.</p>
+        <p font-family="Raleway" style="display: flex; justify-content: center; color: grey; font-size: 18px;">Now, you can click on either of the 2 buttons at once to get the round-wise points progression of the drivers/constructors in that season of F1</p>
+        <p font-family="Raleway" style="display: flex; justify-content: center; color: grey; font-size: 18px;">The drivers/constructors are arranged in descending order of their Championship standings in that season.</p>
+    </div>
+    <div style="display: flex; justify-content: center;">
         <select id="selectSeason">
             <option>Select the season</option>
         </select>
         <button id="button" disabled>Drivers' Championship</button>
         <button id="button2" disabled>Constructors' Championship</button>
     </div>
+    <div id="my_dataviz"></div>
     <script>
 
-        var margin = {top: 30, right: 30, bottom: 90, left: 90},
-            width = 800 - margin.left - margin.right,
+        var margin = {top: 30, right: 30, bottom: 90, left: 450},
+            width = 1100 - margin.left - margin.right,
             height = 600 - margin.top - margin.bottom;
 
         var svg = d3.select("#my_dataviz")
@@ -184,7 +190,7 @@
             svg.append("text")
             .attr("id", "overtext")
             .attr("text-anchor", "center")
-            .attr("x", width/2)
+            .attr("x", width/2 - 50)
             .attr("y", margin.top)
 
             // Y axis label:
@@ -192,8 +198,8 @@
                 .attr("id", "ytitle")
                 .attr("text-anchor", "end")
                 .attr("transform", "rotate(-90)")
-                .attr("y", -margin.left+11)
-                .attr("x", -margin.top - 100)
+                .attr("y", -margin.left+400)
+                .attr("x", -margin.top - 200)
                 .text("Points")
 
             if (data2.length != 0)
@@ -362,7 +368,7 @@
             svg.append("text")
             .attr("id", "overtext")
             .attr("text-anchor", "center")
-            .attr("x", width/2)
+            .attr("x", width/2 - 50)
             .attr("y", margin.top)
 
             // Y axis label:
@@ -370,8 +376,8 @@
                 .attr("id", "ytitle")
                 .attr("text-anchor", "end")
                 .attr("transform", "rotate(-90)")
-                .attr("y", -margin.left+11)
-                .attr("x", -margin.top - 100)
+                .attr("y", -margin.left+400)
+                .attr("x", -margin.top - 200)
                 .text("Points")
             
             if (data2.length != 0)
