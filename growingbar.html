@@ -108,11 +108,10 @@
             carcolours.set('Alfa Romeo', '#A42134')
             carcolours.set('Sauber', '#739CD9')
             carcolours.set('Alpine', '#2173B8')
-            carcolours.set('Alpine F1 Team', '#2173B8')
             carcolours.set('Lotus', '#86995B')
             carcolours.set('BRM', '#86995B')
-            carcolourlist = ['Maserati', 'Cooper', 'Tyrrell', 'Vanwall', 'Brabham', 'Ferrari', 'Mercedes', 'Red Bull', 'Toro Rosso', 'Sauber', 'BMW', 'McLaren', 'Aston Martin', 'Force India', 'Benetton', 'Jordan',
-        'Williams', 'Renault', 'Honda', 'BAR', 'Alfa Romeo', 'Alpine', 'Lotus', 'BRM']
+            carcolourlist = ["Ferrari", "Mercedes", "Maserati", "Red Bull", "Toro Rosso", "AlphaTauri", "BMW", "McLaren", "Aston Martin", "Force India", "Benetton", "Jordan", "Cooper", 
+                            "Tyrrell", "Vanwall", "Brabham", "Williams", "Renault", "Honda", "BAR", "Alfa Romeo", "Sauber", "Alpine", "Lotus", "BRM"]
 
 
             const y = d3.scaleBand()
@@ -142,7 +141,25 @@
                     .attr("id", function(d) {return "c"+drivers.indexOf(d["Name"])})
                     .attr("x", function(d) { return y(d["Name"]); })
                     .attr("width", y.bandwidth())
-                    .attr("fill", function(d) {if (carcolours.has(d["Constructor"])){return carcolours.get(d["Constructor"])} else {return "black"}})
+                    .attr("fill", function(d) {
+                        var list = d["Constructor"].split(" ")
+                        var list2 = d["Constructor"].split("-")
+                        for (var i=0; i<list.length; i++)
+                        {
+                            if (carcolourlist.includes(list[i]))
+                            {
+                                return carcolours.get(list[i]);
+                            }
+                        }
+                        for (var i=0; i<list2.length; i++)
+                        {
+                            if (carcolourlist.includes(list2[i]))
+                            {
+                                return carcolours.get(list2[i]);
+                            }
+                        }
+                        return "black"
+                    })
                     // no bar at the beginning thus:
                     .attr("height", function(d) {return m.get(d["Name"]); }) // always equal to 0
                     .attr("y", function(d) { return height - m.get(d["Name"]); })
