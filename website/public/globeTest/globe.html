@@ -12,6 +12,12 @@
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/tippy.js@6"></script>
 
+  <style>
+    tippy-box {
+      outline: none;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -149,9 +155,11 @@
           if (highlightedCountries.includes(d.properties.name))
           tippy(this, {
             content: "<strong>" + d.properties.name + "</strong>",
-            allowHTML: true
+            allowHTML: true,
+            
           })
         })
+        .style("outline", "none")
         .on("click", function (d, i) {
 
           if (highlightedCountries.includes(i.properties.name)) {
