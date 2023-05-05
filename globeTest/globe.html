@@ -9,10 +9,26 @@
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://d3js.org/topojson.v1.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
 
 </head>
 
 <body>
+
+  <div class="header1">
+    <p></p>
+    <h1>Diversity of F1</h1>
+    <p></p>
+    <p>For a long time, Formula 1 has been criticized for being a sport dominated by wealthy white Europeans. However,
+      in recent years, there has been a concerted effort to diversify the sport and make it more inclusive for people
+      from different regions and backgrounds.
+      F1 now has races in various countries across the globe, from small European nations to places like the United
+      States, Mexico, Canada, and the Middle East. By hosting events in different regions, F1 is helping to promote the
+      sport to new audiences and provide opportunities for aspiring drivers from diverse backgrounds.</p>
+    <p style="font-weight: 900; text-align: center;">Zoomable, draggable globe which shows all the tracks and recent
+      drivers of a highlighted country on clicking it</p>
+  </div>
 
   <div id="svgDiv" style="width: 960px"></div>
 
@@ -127,6 +143,14 @@
           if (highlightedCountries.includes(d.properties.name)) {
             return "#da1e37";
           }
+        })
+        .on("mouseover", function (event, d) {
+
+          if (highlightedCountries.includes(d.properties.name))
+          tippy(this, {
+            content: "<strong>" + d.properties.name + "</strong>",
+            allowHTML: true
+          })
         })
         .on("click", function (d, i) {
 

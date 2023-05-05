@@ -220,11 +220,18 @@ function Dominance() {
 
     return(
         <>
-            <h1 align= "center">Championships</h1>
-            <div style={{position: 'absolute', top: '12vh', left: '3vw'}}>
+            <h1 align= "center" style={{fontFamily: "Raleway",fontWeight: "300",fontSize: "40px"}}>Championships Over The Years</h1>
+            <p style={{ marginLeft: "10vw", marginRight:"10vw", fontFamily: "Raleway", color:"grey", fontSize:"18px" }}>
+            We want to see if there is a correlation between the constructor's champions and the driver's champion, to see how much the car affects the driver's championship over driver ability. We also want to see periods of dominance and patterns of dominance of particular constructors, particular drivers, and both together over a period of time in the overall timeline of the sport (so essentially 1958-2022, as the constructor's championship started in 1958), as it could have an insight on how interesting the season is for a newcomer who's looking to learn more about the sport. (Boring seasons usually fall in the middle of dominant periods, and generally not much insight into new rules can be gained as not much action leading to rule-breaking happens).
+            <br />
+            <br />
+            <b>Hover over one of the team names in the legend to highlight all championships the particular constructor has won, or hover over one of the blocks in the timeline graph and see all the championships the driver who won the championship depicted by that block has won.</b>
+            </p>
+
+            <div style={{position:"relative",left: '3vw'}}>
                 <svg id="legend" />
             </div>
-            <div style={{position: 'absolute', top: '25vh', left: '3vw'}}>
+            <div style={{position:"relative",left: '3vw'}}>
                 <svg id="championships" />
             </div>
         </>

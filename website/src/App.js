@@ -1,7 +1,8 @@
 import * as d3 from 'd3';
 import { useState, useEffect } from 'react';
-import TextField from '@mui/material/TextField'
+import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import { Typography } from '@mui/material';
 
 const drivers = [
   "Michael Schumacher",
@@ -129,9 +130,11 @@ function App() {
           .attr("src", data['Image Link']);
         d3.select(".images").append("h2")
           .attr("align", "center")
+          .style("font-family","Raleway")
           .text(dname)
         d3.select(".images").append("p")
           .attr("class", "info")
+          .style("font-family","Raleway")
           .text("Hover over one of the veritcal lines to see the season wise points breakdown")
       }
     })
@@ -244,11 +247,13 @@ function App() {
           if (!myMap.has(String(d))) {
             d3.select(".images").append("p")
               .attr("class", "info")
+              .style("font-family","Raleway")
               .text("Did not drive in " + d)
           }
           else {
             d3.select(".images").append("p")
               .attr("class", "info")
+              .style("font-family","Raleway")
               .html("Season: " + d + "<br>" + "Team: " + myMap.get(String(d)) + "<br>" + "Points: " + myArr.get(String(d))[0] + "<br>" + "Teammates' total Points: " + myArr.get(String(d))[1])
 
           }
@@ -258,6 +263,7 @@ function App() {
           d3.selectAll(".info").remove()
           d3.select(".images").append("p")
             .attr("class", "info")
+            .style("font-family","Raleway")
             .text("Hover over one of the veritcal lines to see the season wise points breakdown")
         });
 
@@ -380,19 +386,17 @@ function App() {
 
   return (
     <>
-      <h1 align="center">Driver v/s Teammate</h1>
-      <div align="center">
-        {/* <FormControl align={"center"} style={{ width: "50vw" }}>
-          <InputLabel>Driver</InputLabel>
-          <Select value = {dname} label="Driver" onChange={(event)=>{chDriver(event.target.value)}}>
-            {
-              drivers.map((driver, index)=>{
-                return(<MenuItem key={index} value={driver}>{driver}</MenuItem>);
-                // console.log(driver);
-              })
-            }
-          </Select>
-        </FormControl> */}
+      <h1 align="center" style={{fontFamily: "Raleway",fontWeight: "300",fontSize: "40px"}}>Driver Head To Head</h1>
+      <div id="information">
+        <Typography style={{ marginLeft: "10vw", marginRight:"10vw", fontFamily: "Raleway", color:"grey", fontSize:"18px" }}>
+          Drivers cannot be solely compared to all other drivers based on number of wins or number of points in a season. This is because even though driver ability has a part to play in these aspects, the car has a very significant hand in influencing these features. They say that F1 is a team sport. While this may be true, your teammate is the one you absolutely must beat at all costs, as they have the same car as you. If you cannot beat the one with the same car as you, how can you believe that you can stand toe to toe against the best in the world, and deserve to be called the world champion (an unspoken rule in the F1 world - you need to be confident enough to think you are the best in the world).
+          <br></br>
+          <br></br>
+          <b>Start typing the name of a driver and select it from the dropdown to see the graph of the selected driver vs his teammate in every season the driver has been part of the sport.</b>
+        </Typography>
+      </div>
+      <br />
+      <div align = "center">
         <Autocomplete
           disablePortal
           id="combo-box-demo"
@@ -402,7 +406,9 @@ function App() {
           renderInput={(params) => <TextField {...params} label="Driver" />}
         />
       </div>
-      <div id="H2Hgraph" style={{ position: "absolute", top: "20vh", left: "0vw", display: "flex", flexFlow: "row no-wrap", alignItems: "top", justifyItems: "center", gap: "100px" }}>
+      <br></br>
+      <br></br>
+      <div id="H2Hgraph" style={{ position: "absolute", left: "0vw", display: "flex", flexFlow: "row no-wrap", alignItems: "top", justifyItems: "center", gap: "100px" }}>
         <svg className="H2H" width={1230} height={800} />
       </div>
     </>

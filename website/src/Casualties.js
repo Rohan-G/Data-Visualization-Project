@@ -355,11 +355,17 @@ function Casualties() {
 
     return (
         <>
-            <h1 align="center" style={{ "position": "fixed", "left": "48vw" }}>Safety</h1>
-            <div style={{ position: 'absolute', top: '12vh', left: '3vw' }}>
+            <h1 align="center" style={{ "left": "48vw", fontFamily: "Raleway",fontWeight: "300",fontSize: "40px" }}>Evolution of Safety</h1>
+            <p style={{ marginLeft: "10vw", marginRight:"10vw", fontFamily: "Raleway", color:"grey", fontSize:"18px" }}>
+                F1 is an entertaining sport, but it is also very dangerous. There have been many casualties on the track, both drivers and volunteers, and there have been many regulations added to make the sport safer for both drivers and by-standers. We wanted  to show a correlation (if any) between the added regulations and the casualties in the sport, and how safe the sport is in this day and age.
+                <br />
+                <br />
+                <b>Use the brush to select a range of x values to zoom into in the graph.<br></br> The green dots represent a driver casualty, and the yellow dots represent a marshall casualty. Hover over the dots for more details.<br></br>The red lines depict a new regulation that was introduced in that particular year. Click on the lines to view more information on the regulation.</b>    
+            </p>
+            <div style={{ position: 'relative', left: '3vw' }}>
                 <svg id="legend" />
             </div>
-            <div style={{ position: 'absolute', top: '25vh', left: '3vw' }}>
+            <div style={{ position: 'relative', left: '3vw' }}>
                 <svg id="championships" />
             </div>
 
