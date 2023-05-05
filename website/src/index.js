@@ -6,14 +6,15 @@ import Dominance from './ChampionshipWinners';
 import Main from './Main.js'
 import reportWebVitals from './reportWebVitals';
 import Casualties from './Casualties';
+import Linking from './Linking';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Dominance />
+    {/* <Dominance /> */}
     {/* <Casualties /> */}
-    {/* <Main /> */}
+    <Linking />
   </React.StrictMode>
 );
 

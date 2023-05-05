@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5"></script>
+    <title>Radial Chart</title>
+</head>
+<body>
+    <div>
+        <p font-family="Raleway" style="display: flex; justify-content: center; color: grey; font-size: 40px;"><b>Top 10 Drivers/Constructors ranked on various parameters</b></p>
+        <p font-family="Raleway" style="display: flex; justify-content: center; color: grey; font-size: 18px;">Select the parameter from the radio buttons below.</p>
+        <p font-family="Raleway" style="display: flex; justify-content: center; color: grey; font-size: 18px;">The visualisation is a radial chart of these top 10 Drivers/Constructors showing their team progression based on colour.</p>
+        <p font-family="Raleway" style="display: flex; justify-content: center; color: grey; font-size: 18px;">Further details like Points, Wins, Position are shown on hovering.</p>
+    </div>
+    <div>
+        <input type="radio" name="myradio" value="0" labelfor="0" id="0" checked='checked'/>
+        <label for="0">Top 10 drivers based on overall points</label><br/>
+        <input type="radio" name="myradio" value="1" labelfor="1" id="1"/>
+        <label for="1">Top 10 drivers based on overall race wins</label><br/>
+        <input type="radio" name="myradio" value="2" labelfor="2" id="2"/>
+        <label for="2">Top 10 drivers based on overall Championships</label><br/>
+        <input type="radio" name="myradio" value="3" labelfor="3" id="3"/>
+        <label for="3">Top 10 constructors based on overall points</label><br/>
+        <input type="radio" name="myradio" value="4" labelfor="4" id="4"/>
+        <label for="4">Top 10 constructors based on overall race wins</label><br/>
+        <input type="radio" name="myradio" value="5" labelfor="5" id="5"/>
+        <label for="5">Top 10 constructors based on overall Championships</label><br/>
+        <svg width="1425" height="780" class="radial-chart" style="background-color:#EFE0BB">
+        </svg>
+    </div>
+    
+    <script>
+        var data = []
+        let svg = d3.select(".radial-chart")
+        const func = async function (data, ind, mult)
+        {
+            if (ind < 3)
+            {
+                data = await d3.csv("https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/f1db_csv/allseasonstandings.csv")
+            }
+            else
+            {
+                data = await d3.csv("https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/f1db_csv/constructorsstandings.csv")
+            }
+            console.log(data)
+
+            center = [700, 350]
+
+            var arc = d3.arc()
+            .innerRadius(120)
+            .outerRadius(122)
+            .startAngle(- Math.PI * 1/2)
+            .endAngle(Math.PI);
+            svg.append("path")
+            .attr('transform', "translate("+center[0]+", "+center[1] + ")")
+            .attr("class", "arc")
+            .attr("d", arc)
+            .attr("fill","black");
+
+            for(var i=1950; i<2023; i+=10)
+            {
+                if (i > 1970)
+                {
+                    angle = (i - 1998.66)/(2023 - 1998.66) * 180 * 1/2
+                    svg.append("text")
+                    .attr("x", center[0] + 75)
+                    .attr("y", center[1] + 5)
+                    .attr("transform", "rotate("+angle+", " + center[0] +", "+center[1] + ")")
+                    .text(i.toString())
+                }
+                else
+                {
+                    angle = (i - 1950)/(2023 - 1950) * 180 * 3/2
+                    svg.append("text")
+                    .attr("x", center[0] - 110)
+                    .attr("y", center[1] + 5)
+                    .attr("transform", "rotate("+angle+", " + center[0] +", "+center[1] + ")")
+                    .text(i.toString())
+                }
+                angle = (i - 1950)/(2023 - 1950) * 180 * 3/2
+                svg.append("line")
+                .attr("x1", center[0] - 120)
+                .attr("x2", center[0] - 110)
+                .attr("y1", center[1])
+                .attr("y2", center[1])
+                .attr("transform", "rotate("+angle+", " + center[0] +", "+center[1] + ")")
+                .attr("style", "stroke: black; stroke-width: 2")
+            }
+
+            const headers = ['Overall Points in career']
+            const top = [['Lewis Hamilton', 'Sebastian Vettel', 'Fernando Alonso', 'Max Verstappen', 'Kimi Raikkonen', 'Valtteri Bottas', 'Nico Rosberg', 'Michael Schumacher', 'Daniel Ricciardo', 'Jenson Button'],
+                        ['Lewis Hamilton', 'Michael Schumacher', 'Sebastian Vettel', 'Alain Prost', 'Ayrton Senna', 'Max Verstappen', 'Fernando Alonso', 'Nigel Mansell', 'Jackie Stewart', 'Jim Clark'], ['Michael Schumacher', 'Lewis Hamilton', 'Juan Fangio', 'Alain Prost', 'Sebastian Vettel', 'Jack Brabham', 'Jackie Stewart', 'Niki Lauda', 'Nelson Piquet', 'Ayrton Senna'],
+                        ['Ferrari', 'Mercedes', 'Red Bull', 'McLaren', 'Williams', 'Lotus', 'Renault', 'Force India', 'Sauber', 'Brabham'],
+                        ['Ferrari', 'McLaren', 'Mercedes', 'Red Bull', 'Lotus', 'Brabham', 'Renault', 'Benetton', 'Tyrrell'],
+                        ['Ferrari', 'Williams', 'McLaren', 'Mercedes', 'Lotus', 'Red Bull', 'Cooper', 'Brabham', 'Renault', 'Vanwall']]
+            const carcolours = new Map()
+            carcolours.set('Ferrari', '#EF1A2D')
+            carcolours.set('Mercedes', '#0D98BA')
+            carcolours.set('Maserati', 'darkgreen')
+            carcolours.set('Red Bull', ' #00008B')
+            carcolours.set('Toro Rosso', '#1D19AC')
+            carcolours.set('BMW', '#1D19AC')
+            carcolours.set('McLaren', '#FF8000')
+            carcolours.set('Aston Martin', '#037A68')
+            carcolours.set('Force India', 'pink')
+            carcolours.set('Benetton', '#037A68')
+            carcolours.set('Jordan', '#037A68')
+            carcolours.set('Cooper', 'blue')
+            carcolours.set('Tyrrell', 'darkblue')
+            carcolours.set('Vanwall', 'darkgreen')
+            carcolours.set('Brabham', '#037A68')
+            carcolours.set('Williams', '#FFFFFF')
+            carcolours.set('Renault', '#FFF500')
+            carcolours.set('Honda', '#CC0000')
+            carcolours.set('BAR', '#6e7a77')
+            carcolours.set('Alfa Romeo', '#A42134')
+            carcolours.set('Sauber', '#739CD9')
+            carcolours.set('Alpine', '#2173B8')
+            carcolours.set('Lotus', '#86995B')
+            carcolours.set('BRM', '#86995B')
+            carcolourlist = ['Maserati', 'Cooper', 'Tyrrell', 'Vanwall', 'Brabham', 'Ferrari', 'Mercedes', 'Red Bull', 'Toro Rosso', 'Sauber', 'BMW', 'McLaren', 'Aston Martin', 'Force India', 'Benetton', 'Jordan',
+        'Williams', 'Renault', 'Honda', 'BAR', 'Alfa Romeo', 'Alpine', 'Lotus', 'BRM']
+            // var ind = 0
+            // var mult = 1
+            var drivcolors = ["", "", "", "", "", "", "", "", "", ""]
+            var drivpoints = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            var drivwins = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            var drivchamps = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            for(let i=0; i<data.length; i++)
+            {
+                // console.log(data[i]["Driver"])
+                var constr = top[ind][0]
+                var driv = top[ind][0]
+                var p = -1
+                for (j = 0; j<10; j++)
+                {
+                    if (ind >= 3 && data[i]["Constructor"].includes(top[ind][j]))
+                    {
+                        p = j
+                        constr = top[ind][j]
+                        break
+                    }
+                    else if (ind < 3 && data[i]["Driver"].includes(top[ind][j]))
+                    {
+                        p = j
+                        driv = top[ind][j]
+                        break
+                    }
+                }
+                if (p != -1)
+                {
+                    var p = 0
+                    if (ind < 3)
+                    {
+                        p = top[ind].indexOf(driv)
+                    }
+                    else
+                    {
+                        p = top[ind].indexOf(constr)
+                    }
+                    console.log(p)
+                    const index = p
+                    var colour;
+                    var carcolour = null
+                    if (ind < 3)
+                    {
+                        for(j = 0; j<carcolourlist.length; j++)
+                        {
+                            if (data[i]["Constructor"].includes(carcolourlist[j]))
+                            {
+                                carcolour = carcolours.get(carcolourlist[j])
+                                break
+                            }
+                        }
+                    }
+                    else
+                    {
+                        carcolour = carcolours.get(constr)
+                    }
+                    if (carcolour == null)
+                    {
+                        carcolour = 'black'
+                    }
+                    drivcolors[index] = carcolour
+                    drivpoints[index] += parseInt(data[i]["Points"])
+                    drivwins[index] += parseInt(data[i]["Wins"])
+
+                    if (data[i]['Pos'] == 1)
+                    {
+                        colour = "gold"
+                        drivchamps[index] += 1
+                    }
+                    else if (data[i]['Pos'] == 2)
+                    {
+                        colour = "silver"
+                    } 
+                    else if (data[i]['Pos'] == 3)
+                    {
+                        colour = "#CD7F32"
+                    }
+                    else
+                    {
+                        colour = carcolour
+                    }
+                    const ccolor = carcolour
+                    angle = (data[i]["Year"] - 1950)/(2023 - 1950) * 180 * 3/2
+                    const yr = data[i]["Year"]
+                    const curdata = data[i]
+                    svg.append("circle")
+                    .attr("cx", center[0]-128 - index * 20)
+                    .attr("cy", center[1])
+                    .attr("r", 4)
+                    .attr("transform", "rotate("+angle+", " + center[0] +", "+center[1] + ")")
+                    .attr('stroke', "black")
+                    .attr('fill', colour)
+                    .attr("id", function(){return "c"+index+data[i]["Year"]})
+                    .on("mouseover", function() {
+                        d3.select("#c"+index+yr).attr('stroke', ccolor)
+                        if (ind < 3)
+                        {
+                            tippy("#c"+index+yr, {
+                            content: "Driver: "+curdata["Driver"]+"<br>Position: "+curdata["Pos"]+"<br>Team: "+curdata["Constructor"]+"<br>Points: "+curdata["Points"]+"<br>Wins: "+curdata["Wins"]+"<br>Year: "+curdata["Year"]
+                            })
+                        }
+                        else
+                        {
+                            tippy("#c"+index+yr, {
+                            content: "Name: "+curdata["Constructor"]+"<br>Position: "+curdata["Pos"]+"<br>Points: "+curdata["Points"]+"<br>Wins: "+curdata["Wins"]+"<br>Year: "+curdata["Year"]
+                            })
+                        }
+                    })
+                    .on("mouseout", function() {
+                        d3.select("#c"+index+yr).attr('stroke', "black")
+                    })
+                }
+            }
+            for(var i=0; i<10; i++)
+            {
+                const ind2 = i
+                let points2 = 0
+                if (ind%3 == 0)
+                {
+                    const points = drivpoints[ind2]
+                    points2 = points
+                }
+                else if (ind%3 == 1)
+                {
+                    const points = drivwins[ind2]
+                    points2 = points
+                }
+                else if (ind%3 == 2)
+                {
+                    const points = drivchamps[ind2]
+                    points2 = points
+                }
+                const colour = drivcolors[ind2]
+                
+                svg.append("rect")
+                .attr("x", center[0] - 147 - points2/10 * mult)
+                .attr("y", center[1] + 120 + i * 20)
+                .attr("width", points2/10 * mult)
+                .attr("height", 15)
+                .attr("style", "fill: "+drivcolors[i]+"; stroke-width: 2; stroke: black")
+                .attr("id", "r"+i)
+                .on("mouseover", function() {
+                    d3.select("#r"+ind2).attr('stroke', colour)
+                    if (ind%3 == 0)
+                    {
+                        tippy("#r"+ind2, {
+                        content: "Total Points: "+points2
+                        })
+                    }
+                    else if (ind%3 == 1)
+                    {
+                        tippy("#r"+ind2, {
+                        content: "Total Wins: "+points2
+                        })
+                    }
+                    else if (ind%3 == 2)
+                    {
+                        tippy("#r"+ind2, {
+                        content: "Total Championships: "+points2
+                        })
+                    }
+                })
+                .on("mouseout", function() {
+                    d3.select("#r"+ind2).attr('stroke', "black")
+                })
+
+                svg.append("text")
+                .attr("x", center[0] - 10)
+                .attr("y", center[1] + 132 + i * 20)
+                .text(top[ind][i])
+                .attr("text-anchor", "end")
+            }
+        }
+        let b1 = document.getElementById("0")
+        let b2 = document.getElementById("1")
+        let b3 = document.getElementById("2")
+        let b4 = document.getElementById("3")
+        let b5 = document.getElementById("4")
+        let b6 = document.getElementById("5")
+        
+        b1.addEventListener("click", function (){
+            ind = 0
+            mult = 1
+            svg.selectAll("*").remove()
+            func(data, ind, mult);
+        })
+        b2.addEventListener("click", function (){
+            ind = 1
+            mult = 50
+            svg.selectAll("*").remove()
+            func(data, ind, mult);
+        })
+        b3.addEventListener("click", function (){
+            ind = 2
+            mult = 500
+            svg.selectAll("*").remove()
+            func(data, ind, mult);
+        })
+        b4.addEventListener("click", function (){
+            ind = 3
+            mult = 0.5
+            svg.selectAll("*").remove()
+            func(data, ind, mult);
+        })
+        b5.addEventListener("click", function (){
+            ind = 4
+            mult = 20
+            svg.selectAll("*").remove()
+            func(data, ind, mult);
+        })
+        b6.addEventListener("click", function (){
+            ind = 5
+            mult = 250
+            svg.selectAll("*").remove()
+            func(data, ind, mult);
+        })
+        func(data, 0, 1);
+    </script>
+</body>
+</html>

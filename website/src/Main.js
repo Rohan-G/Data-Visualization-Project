@@ -5,15 +5,19 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { useNavigate } from 'react-router';
 
 function Main(){
+
+    const navigate = useNavigate();
     
     return(
         <>
             <img src="logo.png" align="center" style={{ "position": "absolute", "left": "42.5vw" , top: "5vh", width:"15vw"}} />
 
             <div id="Cards" style={{position: "absolute", top: "25vh", left: "6vw", right:"6vw", display: "flex", flexFlow: "row wrap", alignItems: "top", justifyItems: "center", gap: "100px"}}>
-                <Card sx={{ height: 180, width: 235 , color:"rgb(250,235,225)", backgroundColor:"red", transition: '0.5s', "&:hover": { transition: '0.5s' ,transform: "scale3d(1.05, 1.05, 1)" }}}>
+                <a href="./driverGrid/driver.html">
+                    <Card sx={{ height: 180, width: 235 , color:"rgb(250,235,225)", backgroundColor:"red", transition: '0.5s', "&:hover": { transition: '0.5s' ,transform: "scale3d(1.05, 1.05, 1)" }}}>
                     <CardActionArea>
                         <CardMedia
                         component="img"
@@ -32,8 +36,9 @@ function Main(){
                         </CardContent>
                     </CardActionArea>
                 </Card>
+                </a>
 
-                <Card sx={{ height: 180, width: 235 , color:"rgb(250,235,225)", backgroundColor:"red", transition: '0.5s', "&:hover": { transition: '0.5s' ,transform: "scale3d(1.05, 1.05, 1)" }}}>
+                <Card sx={{ height: 180, width: 235 , color:"rgb(250,235,225)", backgroundColor:"red", transition: '0.5s', "&:hover": { transition: '0.5s' ,transform: "scale3d(1.05, 1.05, 1)" }}} onClick={() => {navigate("/casualties")}}>
                     <CardActionArea>
                         <CardMedia
                         component="img"
@@ -53,6 +58,7 @@ function Main(){
                     </CardActionArea>
                 </Card>
 
+                <a href="./Sunburst/engineVsconstructor.html">
                 <Card sx={{ height: 180, width: 235 , color:"rgb(250,235,225)", backgroundColor:"red", transition: '0.5s', "&:hover": { transition: '0.5s' ,transform: "scale3d(1.05, 1.05, 1)" }}}>
                     <CardActionArea>
                         <CardMedia
@@ -72,8 +78,9 @@ function Main(){
                         </CardContent>
                     </CardActionArea>
                 </Card>
+                </a>
 
-                <Card sx={{ height: 180, width: 235 , color:"rgb(250,235,225)", backgroundColor:"red", transition: '0.5s', "&:hover": { transition: '0.5s' ,transform: "scale3d(1.05, 1.05, 1)" }}}>
+                <Card sx={{ height: 180, width: 235 , color:"rgb(250,235,225)", backgroundColor:"red", transition: '0.5s', "&:hover": { transition: '0.5s' ,transform: "scale3d(1.05, 1.05, 1)" }}} onClick={() => {navigate("/dominance")}}>
                     <CardActionArea>
                         <CardMedia
                         component="img"
@@ -93,7 +100,7 @@ function Main(){
                     </CardActionArea>
                 </Card>
 
-                <Card sx={{ height: 180, width: 235 , color:"rgb(250,235,225)", backgroundColor:"red", transition: '0.5s', "&:hover": { transition: '0.5s' ,transform: "scale3d(1.05, 1.05, 1)" }}}>
+                <Card sx={{ height: 180, width: 235 , color:"rgb(250,235,225)", backgroundColor:"red", transition: '0.5s', "&:hover": { transition: '0.5s' ,transform: "scale3d(1.05, 1.05, 1)" }}} onClick={() => {navigate("/h2h")}}>
                     <CardActionArea>
                         <CardMedia
                         component="img"
@@ -113,6 +120,7 @@ function Main(){
                     </CardActionArea>
                 </Card>
 
+                <a href="./globeTest/globe.html">
                 <Card sx={{ height: 180, width: 235 , color:"rgb(250,235,225)", backgroundColor:"red", transition: '0.5s', "&:hover": { transition: '0.5s' ,transform: "scale3d(1.05, 1.05, 1)" }}}>
                     <CardActionArea>
                         <CardMedia
@@ -132,7 +140,9 @@ function Main(){
                         </CardContent>
                     </CardActionArea>
                 </Card>
+                </a>
 
+                <a href='./radial.html'>
                 <Card sx={{ height: 180, width: 235 , color:"rgb(250,235,225)", backgroundColor:"red", transition: '0.5s', "&:hover": { transition: '0.5s' ,transform: "scale3d(1.05, 1.05, 1)" }}}>
                     <CardActionArea>
                         <CardMedia
@@ -152,7 +162,9 @@ function Main(){
                         </CardContent>
                     </CardActionArea>
                 </Card>
+                </a>
 
+                <a href='growingbar.html'>
                 <Card sx={{ height: 180, width: 235 , color:"rgb(250,235,225)", backgroundColor:"red", transition: '0.5s', "&:hover": { transition: '0.5s' ,transform: "scale3d(1.05, 1.05, 1)" }}}>
                     <CardActionArea>
                         <CardMedia
@@ -172,6 +184,7 @@ function Main(){
                         </CardContent>
                     </CardActionArea>
                 </Card>
+                </a>
 
             </div>
         </>
