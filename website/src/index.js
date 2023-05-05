@@ -6,6 +6,7 @@ import Dominance from './ChampionshipWinners';
 import Main from './Main.js'
 import reportWebVitals from './reportWebVitals';
 import Casualties from './Casualties';
+import Globe from './Globe';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +14,8 @@ root.render(
     {/* <App /> */}
     {/* <Dominance /> */}
     {/* <Casualties /> */}
-    <Main />
+    {/* <Main /> */}
+    <Globe />
   </React.StrictMode>
 );
 
