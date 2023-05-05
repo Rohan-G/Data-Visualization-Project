@@ -134,12 +134,16 @@
                             .attr("font-size", "16px")
                             .attr("fill", "white")
                             .text(dataYear[i].Driver.toUpperCase())
-                            // .on("mouseover", function (d) {
-                            //     tippy(this, {
-                            //         content: "<strong>" + "Driver: " + dataYear[i].Driver + "</strong>",
-                            //         allowHTML: true
-                            //     })
-                            // })
+                            .on("mouseover", function (d) {
+                                tippy(this, {
+                                    content: "<strong>" + "Driver: " + "</strong>" + dataYear[i].Driver + "<br>" +
+                                    "<strong>" + "Points: " + "</strong>" + dataYear[i].Points + "<br>" + 
+                                    "<strong>" + "Finishes In Points: " + "</strong>" + dataYear[i].PointsFinishes + "<br>" +
+                                    "<strong>" + "Wins: " + "</strong>" + dataYear[i].Wins + "<br>" +
+                                    "<strong>" + "Pole Positions: " + "</strong>" + dataYear[i].Poles + "<br>",
+                                    allowHTML: true
+                                })
+                            })
 
 
                         svg.append("image")
@@ -259,7 +263,17 @@
                             .attr("text-anchor", "middle")
                             .attr("font-size", "16px")
                             .attr("fill", "white")
-                            .text(dataYear[i].Driver.toUpperCase());
+                            .text(dataYear[i].Driver.toUpperCase())
+                            .on("mouseover", function (d) {
+                                tippy(this, {
+                                    content: "<strong>" + "Driver: " + "</strong>" + dataYear[i].Driver + "<br>" +
+                                    "<strong>" + "Points: " + "</strong>" + dataYear[i].Points + "<br>" + 
+                                    "<strong>" + "Finishes In Points: " + "</strong>" + dataYear[i].PointsFinishes + "<br>" +
+                                    "<strong>" + "Wins: " + "</strong>" + dataYear[i].Wins + "<br>" +
+                                    "<strong>" + "Pole Positions: " + "</strong>" + dataYear[i].Poles + "<br>",
+                                    allowHTML: true
+                                })
+                            })
 
                         svg.append("image")
                             .attr("x", x_init2 + 70)
@@ -379,7 +393,17 @@
                             .attr("text-anchor", "middle")
                             .attr("font-size", "16px")
                             .attr("fill", "white")
-                            .text(dataYear[i].Driver.toUpperCase());
+                            .text(dataYear[i].Driver.toUpperCase())
+                            .on("mouseover", function (d) {
+                                tippy(this, {
+                                    content: "<strong>" + "Driver: " + "</strong>" + dataYear[i].Driver + "<br>" +
+                                    "<strong>" + "Points: " + "</strong>" + dataYear[i].Points + "<br>" + 
+                                    "<strong>" + "Finishes In Points: " + "</strong>" + dataYear[i].PointsFinishes + "<br>" +
+                                    "<strong>" + "Wins: " + "</strong>" + dataYear[i].Wins + "<br>" +
+                                    "<strong>" + "Pole Positions: " + "</strong>" + dataYear[i].Poles + "<br>",
+                                    allowHTML: true
+                                })
+                            })
 
 
                         svg.append("image")
@@ -502,7 +526,17 @@
                             .attr("text-anchor", "middle")
                             .attr("font-size", "16px")
                             .attr("fill", "white")
-                            .text(dataYear[i].Driver.toUpperCase());
+                            .text(dataYear[i].Driver.toUpperCase())
+                            .on("mouseover", function (d) {
+                                tippy(this, {
+                                    content: "<strong>" + "Driver: " + "</strong>" + dataYear[i].Driver + "<br>" +
+                                    "<strong>" + "Points: " + "</strong>" + dataYear[i].Points + "<br>" + 
+                                    "<strong>" + "Finishes In Points: " + "</strong>" + dataYear[i].PointsFinishes + "<br>" +
+                                    "<strong>" + "Wins: " + "</strong>" + dataYear[i].Wins + "<br>" +
+                                    "<strong>" + "Pole Positions: " + "</strong>" + dataYear[i].Poles + "<br>",
+                                    allowHTML: true
+                                })
+                            })
 
                         svg.append("image")
                             .attr("x", x_init4 + 70)
