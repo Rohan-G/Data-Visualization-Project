@@ -118,285 +118,232 @@ drivers.sort();
 function App() {
   const [myArr, updArr] = useState();
   const [myMap, updMap] = useState();
-  const [dname,chDriver] = useState("");
+  const [dname, chDriver] = useState("");
 
-  async function insertImage(dname){
-    await d3.csv('https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/DriverImages.csv', function(data){
-      if(data.Driver==dname){
+  async function insertImage(dname) {
+    await d3.csv('https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/DriverImages.csv', function (data) {
+      if (data.Driver == dname) {
         d3.select(".images").append("img")
-        .attr("height",500)
-        .attr("width",500)
-        .attr("src",data['Image Link']);
+          .attr("height", 500)
+          .attr("width", 500)
+          .attr("src", data['Image Link']);
         d3.select(".images").append("h2")
-        .attr("align","center")
-        .text(dname)
+          .attr("align", "center")
+          .text(dname)
         d3.select(".images").append("p")
-        .attr("class","info")
-        .text("Hover over one of the veritcal lines to see the season wise points breakdown")
+          .attr("class", "info")
+          .text("Hover over one of the veritcal lines to see the season wise points breakdown")
       }
     })
   }
 
-  function drawGraph(){
+  function drawGraph() {
     var pointScale = [0, 50, 100, 150, 200, 250, 300, 350, 400, 450];
     var xVals = [2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
     const myVals = Array.from(myArr.keys());
     // console.log(myArr.keys());
-    
-    if(myArr.length !== 0 && myMap.length !== 0){
+
+    var lineOpp = d3.line()
+      .x(function (d) { return xScale(Number(d)) + xScale.bandwidth() / 2 })
+      .y(function (d) { return yScale(myArr.get(d)[1]) - 7 })
+      .curve(d3.curveLinear);
+
+    var lineMy = d3.line()
+      .x(function (d) { return xScale(Number(d)) + xScale.bandwidth() / 2 })
+      .y(function (d) { return yScale(myArr.get(d)[0]) - 7 })
+      .curve(d3.curveLinear);
+
+    if (myArr.length !== 0 && myMap.length !== 0) {
       // console.log("Hello");
       let svg = d3.select(".H2H");
 
       svg.append("line")
-      .attr("x1",100)
-      .attr("x2",1230)
-      .attr("y1",687.5)
-      .attr("y2",687.5)
-      .attr("style","stroke: black; stroke-width: 5");
+        .attr("x1", 100)
+        .attr("x2", 1230)
+        .attr("y1", 687.5)
+        .attr("y2", 687.5)
+        .attr("style", "stroke: black; stroke-width: 5");
 
       svg.append("line")
-      .attr("x1",100)
-      .attr("x2",100)
-      .attr("y1",0)
-      .attr("y2",690)
-      .attr("style","stroke: black; stroke-width: 5")
+        .attr("x1", 100)
+        .attr("x2", 100)
+        .attr("y1", 0)
+        .attr("y2", 690)
+        .attr("style", "stroke: black; stroke-width: 5")
 
       var xScale = d3.scaleBand();
-      xScale.range([100,1215]);
-      xScale.domain(xVals.map((d)=>{return d;}));
+      xScale.range([100, 1215]);
+      xScale.domain(xVals.map((d) => { return d; }));
       var yScale = d3.scaleLinear();
-      yScale.range([687.5,10]);
-      yScale.domain([0,480]);
+      yScale.range([687.5, 10]);
+      yScale.domain([0, 480]);
 
       svg.append("text")
-      .attr("x",625)
-      .attr("y",750)
-      .text("Season")
-      .attr("style","font-size:1.5vw; font-weight:bold");
+        .attr("x", 625)
+        .attr("y", 750)
+        .text("Season")
+        .attr("style", "font-size:1.5vw; font-weight:bold");
 
       svg.selectAll(".xLabels")
-      .data(xVals)
-      .enter().append("text")
-      .attr("class","xLabels")
-      .attr("x", function(d){ return xScale(d) + 5})
-      .attr("y", 710)
-      .text(function(d){ return d })
-      .attr("style","font-size:1.01vw")
+        .data(xVals)
+        .enter().append("text")
+        .attr("class", "xLabels")
+        .attr("x", function (d) { return xScale(d) + 5 })
+        .attr("y", 710)
+        .text(function (d) { return d })
+        .attr("style", "font-size:1.01vw")
 
       svg.selectAll(".xticks")
-      .data(xVals)
-      .enter().append("line")
-      .attr("class","xticks")
-      .attr("x1", function(d){ return xScale(d) + xScale.bandwidth()/2})
-      .attr("y1", 695)
-      .attr("x2", function(d){ return xScale(d) + xScale.bandwidth()/2})
-      .attr("y2", 680)
-      .attr("style","stroke:black; stroke-width:2");
+        .data(xVals)
+        .enter().append("line")
+        .attr("class", "xticks")
+        .attr("x1", function (d) { return xScale(d) + xScale.bandwidth() / 2 })
+        .attr("y1", 695)
+        .attr("x2", function (d) { return xScale(d) + xScale.bandwidth() / 2 })
+        .attr("y2", 680)
+        .attr("style", "stroke:black; stroke-width:2");
 
       svg.append("text")
-      .attr("x",40)
-      .attr("y",400)
-      .text("Points")
-      .attr("transform","rotate(270,40,400)")
-      .attr("style","font-size:1.5vw; font-weight:bold");
+        .attr("x", 40)
+        .attr("y", 400)
+        .text("Points")
+        .attr("transform", "rotate(270,40,400)")
+        .attr("style", "font-size:1.5vw; font-weight:bold");
 
       svg.selectAll(".yLabels")
-      .data(pointScale)
-      .enter().append("text")
-      .attr("class","yLabels")
-      .attr("x", 60)
-      .attr("y", function(d){ return yScale(d)})
-      .text(function(d){ return d })
-      .attr("style","font-size:1.01vw")
+        .data(pointScale)
+        .enter().append("text")
+        .attr("class", "yLabels")
+        .attr("x", 60)
+        .attr("y", function (d) { return yScale(d) })
+        .text(function (d) { return d })
+        .attr("style", "font-size:1.01vw")
 
       svg.selectAll(".yTicks")
-      .data(pointScale)
-      .enter().append("line")
-      .attr("class","yTicks")
-      .attr("x1", 95)
-      .attr("y1", function(d){ return yScale(d) - 7})
-      .attr("x2", 105)
-      .attr("y2", function(d){ return yScale(d) - 7})
-      .attr("style", "stroke: black; stroke-width: 1")
+        .data(pointScale)
+        .enter().append("line")
+        .attr("class", "yTicks")
+        .attr("x1", 95)
+        .attr("y1", function (d) { return yScale(d) - 7 })
+        .attr("x2", 105)
+        .attr("y2", function (d) { return yScale(d) - 7 })
+        .attr("style", "stroke: black; stroke-width: 1")
 
       svg.selectAll(".infoLines")
-      .data(xVals)
-      .enter().append("line")
-      .attr("class","infoLines")
-      .attr("x1", function(d){ return xScale(d) + xScale.bandwidth()/2})
-      .attr("y1", 0)
-      .attr("x2", function(d){ return xScale(d) + xScale.bandwidth()/2})
-      .attr("y2", 687.5)
-      .attr("style","stroke:black; stroke-width:8; stroke-opacity:0.1")
-      .on("mouseover",function(event,d){
-        d3.select(event.target).attr("style","stroke:black; stroke-width:8; stroke-opacity:0.5");
-        d3.selectAll(".info").remove()
-        if(!myMap.has(String(d))){
-          d3.select(".images").append("p")
-          .attr("class","info")
-          .text("Did not drive in "+d)
-        }
-        else{
-          d3.select(".images").append("p")
-          .attr("class","info")
-          .html("Season: " + d + "<br>" + "Team: " + myMap.get(String(d)) + "<br>" + "Points: "+myArr.get(String(d))[0] + "<br>" +"Teammates' total Points: "+myArr.get(String(d))[1])
-          
-        }
-      })
-      .on("mouseout",function(event,d){
-        d3.select(event.target).attr("style","stroke:black; stroke-width:8; stroke-opacity:0.1");
-        d3.selectAll(".info").remove()
-        d3.select(".images").append("p")
-        .attr("class","info")
-        .text("Hover over one of the veritcal lines to see the season wise points breakdown")
-      });
+        .data(xVals)
+        .enter().append("line")
+        .attr("class", "infoLines")
+        .attr("x1", function (d) { return xScale(d) + xScale.bandwidth() / 2 })
+        .attr("y1", 0)
+        .attr("x2", function (d) { return xScale(d) + xScale.bandwidth() / 2 })
+        .attr("y2", 687.5)
+        .attr("style", "stroke:black; stroke-width:8; stroke-opacity:0.1")
+        .on("mouseover", function (event, d) {
+          d3.select(event.target).attr("style", "stroke:black; stroke-width:8; stroke-opacity:0.5");
+          d3.selectAll(".info").remove()
+          if (!myMap.has(String(d))) {
+            d3.select(".images").append("p")
+              .attr("class", "info")
+              .text("Did not drive in " + d)
+          }
+          else {
+            d3.select(".images").append("p")
+              .attr("class", "info")
+              .html("Season: " + d + "<br>" + "Team: " + myMap.get(String(d)) + "<br>" + "Points: " + myArr.get(String(d))[0] + "<br>" + "Teammates' total Points: " + myArr.get(String(d))[1])
 
-      svg.selectAll(".opponent")
-      .data(myVals)
-      .enter().append("line")
-      .attr("class","opponent")
-      .attr("x1", function(d, index){
-        if(index==0){
-          return 100;
-        }
-        else{
-          return xScale(Number(myVals[index-1])) + xScale.bandwidth()/2;
-        }
-      })
-      .attr("y1",function(d, index){
-        if(index==0){
-          return 690;
-        }
-        else{
-          return yScale(myArr.get(myVals[index-1])[1]) - 7;
-        }
-      })
-      .attr("x2",function(d){return xScale(Number(d)) + xScale.bandwidth()/2})
-      .attr("y2",function(d){return yScale(myArr.get(d)[1]) - 7})
-      .attr("style","stroke: red; stroke-width:12; stroke-opacity:0.5")
-      .style("z-index","0")
-      .on("mouseover",function(event,d){
-        svg.selectAll(".opponent").attr("style","stroke: red; stroke-width:12; stroke-opacity:1");
-      })
-      .on("mouseout",function(event,d){
-        svg.selectAll(".opponent").attr("style","stroke: red; stroke-width:12; stroke-opacity:0.5")
-      })
+          }
+        })
+        .on("mouseout", function (event, d) {
+          d3.select(event.target).attr("style", "stroke:black; stroke-width:8; stroke-opacity:0.1");
+          d3.selectAll(".info").remove()
+          d3.select(".images").append("p")
+            .attr("class", "info")
+            .text("Hover over one of the veritcal lines to see the season wise points breakdown")
+        });
+
+      svg.append("path")
+        .datum(myVals)
+        .attr("d", lineOpp)
+        .attr("fill", "none")
+        .attr("style", "stroke: red; stroke-width:10; stroke-opacity:0.5")
+        .on("mouseover", function (event, d) {
+          d3.select(this).attr("style", "stroke: red; stroke-width:10; stroke-opacity:1");
+        })
+        .on("mouseout", function (event, d) {
+          d3.select(this).attr("style", "stroke: red; stroke-width:10; stroke-opacity:0.5")
+        })
+        .transition()
+        .duration(10000)
+        .ease(d3.easeLinear)
+        .attrTween("stroke-dasharray", function() {
+            var len = this.getTotalLength();
+            return function(t) { return (d3.interpolateString("0," + len, len + ",0"))(t); };
+        });
+
 
       svg.selectAll(".oppPoints")
-      .data(myVals)
-      .enter().append("circle")
-      .attr("class","oppPoints")
-      .attr("cx",function(d){ return xScale(Number(d)) + xScale.bandwidth()/2 })
-      .attr("cy",function(d){ return yScale(myArr.get(d)[1]) - 7 })
-      .attr("r", 20)
-      .attr("fill","red");
+        .data(myVals)
+        .enter().append("circle")
+        .attr("class", "oppPoints")
+        .attr("cx", function (d) { return xScale(Number(d)) + xScale.bandwidth() / 2 })
+        .attr("cy", function (d) { return yScale(myArr.get(d)[1]) - 7 })
+        .attr("r", 13)
+        .attr("fill", "red");
 
-      svg.append("circle")
-      .attr("class","oppPoints")
-      .attr("cx",100)
-      .attr("cy",690)
-      .attr("r", 20)
-      .attr("fill","red");
-
-      svg.selectAll(".myDriver")
-      .data(myVals)
-      .enter().append("line")
-      .attr("class","myDriver")
-      .attr("x1", function(d, index){
-        if(index==0){
-          return 100;
-        }
-        else{
-          return xScale(Number(myVals[index-1])) + xScale.bandwidth()/2;
-        }
-      })
-      .attr("y1",function(d, index){
-        if(index==0){
-          return 690;
-        }
-        else{
-          return yScale(myArr.get(myVals[index-1])[0]) - 7;
-        }
-      })
-      .attr("x2",function(d){return xScale(Number(d)) + xScale.bandwidth()/2})
-      .attr("y2",function(d){return yScale(myArr.get(d)[0]) - 7})
-      .attr("style","stroke: blue; stroke-width:12; stroke-opacity:0.5")
-      .on("mouseover",function(event,d){
-        svg.selectAll(".myDriver").attr("style","stroke: blue; stroke-width:12; stroke-opacity:1");
-      })
-      .on("mouseout",function(event,d){
-        svg.selectAll(".myDriver").attr("style","stroke: blue; stroke-width:12; stroke-opacity:0.5")
-      });
+      svg.append("path")
+        .datum(myVals)
+        .attr("d", lineMy)
+        .attr("fill", "none")
+        .attr("style", "stroke: blue; stroke-width:8; stroke-opacity:0.5")
+        .on("mouseover", function (event, d) {
+          d3.select(this).attr("style", "stroke: blue; stroke-width:10; stroke-opacity:1");
+        })
+        .on("mouseout", function (event, d) {
+          d3.select(this).attr("style", "stroke: blue; stroke-width:10; stroke-opacity:0.5")
+        })
+        .transition()
+        .duration(10000)
+        .ease(d3.easeLinear)
+        .attrTween("stroke-dasharray", function() {
+            var len = this.getTotalLength();
+            return function(t) { return (d3.interpolateString("0," + len, len + ",0"))(t); };
+        });
 
       svg.selectAll(".myPoints")
-      .data(myVals)
-      .enter().append("circle")
-      .attr("class","myPoints")
-      .attr("cx",function(d){ return xScale(Number(d)) + xScale.bandwidth()/2 })
-      .attr("cy",function(d){ return yScale(myArr.get(d)[0]) - 7 })
-      .attr("r", 20)
-      .attr("fill","blue");
-
-      svg.append("circle")
-      .attr("class","myPoints")
-      .attr("cx",100)
-      .attr("cy",690)
-      .attr("r", 20)
-      .attr("fill","blue");
-      
-      // var line = d3
-      // .line()
-      // .x(function (d) {
-      //   console.log(d);
-      //   return xScale(Number(d)) + xScale.bandwidth()/2;
-      // })
-      // .y(function (d) {
-      //   console.log(d);
-      //   return yScale(myArr.get(d)[0]) - 7;
-      // });
-
-      // var lineElement = svg.selectAll(".line").data([myVals]);
-
-      // lineElement.enter()
-      // .append("path")
-      // .attr("class", "line")
-      // .attr("stroke", "blue")
-      // .attr("stroke-width", 12)
-      // .attr("fill", "none");
-
-      // lineElement.attr("d", line(myVals.slice(0,1)));
-
-      // lineElement.transition()
-      // .duration(1000) // Set the duration of the transition
-      // .ease(d3.easeLinear)
-      // .attr("d", line(myVals)); // Set the final line path
+        .data(myVals)
+        .enter().append("circle")
+        .attr("class", "myPoints")
+        .attr("cx", function (d) { return xScale(Number(d)) + xScale.bandwidth() / 2 })
+        .attr("cy", function (d) { return yScale(myArr.get(d)[0]) - 7 })
+        .attr("r", 13)
+        .attr("fill", "blue");
 
     }
   }
 
-  async function getData(name){
+  async function getData(name) {
     const newArr = new Map();
 
     // console.log(newArr);
 
     const newMap = new Map();
-    await d3.csv('https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/DriversStandings.csv',function(data){
-      if(data.Driver === name){
+    await d3.csv('https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/DriversStandings.csv', function (data) {
+      if (data.Driver === name) {
         newMap.set(data.Year, data.Constructor);
       }
     });
 
-    await d3.csv('https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/DriversStandings.csv',function(data){
-      if(newMap.has(data.Year)){
-        if(data.Constructor === newMap.get(data.Year)){
-          if(!newArr.has(data.Year)){
-            newArr.set(data.Year,[0,0])
+    await d3.csv('https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/DriversStandings.csv', function (data) {
+      if (newMap.has(data.Year)) {
+        if (data.Constructor === newMap.get(data.Year)) {
+          if (!newArr.has(data.Year)) {
+            newArr.set(data.Year, [0, 0])
           }
-          if(data.Driver === name){
+          if (data.Driver === name) {
             newArr.set(data.Year, [Number(data.Points), newArr.get(data.Year)[1]]);
           }
-          else{
-            newArr.set(data.Year, [newArr.get(data.Year)[0], newArr.get(data.Year)[1]+Number(data.Points)]);
+          else {
+            newArr.set(data.Year, [newArr.get(data.Year)[0], newArr.get(data.Year)[1] + Number(data.Points)]);
           }
         }
       }
@@ -405,31 +352,31 @@ function App() {
     updMap(newMap);
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     // console.log(myArr);
     // console.log(myMap);
-    if(myArr!=undefined && myMap!=undefined){
+    if (myArr != undefined && myMap != undefined) {
       d3.select(".H2H").remove();
       d3.select("#H2Hgraph").append("svg")
-      .attr("class","H2H")
-      .attr("width",1230)
-      .attr("height",800);
+        .attr("class", "H2H")
+        .attr("width", 1230)
+        .attr("height", 800);
       drawGraph();
 
       d3.selectAll(".images").remove();
       d3.select("#H2Hgraph").append("div")
-      .attr("class","images");
+        .attr("class", "images");
 
       insertImage(dname);
     }
-  },[myArr,myMap])
+  }, [myArr, myMap])
 
-  useEffect(()=>{
-    if(dname !== ""){
+  useEffect(() => {
+    if (dname !== "") {
       // console.log(dname);
       getData(dname);
     }
-  },[dname]);
+  }, [dname]);
 
   return (
     <>
@@ -451,11 +398,11 @@ function App() {
           id="combo-box-demo"
           options={drivers}
           sx={{ width: 300 }}
-          onChange={(event,value)=>{chDriver(value)}}
+          onChange={(event, value) => { chDriver(value) }}
           renderInput={(params) => <TextField {...params} label="Driver" />}
         />
       </div>
-      <div id="H2Hgraph" style={{position:"absolute", top: "20vh", left: "0vw", display:"flex", flexFlow:"row no-wrap", alignItems:"top", justifyItems:"center", gap:"100px" }}>
+      <div id="H2Hgraph" style={{ position: "absolute", top: "20vh", left: "0vw", display: "flex", flexFlow: "row no-wrap", alignItems: "top", justifyItems: "center", gap: "100px" }}>
         <svg className="H2H" width={1230} height={800} />
       </div>
     </>
