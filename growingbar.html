@@ -7,18 +7,16 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/popper.js@1"></script>
     <script src="https://unpkg.com/tippy.js@5"></script>
-    <title>Project</title>
+    <title>Growing Bar Chart</title>
 </head>
 <body>
-    <!-- <div>
-        <svg width="1425" height="780" class="bar-chart" style="background-color:#EFE0BB">
-        </svg>
-    </div> -->
     <div id="my_dataviz">
+        <br>
         <select id="selectSeason">
             <option>Select the season</option>
         </select>
-        <button id="button">Click me</button>
+        <button id="button" disabled>Drivers' Championship</button>
+        <button id="button2" disabled>Constructors' Championship</button>
     </div>
     <script>
 
@@ -26,23 +24,22 @@
             width = 800 - margin.left - margin.right,
             height = 600 - margin.top - margin.bottom;
 
-        // append the svg object to the body of the page
         var svg = d3.select("#my_dataviz")
         .attr("style", "background-color:#EFE0BB")
         .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .attr("id", "svgid")
-            // .attr("style", "background-color:#EFE0BB")
         .append("g")
             .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
 
         var data = []
-        // let svg = d3.select(".bar-chart")
         var season = 2022
 
         var m = new Map()
+        var disable1 = 1
+        var disable2 = 1
 
         const func = async function (data, season, round)
         {
@@ -95,6 +92,7 @@
             carcolours.set('McLaren', '#FF8000')
             carcolours.set('Aston Martin', '#037A68')
             carcolours.set('Force India', 'pink')
+            carcolours.set('Racing Point', 'pink')
             carcolours.set('Benetton', '#037A68')
             carcolours.set('Jordan', '#037A68')
             carcolours.set('Cooper', 'blue')
@@ -110,8 +108,9 @@
             carcolours.set('Alpine', '#2173B8')
             carcolours.set('Lotus', '#86995B')
             carcolours.set('BRM', '#86995B')
-            carcolourlist = ["Ferrari", "Mercedes", "Maserati", "Red Bull", "Toro Rosso", "AlphaTauri", "BMW", "McLaren", "Aston Martin", "Force India", "Benetton", "Jordan", "Cooper", 
-                            "Tyrrell", "Vanwall", "Brabham", "Williams", "Renault", "Honda", "BAR", "Alfa Romeo", "Sauber", "Alpine", "Lotus", "BRM"]
+            carcolours.set('Haas', '#E6002B')
+            carcolourlist = ["Ferrari", "Mercedes", "Maserati", "Red Bull", "Toro Rosso", "AlphaTauri", "BMW", "McLaren", "Aston Martin", "Force India", "Racing Point", "Benetton", "Jordan", "Cooper", 
+                            "Tyrrell", "Vanwall", "Brabham", "Williams", "Renault", "Honda", "BAR", "Alfa Romeo", "Sauber", "Alpine", "Lotus", "BRM", "Haas"]
 
 
             const y = d3.scaleBand()
@@ -187,7 +186,6 @@
             .attr("text-anchor", "center")
             .attr("x", width/2)
             .attr("y", margin.top)
-            .text("Season: "+season+"\nRound: "+round);
 
             // Y axis label:
             svg.append("text")
@@ -198,11 +196,15 @@
                 .attr("x", -margin.top - 100)
                 .text("Points")
 
+            if (data2.length != 0)
+            {
+                svg.selectAll("#overtext").text("Season: "+season+"\nRound: "+round)
+            }
+
             setTimeout(function() {
                 if (data2.length != 0)
                 {
                     round = round + 1
-                    svg.selectAll("#overtext").remove()
                     svg.selectAll("#xaxis").remove()
                     svg.selectAll("#yaxis").remove()
                     svg.selectAll("#xtitle").remove()
@@ -211,11 +213,191 @@
                 }
                 else
                 {
-                    svg.selectAll("#overtext").text("Season: "+season+"\nRound: "+(round-1))
+                    a.disabled = false
+                    b.disabled = false
+                }
+            }, 500)
+        }
+
+        const func2 = async function (data, season, round)
+        {
+            data = await d3.csv("https://raw.githubusercontent.com/Rohan-G/Data-Visualization-Project/main/dataset/f1db_csv/roundwiseconstructors.csv")
+            maxppl = 0
+            data2 = []
+            data3 = []
+            drivers = []
+            for(var i=0; i<data.length; i++)
+            {
+                if (data[i]["Season"] == season && data[i]["Round"] == round)
+                {
+                    data2.push(data[i])
+                    if (!m.has(data[i]["Name"]))
+                    {
+                        m.set(data[i]["Name"], 0)
+                    }
+                }
+                if (data[i]["Season"] == season)
+                {
+                    data3.push(data[i])
+                }
+
+            }
+            data3 = data3.reverse()
+            s = data3[0]["Season"]
+            r = data3[0]["Round"]
+            pos = data3[0]["Position"]
+            var maxpoints=0
+            for(var i=0; i<parseInt(pos); i++)
+            {
+                drivers.push(data3[i]["Name"])
+                if (i == parseInt(pos) - 1)
+                {
+                    maxpoints = data3[i]["Points"]
+                }
+            }
+            drivers = drivers.reverse()
+            data3 = data3.reverse()
+            console.log(drivers)
+
+            const carcolours = new Map()
+            carcolours.set('Ferrari', '#EF1A2D')
+            carcolours.set('Mercedes', '#0D98BA')
+            carcolours.set('Maserati', 'darkgreen')
+            carcolours.set('Red Bull', ' #00008B')
+            carcolours.set('Toro Rosso', '#1D19AC')
+            carcolours.set('AlphaTauri', 'darkgrey')
+            carcolours.set('BMW', '#1D19AC')
+            carcolours.set('McLaren', '#FF8000')
+            carcolours.set('Aston Martin', '#037A68')
+            carcolours.set('Force India', 'pink')
+            carcolours.set('Racing Point', 'pink')
+            carcolours.set('Benetton', '#037A68')
+            carcolours.set('Jordan', '#037A68')
+            carcolours.set('Cooper', 'blue')
+            carcolours.set('Tyrrell', 'darkblue')
+            carcolours.set('Vanwall', 'darkgreen')
+            carcolours.set('Brabham', '#037A68')
+            carcolours.set('Williams', '#FFFFFF')
+            carcolours.set('Renault', '#FFF500')
+            carcolours.set('Honda', '#CC0000')
+            carcolours.set('BAR', '#6e7a77')
+            carcolours.set('Alfa Romeo', '#A42134')
+            carcolours.set('Sauber', '#739CD9')
+            carcolours.set('Alpine', '#2173B8')
+            carcolours.set('Lotus', '#86995B')
+            carcolours.set('BRM', '#86995B')
+            carcolours.set('Haas', '#E6002B')
+            carcolourlist = ["Ferrari", "Mercedes", "Maserati", "Red Bull", "Toro Rosso", "AlphaTauri", "BMW", "McLaren", "Aston Martin", "Force India", "Racing Point", "Benetton", "Jordan", "Cooper", 
+                            "Tyrrell", "Vanwall", "Brabham", "Williams", "Renault", "Honda", "BAR", "Alfa Romeo", "Sauber", "Alpine", "Lotus", "BRM", "Haas"]
+
+
+            const y = d3.scaleBand()
+                .range([0, width])
+                .domain(drivers.map(function(d) { return d }))
+                .padding(0.2)
+            svg.append("g")
+                .attr("id", "xaxis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(y))
+                .selectAll("text")
+                    .attr("transform", "translate(-10,0)rotate(-45)")
+                    .style("text-anchor", "end");
+
+
+            const x = d3.scaleLinear()
+                .domain([0, maxpoints])
+                .range([ height, 0])
+            svg.append("g")
+                .attr("id", "yaxis")
+                .call(d3.axisLeft(x))
+
+            var bar = svg.selectAll("mybar")
+                .data(data2)
+                .enter()
+                .append("rect")
+                    .attr("id", function(d) {return "c"+drivers.indexOf(d["Name"])})
+                    .attr("x", function(d) { return y(d["Name"]); })
+                    .attr("width", y.bandwidth())
+                    .attr("fill", function(d) {
+                        var list = d["Name"].split(" ")
+                        var list2 = d["Name"].split("-")
+                        for (var i=0; i<list.length; i++)
+                        {
+                            if (carcolourlist.includes(list[i]))
+                            {
+                                return carcolours.get(list[i]);
+                            }
+                        }
+                        for (var i=0; i<list2.length; i++)
+                        {
+                            if (carcolourlist.includes(list2[i]))
+                            {
+                                return carcolours.get(list2[i]);
+                            }
+                        }
+                        return "black"
+                    })
+                    // no bar at the beginning thus:
+                    .attr("height", function(d) {return m.get(d["Name"]); }) // always equal to 0
+                    .attr("y", function(d) { return height - m.get(d["Name"]); })
+            bar.transition()
+                .duration(500)
+                .attr("y", function(d) { m.set(d["Name"], parseInt(d["Points"]*height/maxpoints));return height - d["Points"]*height/maxpoints; })
+                .attr("height", function(d) { return d["Points"]*height/maxpoints; })
+                .delay(function(d,i){return(0*100)})
+
+            bar.on("mouseover", function (d, f) {
+                tippy("#c"+drivers.indexOf(f["Name"]), {
+                    content: "Position: "+f["Position"]+"<br>Points: "+f["Points"]+"<br>Wins: "+f["Wins"]
+                })
+            })
+
+            svg.append("text")
+            .attr("id", "xtitle")
+            .attr("text-anchor", "end")
+            .attr("x", width/2 + 30)
+            .attr("y", height + margin.top + 55)
+            .text("Drivers");
+
+            svg.append("text")
+            .attr("id", "overtext")
+            .attr("text-anchor", "center")
+            .attr("x", width/2)
+            .attr("y", margin.top)
+
+            // Y axis label:
+            svg.append("text")
+                .attr("id", "ytitle")
+                .attr("text-anchor", "end")
+                .attr("transform", "rotate(-90)")
+                .attr("y", -margin.left+11)
+                .attr("x", -margin.top - 100)
+                .text("Points")
+            
+            if (data2.length != 0)
+            {
+                svg.selectAll("#overtext").text("Season: "+season+"\nRound: "+round)
+            }
+
+            setTimeout(function() {
+                if (data2.length != 0)
+                {
+                    round = round + 1
+                    svg.selectAll("#xaxis").remove()
+                    svg.selectAll("#yaxis").remove()
+                    svg.selectAll("#xtitle").remove()
+                    svg.selectAll("#ytitle").remove()
+                    func2(data, season, round);
+                }
+                else
+                {
+                    a.disabled = false
+                    b.disabled = false
                 }
             }, 500)
         }
         let a = document.getElementById("button")
+        let b = document.getElementById("button2")
         var round = 1
 
         let ss = document.getElementById("selectSeason")
@@ -229,10 +411,40 @@
             el.value = opt;
             ss.appendChild(el);
         }
+        ss.addEventListener("click", function()
+        {
+            console.log(ss.value)
+            if (ss.value == "Select the season")
+            {
+                console.log("1")
+                a.disabled = true
+                b.disabled = true
+            }
+            else
+            {
+                console.log("2")
+                a.disabled = false
+                b.disabled = false
+            }
+        })
+        
 
         a.addEventListener("click", function (){
             m.clear()
+            data = []
+            round = 1
+            a.disabled = true
+            b.disabled = true
             func(data, ss.value, round);
+            svg.selectAll("*").remove()
+        })
+        b.addEventListener("click", function (){
+            m.clear()
+            data = []
+            round = 1
+            a.disabled = true
+            b.disabled = true
+            func2(data, ss.value, round);
             svg.selectAll("*").remove()
         })
     </script>
