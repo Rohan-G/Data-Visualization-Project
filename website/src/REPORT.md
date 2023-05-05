@@ -13,6 +13,7 @@
 <br><br>
 
 ## Diversity of F1
+* <u>What:</u> A globe that displays all current circuits for the 2023 season, as well as future and returning circuits for the 2024 season.
 
 * <u>Why:</u> For a long time, Formula 1 has been criticized for being a sport dominated by wealthy white Europeans. However, in recent years, there has been a concerted effort to diversify the sport and make it more inclusive for people from different regions and backgrounds.
 One of the ways that F1 is doing this is by expanding the number of tracks around the world. F1 now has races in various countries across the globe, from small European nations to places like the United States, Mexico, Canada, and the Middle East. By hosting events in different regions, F1 is helping to promote the sport to new audiences and provide opportunities for aspiring drivers from diverse backgrounds.

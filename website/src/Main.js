@@ -12,27 +12,167 @@ function Main(){
         <>
             <img src="logo.png" align="center" style={{ "position": "fixed", "left": "42.5vw" , top: "5vh", width:"15vw"}} />
 
-            <div id="Cards" style={{position: "absolute", top: "20vh", left: "15vw", display: "flex", flexFlow: "row no-wrap", alignItems: "top", justifyItems: "center", gap: "100px"}}>
+            <div id="Cards" style={{position: "absolute", top: "20vh", left: "6vw", right:"6vw", display: "flex", flexFlow: "row wrap", alignItems: "top", justifyItems: "center", gap: "100px"}}>
                 <Card sx={{ maxWidth: 345 , color:"rgb(250,235,225)", backgroundColor:"red"}}>
-                <CardActionArea>
-                    <CardMedia
-                    component="img"
-                    height="140"
-                    image="top10Grid.png"
-                    alt="Top10Grid"
-                    style={{width:"95%", height:"95%", objectFit: "contain", display:"block", justifyContent:"center", margin: "auto", marginTop:"10px"}}
-                    />
-                    <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
-                    </Typography>
-                    </CardContent>
-                </CardActionArea>
+                    <CardActionArea>
+                        <CardMedia
+                        component="img"
+                        height="140"
+                        image="top10Grid.png"
+                        alt="Top10Grid"
+                        style={{width:"150", height:"150", objectFit: "contain", display:"block", justifyContent:"center", margin: "auto", marginTop:"10px"}}
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Top 10 Drivers Seasonwise
+                        </Typography>
+                        <Typography variant="body2">
+                            We are visualizing the top 10 drivers for each season 2003 onwards through a grid-system.
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
                 </Card>
+
+                <Card sx={{ maxWidth: 345 , color:"rgb(250,235,225)", backgroundColor:"red"}}>
+                    <CardActionArea>
+                        <CardMedia
+                        component="img"
+                        height="140"
+                        image="safety.png"
+                        alt="Safety"
+                        style={{width:"150", height:"150", objectFit: "contain", display:"block", justifyContent:"center", margin: "auto", marginTop:"10px"}}
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Safety Over The Years
+                        </Typography>
+                        <Typography variant="body2">
+                        We are visulizing how safety in the sport has evolved over the years, with the introduction of various regulations.
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+
+                <Card sx={{ maxWidth: 345 , color:"rgb(250,235,225)", backgroundColor:"red"}}>
+                    <CardActionArea>
+                        <CardMedia
+                        component="img"
+                        height="140"
+                        image="sunburst.jpeg"
+                        alt="EngineVConstructors"
+                        style={{width:"150", height:"150", objectFit: "contain", display:"block", justifyContent:"center", margin: "auto", marginTop:"10px"}}
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Correlation between Engine and Constructor Performance
+                        </Typography>
+                        <Typography variant="body2">
+                            We have made a sunburst chart representing engines and the particular constructors they supply.
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+
+                <Card sx={{ maxWidth: 345 , color:"rgb(250,235,225)", backgroundColor:"red"}}>
+                    <CardActionArea>
+                        <CardMedia
+                        component="img"
+                        height="140"
+                        image="timeline.png"
+                        alt="TimeLine"
+                        style={{width:"150", height:"150", objectFit: "contain", display:"block", justifyContent:"center", margin: "auto", marginTop:"10px"}}
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Championships Over the Years
+                        </Typography>
+                        <Typography variant="body2">
+                            We are visualizing the effect a constructor has on the driver's championship, if any, as well as how dominant a particular constructor or driver has been for a contiguous set of seasons.
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+
+                <Card sx={{ maxWidth: 345 , color:"rgb(250,235,225)", backgroundColor:"red"}}>
+                    <CardActionArea>
+                        <CardMedia
+                        component="img"
+                        height="140"
+                        image="WebsitePic.png"
+                        alt="Head2Head"
+                        style={{width:"150", height:"150", objectFit: "contain", display:"block", justifyContent:"center", margin: "auto", marginTop:"10px"}}
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Driver Head To Head
+                        </Typography>
+                        <Typography variant="body2">
+                            We are visualizing a head to head of drivers against their teammates (in that particular season) over all the seasons the driver had participated.
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+
+                <Card sx={{ maxWidth: 345 , color:"rgb(250,235,225)", backgroundColor:"red"}}>
+                    <CardActionArea>
+                        <CardMedia
+                        component="img"
+                        height="140"
+                        image="tracksOnGlobe.png"
+                        alt="Globe"
+                        style={{width:"150", height:"150", objectFit: "contain", display:"block", justifyContent:"center", margin: "auto", marginTop:"10px"}}
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Diversity of F1
+                        </Typography>
+                        <Typography variant="body2">
+                            A globe that displays all current circuits for the 2023 season, as well as future and returning circuits for the 2024 season.
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+
+                <Card sx={{ maxWidth: 345 , color:"rgb(250,235,225)", backgroundColor:"red"}}>
+                    <CardActionArea>
+                        <CardMedia
+                        component="img"
+                        height="140"
+                        image="tracksOnGlobe.png"
+                        alt="Globe"
+                        style={{width:"150", height:"150", objectFit: "contain", display:"block", justifyContent:"center", margin: "auto", marginTop:"10px"}}
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Top 10 of 3 Categories
+                        </Typography>
+                        <Typography variant="body2">
+                            We are trying to show information about the 10 greatest drivers in different aspects: Our chosen aspects are - most overall points, most championships, most wins.
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+
+                <Card sx={{ maxWidth: 345 , color:"rgb(250,235,225)", backgroundColor:"red"}}>
+                    <CardActionArea>
+                        <CardMedia
+                        component="img"
+                        height="140"
+                        image="tracksOnGlobe.png"
+                        alt="Globe"
+                        style={{width:"150", height:"150", objectFit: "contain", display:"block", justifyContent:"center", margin: "auto", marginTop:"10px"}}
+                        />
+                        <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            A growing bar chart
+                        </Typography>
+                        <Typography variant="body2">
+                            This chart is an animated growing/racing bar chart for a particular season which shows the progression of points of each driver after each round.   
+                        </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+
             </div>
         </>
     )
