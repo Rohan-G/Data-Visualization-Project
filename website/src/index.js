@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Dominance from './ChampionshipWinners';
+import Main from './Main.js'
 import reportWebVitals from './reportWebVitals';
 import Casualties from './Casualties';
 
@@ -11,7 +12,8 @@ root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Dominance /> */}
-    <Casualties />
+    {/* <Casualties /> */}
+    <Main />
   </React.StrictMode>
 );
 
