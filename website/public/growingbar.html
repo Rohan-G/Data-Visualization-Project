@@ -123,6 +123,9 @@
                 .range([0, width])
                 .domain(drivers.map(function(d) { return d }))
                 .padding(0.2)
+
+            if (round == 1)
+            {
             svg.append("g")
                 .attr("id", "xaxis")
                 .attr("transform", "translate(0," + height + ")")
@@ -138,6 +141,7 @@
             svg.append("g")
                 .attr("id", "yaxis")
                 .call(d3.axisLeft(x))
+            }
 
             var bar = svg.selectAll("mybar")
                 .data(data2)
@@ -179,13 +183,16 @@
                     content: "Position: "+f["Position"]+"<br>Points: "+f["Points"]+"<br>Wins: "+f["Wins"]+"<br>Constructor: "+f["Constructor"]
                 })
             })
-
+            
+            if (round == 1)
+            {
             svg.append("text")
             .attr("id", "xtitle")
             .attr("text-anchor", "end")
             .attr("x", width/2 + 30)
             .attr("y", height + margin.top + 55)
             .text("Drivers");
+            }
 
             svg.append("text")
             .attr("id", "overtext")
@@ -194,6 +201,8 @@
             .attr("y", margin.top)
 
             // Y axis label:
+            if (round == 1)
+            {
             svg.append("text")
                 .attr("id", "ytitle")
                 .attr("text-anchor", "end")
@@ -201,6 +210,7 @@
                 .attr("y", -margin.left+400)
                 .attr("x", -margin.top - 200)
                 .text("Points")
+            }
 
             if (data2.length != 0)
             {
@@ -211,10 +221,10 @@
                 if (data2.length != 0)
                 {
                     round = round + 1
-                    svg.selectAll("#xaxis").remove()
-                    svg.selectAll("#yaxis").remove()
-                    svg.selectAll("#xtitle").remove()
-                    svg.selectAll("#ytitle").remove()
+                    // svg.selectAll("#xaxis").remove()
+                    // svg.selectAll("#yaxis").remove()
+                    // svg.selectAll("#xtitle").remove()
+                    // svg.selectAll("#ytitle").remove()
                     func(data, season, round);
                 }
                 else
@@ -301,6 +311,9 @@
                 .range([0, width])
                 .domain(drivers.map(function(d) { return d }))
                 .padding(0.2)
+
+            if (round == 1)
+            {
             svg.append("g")
                 .attr("id", "xaxis")
                 .attr("transform", "translate(0," + height + ")")
@@ -316,6 +329,7 @@
             svg.append("g")
                 .attr("id", "yaxis")
                 .call(d3.axisLeft(x))
+            }
 
             var bar = svg.selectAll("mybar")
                 .data(data2)
@@ -358,12 +372,15 @@
                 })
             })
 
+            if (round == 1)
+            {
             svg.append("text")
             .attr("id", "xtitle")
             .attr("text-anchor", "end")
             .attr("x", width/2 + 30)
             .attr("y", height + margin.top + 55)
             .text("Drivers");
+            }
 
             svg.append("text")
             .attr("id", "overtext")
@@ -372,6 +389,8 @@
             .attr("y", margin.top)
 
             // Y axis label:
+            if (round == 1)
+            {
             svg.append("text")
                 .attr("id", "ytitle")
                 .attr("text-anchor", "end")
@@ -379,6 +398,7 @@
                 .attr("y", -margin.left+400)
                 .attr("x", -margin.top - 200)
                 .text("Points")
+            }
             
             if (data2.length != 0)
             {
@@ -389,10 +409,10 @@
                 if (data2.length != 0)
                 {
                     round = round + 1
-                    svg.selectAll("#xaxis").remove()
-                    svg.selectAll("#yaxis").remove()
-                    svg.selectAll("#xtitle").remove()
-                    svg.selectAll("#ytitle").remove()
+                    // svg.selectAll("#xaxis").remove()
+                    // svg.selectAll("#yaxis").remove()
+                    // svg.selectAll("#xtitle").remove()
+                    // svg.selectAll("#ytitle").remove()
                     func2(data, season, round);
                 }
                 else
